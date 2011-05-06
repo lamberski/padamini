@@ -850,6 +850,19 @@ textarea {
   border-top: 0;
 }
 
+/* Required */
+
+.form .field.required label:first-child:after {
+  color: #bbb;
+  content: " (*)";
+}
+
+/* Invalid */
+
+.form .field.invalid label:first-child {
+  color: #c28881;
+}
+
 /* Plain */
 
 .form .field.plain {
@@ -862,6 +875,10 @@ textarea {
   width: auto;
   font-size: 12px;
   padding-top: 0;
+}
+
+.form .field.plain.required label:first-child:after {
+  content: "";
 }
 
 /*  Field elements
@@ -903,19 +920,6 @@ textarea {
   max-width: 620px;
 }
 
-/* Required field */
-
-.form label .required {
-  color: #ee3e3e;
-  font-size: 11px;
-}
-
-.form label .required.gray {
-  color: #bbb;
-  display: block;
-  line-height: 1.4;
-}
-
 /* Block */
 
 .form .block {
@@ -928,19 +932,28 @@ textarea {
   margin-top: 0;
 }
 
-/* Hint */
-
-.form .hint {
-  line-height: 1.4;
-  color: #999;
-  font-size: 11px;
-}
-
 /* Label */
 
 .form .field label:first-child ~ label {
   color: #666;
 }
+
+/* Hint & Error */
+
+.form .hint,
+.form .error {
+  line-height: 1.4;
+  font-size: 11px;
+}
+
+.form .hint {
+  color: #999;
+}
+
+.form .error {
+  color: #c28881;
+}
+
 
 /*  Buttons
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
