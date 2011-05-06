@@ -859,8 +859,13 @@ textarea {
 
 /* Invalid */
 
-.form .field.invalid label:first-child {
-  color: #c28881;
+.invalid input[type=password],
+.invalid input[type=text],
+.invalid input[type=email],
+.invalid input[type=url],
+.invalid input[type=number],
+.invalid textarea {
+  color: #96544c;
 }
 
 /* Plain */
