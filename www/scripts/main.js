@@ -1,5 +1,5 @@
 /*
- *  Admin Panel Base JavaScripts (March 2011)
+ *  Admin Panel Main JavaScripts (March 2011)
  *  Crafted with passion by http://lamberski.com
  */
 var AdminBase = {
