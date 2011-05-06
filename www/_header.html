@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <title>Administration Panel</title>
+    <meta name="author" content="http://lamberski.com">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/custom.css" rel="stylesheet">
+    <link href="styles/boxy.css" rel="stylesheet">
+    <link href="styles/wysiwyg.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="scripts/jquery.wysiwyg.js"></script>
+    <script src="scripts/jquery.wysiwyg.image.js"></script>
+    <script src="scripts/jquery.wysiwyg.link.js"></script>
+    <script src="scripts/jquery.wysiwyg.table.js"></script>
+    <script src="scripts/jquery.boxy.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/custom.js"></script>
+  </head>
+  <body>
+    <header role="banner">
+      <h1 class="outline">Panel administracyjny</h1>
+
+      <!-- Top -->
+      <div class="wrapper top">
+        <div class="title">
+          <a href="#" class="to-index"><em>Fajny Sklep</em> Admin</a>
+          <a href="#" class="button external">Odwiedź stronę &rarr;</a>
+        </div>
+
+        <div class="user-panel">
+          <p>Zalogowany jako <em>Maciek</em></p>
+          <a href="#" class="button logout">Wyloguj</a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav role="navigation">
+        <ul class="wrapper tabs">
+          <li><a href="#">Kokpit</a></li>
+          <li class="selected"><a href="#">Komentarze <small>12</small></a></li>
+          <li><a href="#">Produkty</a></li>
+          <li><a href="#">Zamówienia <small>5</small></a></li>
+          <li><a href="#">Użytkownicy</a></li>
+          <li><a href="#">Strony statyczne</a></li>
+          <li><a href="#">Parametry sklepu</a></li>
+        </ul>
+      </nav>
+
+      <!-- Subnavigation -->
+      <div class="subnavigation">
+        <ul class="wrapper">
+          <li><a href="#">Zarządzanie</a></li>
+          <li class="selected"><a href="#">Kategorie</a></li>
+          <li><a href="#">Parametry</a></li>
+          <li><a href="#">Statystyki</a></li>
+          <li><a href="#">Płatności</a></li>
+        </ul>
+      </div>
+    </header>
+    <div id="content" class="wrapper">

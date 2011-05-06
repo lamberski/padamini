@@ -1,40 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="author" content="Crafted with passion by http://lamberski.com">
-    <link href="favicon.ico" rel="shortcut icon">
-    <link href="styles/main.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <a href="#content" class="accessibility"></a>
-    <header role="banner">
-      <h1 class="outline"></h1>
-      <a href="#" id="logo">
-        <img src="">
-      </a>
-      <nav role="navigation">
-        <h4 class="outline"></h4>
+      <!-- Messages
+      <div class="message success">
+        <p>Maecenas faucibus mollis interdum!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Etiam porta sem malesuada magna mollis euismod.</p>
+      </div>
+
+      <div class="message error">
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
         <ul>
-          <li></li>
+          <li><label>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</label></li>
+          <li><label>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</label></li>
+          <li><label>Cras mattis consectetur purus sit amet fermentum.</label></li>
+          <li><label>Donec sed odio dui.</label></li>
+          <li><label>Donec ullamcorper nulla non metus auctor fringilla.</label></li>
         </ul>
-      </nav>
-    </header>
-    <div id="content">
-      <div role="main">
-
       </div>
-      <div id="sidebar">
 
+      <div class="message info">
+        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Etiam porta sem malesuada magna mollis euismod.</p>
+      </div> -->
+
+      <div class="message warning">
+        <p>Sed posuere consectetur est at lobortis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Etiam porta sem malesuada magna mollis euismod.</p>
       </div>
-    </div>
-    <footer role="contentinfo">
 
-    </footer>
-  </body>
-</html>
+      <!-- Header -->
+      <header>
+        <h2>Parametry sklepu</h2>
+
+        <ul class="actions">
+          <li><a href="#" class="button create">Dodaj</a></li>
+          <li><a href="#" class="button delete confirmation" data-question="Czy na pewno chcesz usunąć wszystkie rekordy?">Usuń wszystkie&hellip;</a></li>
+        </ul>
+
+        <ul class="filters">
+          <li><a href="#">Wszystkie</a></li>
+          <li><a href="#">Opublikowane</a></li>
+          <li><a href="#" class="button">Nieopublikowane</a></li>
+          <li><a href="#">W koszu</a></li>
+        </ul>
+      </header>
+
+      <!-- Form -->
+      <form class="form">
+        <fieldset class="fields">
+          <legend><span>Podstawowe</span></legend>
+          <div class="field">
+            <label>Tytuł <span class="required gray">(wymagane)</span></label>
+            <input type="text" class="medium">
+            <p class="hint block">Morbi leo risus, porta ac consectetur ac, <a href="">vestibulum at eros</a>. Vivamus sagittis lacus <em>vel augue laoreet rutrum faucibus dolor</em> auctor. Nulla vitae elit libero, a pharetra augue. <strong>Nullam quis</strong> risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.</p>
+          </div>
+          <div class="field">
+            <label>Treść <span class="required">(*)</span></label>
+            <textarea rows="6" cols="50" class="normal"></textarea>
+            <p class="hint block">Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="fields">
+          <legend><span>Zdjęcia</span></legend>
+          <div class="field">
+            <label>Aktualne</label>
+            <ul>
+              <li>
+                <img src="http://t3.gstatic.com/images?q=tbn:ANd9GcRg_OSJGzeDnM73QbrmZ6Dt61TAepan8H9gUCHOdL_tsTBr7W-h-Q">
+              </li>
+              <li>
+                <img src="http://economictimes.indiatimes.com/photo/5951402.cms">
+              </li>
+            </ul>
+          </div>
+
+          <div class="field">
+            <label>Aktualne</label>
+            <div class="block">
+              <input type="text" readonly value="10 ml" class="small" placeholder="Wielkość">
+              <input type="text" readonly value="12,00" class="small" placeholder="Cena">
+              <input type="text" name="sizes[44][number]" value="1" class="tiny" placeholder="Liczba">
+              <label><input type="checkbox" class="remove" name="sizes[44][delete]"> Usuń</label>
+            </div>
+            <div class="block">
+              <input type="text" readonly value="15 ml" class="small" placeholder="Wielkość">
+              <input type="text" readonly value="17,50" class="small" placeholder="Cena">
+              <input type="text" name="sizes[45][number]" value="4" class="tiny" placeholder="Liczba">
+              <label><input type="checkbox" class="remove" name="sizes[45][delete]"> Usuń</label>
+            </div>
+            <p class="hint block">Rekordy z zaznaczonym polem "Usuń" zostaną usunięte przy wysyłaniu formularza.</p>
+          </div>
+
+          <div class="field">
+            <label>Nowy</label>
+            <div class="block form">
+              <input type="hidden" name="fragrances[id][new]" value="1" disabled>
+              <input type="text" name="fragrances[id][name]" class="small" placeholder="Nazwa" disabled>
+              <input type="text" name="fragrances[id][description]" class="normal" placeholder="Opis" disabled>
+              <a href="#" class="remove">Usuń</a>
+            </div>
+            <div class="block">
+              <a href="#" class="add">Dodaj kolejny</a>
+            </div>
+          </div>
+
+          <div class="field plain">
+            <label class="block"><input type="checkbox"> Przyklej</label>
+            <label class="block"><input type="checkbox" checked> Wyślij wiadomości e-mail do subskrybentów</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="buttons">
+          <button class="button left create">Stwórz</button>
+          <button class="button left delete">Usuń</button>
+          <button class="button right external" data-url="http://dupa.pl">Podgląd &rarr;</button>
+        </fieldset>
+      </form>
+
+      <!-- Listing -->
+      <div class="listing">
+        <ul>
+          <li class="element selected">
+            <div class="info">
+              <p>Condimentum egestas dapibus</p>
+              <dl>
+                <dt>Dług</dt>
+                <dd class="value red">-832,30 zł</dd>
+                <dt>Wartość zamówienia</dt>
+                <dd class="value green">8,50 zł</dd>
+                <dt>Data dodania</dt>
+                <dd>13.11.2011</dd>
+                <dt>Status</dt>
+                <dd class="label">Zakończony</dd>
+              </dl>
+            </div>
+            <ul class="actions">
+              <li><a href="#" class="external">Podgląd</a></li>
+              <li><a href="#">Edytuj</a></li>
+              <li><a href="#" class="confirmation" data-question="Czy na pewno chcesz usunąć ten produkt?">Usuń&hellip;</a></li>
+            </ul>
+            <div class="more">
+            </div>
+          </li>
+          <li class="element">
+            <div class="info">
+              <p>Condimentum egestas dapibus</p>
+              <dl>
+                <dt>Data dodania</dt>
+                <dd>13.11.2011</dd>
+                <dt>Status</dt>
+                <dd class="label">Zakończony</dd>
+              </dl>
+            </div>
+            <ul class="actions">
+              <li><a href="#">Edytuj</a></li>
+              <li><a href="#">Usuń&hellip;</a></li>
+            </ul>
+            <div class="more">
+            </div>
+          </li>
+        </ul>
+
+        <nav class="pagination">
+          <ul>
+            <li class="previous disabled">&laquo; Poprzednie</li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><span>&hellip;</span></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li class="current"><span>9</span></li>
+            <li><a href="#">10</a></li>
+            <li><a href="#">11</a></li>
+            <li><span>&hellip;</span></li>
+            <li><a href="#">10</a></li>
+            <li><a href="#">11</a></li>
+            <li class="next"><a href="#" rel="next">Następne &raquo;</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- <div class="message info notice">
+        <p>Obecnie nie ma żadnych podstron statycznych.</p>
+      </div> -->
