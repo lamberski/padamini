@@ -212,7 +212,7 @@ textarea {
 /* Warning */
 
 .message.warning {
-  background-color: #f4f4cf;
+  background-color: #f7f7cc;
   color: #7c7054;
 }
 
@@ -615,8 +615,8 @@ textarea {
   line-height: 13px;
   display: inline-block;
   text-transform: uppercase;
-  background: #efefef;
-  color: #858585;
+  background: #f1f1f1;
+  color: #666;
   border-radius: 3px;
   -moz-border-radius: 3px;
   padding: 4px 5px;
@@ -624,23 +624,23 @@ textarea {
 }
 
 .listing .info .label.yellow {
-  background-color: #fcf8cb;
-  color: #828371;
+  background-color: #f7f7cc;
+  color: #7c7054;
 }
 
 .listing .info .label.green {
-  background-color: #e7f1e1;
-  color: #6c8b59;
+  background-color: #e7f0e2;
+  color: #617654;
 }
 
 .listing .info .label.red {
-  background: #f8e7e5;
-  color: #a75d55;
+  background-color: #f7e8e6;
+  color: #a65a50;
 }
 
 .listing .info .label.blue {
-  background-color: #e0f1f9;
-  color: #4e78a1;
+  background-color: #e2f0f7;
+  color: #53768b;
 }
 
 /* Value */
