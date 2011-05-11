@@ -157,6 +157,7 @@ textarea {
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 .message {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .03);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .03);
   -webkit-box-shadow: inset 0px 1px rgba(0, 0, 0, .03);
   border-radius: 5px;
@@ -165,7 +166,7 @@ textarea {
   line-height: 1.4;
   padding: 15px 20px;
   background: #f1f1f1;
-  color: #bbb;
+  color: #666;
 }
 
 .message.notice {
@@ -185,17 +186,12 @@ textarea {
 .message p:first-child {
   font-size: 13px;
   margin-top: 0;
-  color: #858585;
 }
 
 /* Success */
 
 .message.success {
   background-color: #e7f0e2;
-  color: #879f78;
-}
-
-.message.success p:first-child {
   color: #617654;
 }
 
@@ -203,33 +199,21 @@ textarea {
 
 .message.error {
   background-color: #f7e8e6;
-  color: #c28881;
-}
-
-.message.error p:first-child {
-  color: #96544c;
+  color: #a65a50;
 }
 
 /* Info */
 
 .message.info {
   background-color: #e2f0f7;
-  color: #7a9cb0;
-}
-
-.message.info p:first-child {
-  color: #506b85;
+  color: #53768b;
 }
 
 /* Warning */
 
 .message.warning {
   background-color: #f4f4cf;
-  color: #a9a18d;
-}
-
-.message.warning p:first-child {
-  color: #766e59;
+  color: #7c7054;
 }
 
 /*  Content buttons (and selected filter tabs)
@@ -323,7 +307,7 @@ textarea {
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 [role="banner"] {
-  background: #444;
+  background: #3b3b3b;
 }
 
 /*  Top
@@ -345,22 +329,22 @@ textarea {
   line-height: 30px;
   float: left;
   display: block;
-  color: #777;
+  color: #999;
   text-decoration: none;
   font-size: 18px;
 }
 
 [role="banner"] .to-index em {
-  color: #eee;
+  color: #fff;
   font-style: normal;
 }
 
 [role="banner"] .to-index:hover {
-  color: #6f6f6f;
+  color: #888;
 }
 
 [role="banner"] .to-index:hover em {
-  color: #ddd;
+  color: #ececec;
 }
 
 /* Button */
@@ -393,11 +377,11 @@ textarea {
   float: left;
   font-size: 12px;
   line-height: 50px;
-  color: #777;
+  color: #999;
 }
 
 [role="banner"] .user-panel em {
-  color: #999;
+  color: #ccc;
   font-style: normal;
 }
 
@@ -420,7 +404,7 @@ textarea {
   line-height: 38px;
   text-transform: uppercase;
   padding: 0 10px;
-  color: #eee;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
@@ -431,7 +415,7 @@ textarea {
 
 [role="navigation"] .selected a {
   background: #eee;
-  color: #666;
+  color: #555;
 }
 
 [role="navigation"] small {
@@ -469,16 +453,16 @@ textarea {
   display: block;
   line-height: 34px;
   padding: 0 10px;
-  color: #777;
+  color: #666;
   text-decoration: none;
 }
 
 .subnavigation a:hover {
-  color: #444;
+  color: #333;
 }
 
 .subnavigation .selected a {
-  color: #bbb;
+  color: #aaa;
 }
 
 /*
@@ -506,8 +490,9 @@ textarea {
 }
 
 #content > header h2 {
-  color: #555;
-  font-size: 22px;
+  font-size: 21px;
+  font-weight: bold;
+  color: #444;
   float: left;
   line-height: 28px;
 }
@@ -612,7 +597,7 @@ textarea {
   display: inline-block;
   margin-left: 10px;
   font-size: 10px;
-  color: #bbb;
+  color: #aaa;
 }
 
 .listing .info dt {
@@ -687,6 +672,9 @@ textarea {
 }
 
 .listing .actions a {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .03);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .03);
+  -webkit-box-shadow: inset 0px 1px rgba(0, 0, 0, .03);
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -705,6 +693,9 @@ textarea {
 /* External */
 
 .listing .actions a.external {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
   background: none;
   color: #999;
   padding: 5px 0;
@@ -747,6 +738,9 @@ textarea {
 }
 
 .pagination .current {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .03);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .03);
+  -webkit-box-shadow: inset 0px 1px rgba(0, 0, 0, .03);
   padding: 7px 10px;
   background: #6f7b95;
   color: #fff;
@@ -756,10 +750,13 @@ textarea {
 }
 
 .pagination li a, .pagination .disabled {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .03);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .03);
+  -webkit-box-shadow: inset 0px 1px rgba(0, 0, 0, .03);
   text-decoration: none;
   padding: 7px 10px;
   background: #eee;
-  color: #777;
+  color: #666;
   border-radius: 4px;
   -moz-border-radius: 4px;
 }
@@ -770,7 +767,10 @@ textarea {
 }
 
 .pagination .disabled {
-  color: #ccc;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  color: #aaa;
   background: #fff;
 }
 
@@ -833,7 +833,7 @@ textarea {
 }
 
 .form .field label:first-child {
-  color: #555;
+  color: #444;
   position: absolute;
   width: 120px;
   left: 0;
@@ -853,7 +853,7 @@ textarea {
 /* Required */
 
 .form .field.required label:first-child:after {
-  color: #bbb;
+  color: #aaa;
   content: " (*)";
 }
 
@@ -875,7 +875,7 @@ textarea {
 }
 
 .form .field.plain label:first-child {
-  color: #666;
+  color: #555;
   position: static;
   width: auto;
   font-size: 12px;
@@ -891,11 +891,11 @@ textarea {
 
 .form .field a {
   text-decoration: underline;
-  color: #666;
+  color: #555;
 }
 
 .form .field a:hover {
-  color: #888;
+  color: #777;
 }
 
 /* Input sizes */
@@ -940,7 +940,7 @@ textarea {
 /* Label */
 
 .form .field label:first-child ~ label {
-  color: #666;
+  color: #555;
 }
 
 /* Hint & Error */
@@ -952,7 +952,7 @@ textarea {
 }
 
 .form .hint {
-  color: #999;
+  color: #888;
 }
 
 .form .error {
@@ -985,15 +985,15 @@ textarea {
 [role="contentinfo"] {
   margin-top: 40px;
   margin-bottom: 20px;
-  color: #ccc;
+  color: #bbb;
   line-height: 1.4;
   text-align: center;
 }
 
 [role="contentinfo"] a {
-  color: #aaa;
+  color: #888;
 }
 
 [role="contentinfo"] a:hover {
-  color: #999;
+  color: #777;
 }
