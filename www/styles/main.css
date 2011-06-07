@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*
- *  Admin Panel Main Stylesheet (May 2011)
+ *  Admin Panel Main Stylesheet (June 2011)
  *  Crafted with passion by http://lamberski.com
  *
  *  1 Global
@@ -258,37 +258,37 @@ textarea {
 /* Create */
 
 #content .button.create {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e7f1e1, endColorstr=#c9e8b7);
-  background: -webkit-gradient(linear, left top, left bottom, from(#e7f1e1), to(#c9e8b7));
-  background: -moz-linear-gradient(top,  #e7f1e1,  #c9e8b7);
-  background-color: #c9e8b7;
-  color: #657b58 !important;
-  border-color: #adc79d;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#70ac64, endColorstr=#4e7f44);
+  background: -webkit-gradient(linear, left top, left bottom, from(#70ac64), to(#4e7f44));
+  background: -moz-linear-gradient(top,  #70ac64,  #4e7f44);
+  background-color: #58904d;
+  color: #fff !important;
+  border-color: #46733d;
 }
 
 #content .button.create:hover {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e7f1e1, endColorstr=#b3de99);
-  background: -webkit-gradient(linear, left top, left bottom, from(#e7f1e1), to(#b3de99));
-  background: -moz-linear-gradient(top,  #e7f1e1,  #b3de99);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fb575, endColorstr=#58904d);
+  background: -webkit-gradient(linear, left top, left bottom, from(#7fb575), to(#58904d));
+  background: -moz-linear-gradient(top,  #7fb575,  #58904d);
   background-color: #c9e8b7;
 }
 
 /* Delete */
 
 #content .button.delete {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f8e7e5, endColorstr=#edc2bd);
-  background: -webkit-gradient(linear, left top, left bottom, from(#f8e7e5), to(#edc2bd));
-  background: -moz-linear-gradient(top,  #f8e7e5,  #edc2bd);
-  background-color: #edc2bd;
-  color: #96544c !important;
-  border-color: #e8afa9;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d26e60, endColorstr=#b34332);
+  background: -webkit-gradient(linear, left top, left bottom, from(#d26e60), to(#b34332));
+  background: -moz-linear-gradient(top,  #d26e60,  #b34332);
+  background-color: #c74a38;
+  color: #fff !important;
+  border-color: #9f3b2d;
 }
 
 #content .button.delete:hover {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f8e7e5, endColorstr=#e6ada5);
-  background: -webkit-gradient(linear, left top, left bottom, from(#f8e7e5), to(#e6ada5));
-  background: -moz-linear-gradient(top,  #f8e7e5,  #e6ada5);
-  background-color: #e6ada5;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d88074, endColorstr=#c74a38);
+  background: -webkit-gradient(linear, left top, left bottom, from(#d88074), to(#c74a38));
+  background: -moz-linear-gradient(top,  #d88074,  #c74a38);
+  background-color: #cd5c4c;
 }
 
 /*
@@ -589,6 +589,7 @@ textarea {
 .listing .info dl {
   position: absolute;
   right: 0;
+  top: 0;
   line-height: 20px;
 }
 
