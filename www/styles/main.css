@@ -551,7 +551,7 @@ textarea {
 }
 
 .listing .element.odd {
-  background: #fbfbfb;
+  background: #fafafa;
 }
 
 .listing .element:first-child {
@@ -790,7 +790,7 @@ textarea {
   border-radius: 5px;
   -moz-border-radius: 5px;
   margin-top: 20px;
-  background: #f3f3f3;
+  background: #f5f5f5;
   padding: 20px;
   padding-top: 60px;
   position: relative;
