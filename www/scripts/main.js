@@ -35,8 +35,8 @@ var AdminBase = {
 
       anchor = $(this);
 
-      Boxy.ask(anchor.data("question"), ["OK", "Cancel"], function(response) {
-        if (response == "OK") window.location.href = anchor.attr("href");
+      Boxy.ask(anchor.data("question"), [anchor.data("decline"), anchor.data("accept")], function(response) {
+        if (response == anchor.data("accept")) window.location.href = anchor.attr("href");
       });
 
       return false;
