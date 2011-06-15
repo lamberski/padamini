@@ -10,6 +10,7 @@ var AdminMain = {
     this.enableConfirmationModals();
     this.enableExternalLinks();
     this.enableInputAutofocus();
+    this.performGridInfo();
   },
 
   initBoxy: function() {
@@ -23,7 +24,7 @@ var AdminMain = {
     /*
      * Setting title attribute for each <dd> in .element .info
      */
-    $(".info dt").each(function() {
+    $(".listing .info dt").each(function() {
       currentDt = $(this);
 
       currentDt.next(":not([title])").attr("title", currentDt.text());
@@ -69,12 +70,33 @@ var AdminMain = {
       return false;
     });
   },
-  
+
   enableInputAutofocus: function() {
 
     if ($("[autofocus]").length == 0) {
       $(".field input, .field textarea").first().focus();
     }
+  },
+
+  performGridInfo: function() {
+
+    $(".grid .actions a").bind("click", function() {
+      $(this).parent().parent().parent().addClass("selected");
+    });
+
+    unselect = function() {
+      $(".grid .element.selected").each(function() {
+        $(this).removeClass("selected");
+      });
+    }
+
+    $(".boxy-wrapper .answers [type=\"button\"]").live("click", function() {
+      unselect();
+    });
+
+    $(".grid .element, .grid").bind("mouseover", function() {
+      unselect();
+    });
   }
 
 };
