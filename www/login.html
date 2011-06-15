@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <title>Administration Panel</title>
+    <meta name="author" content="http://lamberski.com">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link href="styles/boxy.css" rel="stylesheet">
+    <link href="styles/wysiwyg.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/custom.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <section id="content" class="wrapper login">
+      <header>
+        <h1>Awesome Shop <em>Admin</em></h1>
+      </header>
+      
+      <div class="message error notice">
+        <p>There is no user with given username and password.</p>
+      </div>
+      
+      <form class="form" method="post" action="/">
+
+        <fieldset class="fields plain">
+          <div class="field">
+            <label>Username</label>            
+            <input type="text" class="medium" name="username">
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" class="medium" name="password">
+            <p class="hint block"><a href="#">Forgot password?</a></p>
+          </div>
+          <div class="field plain">
+            <label><input type="checkbox" name="remember"> Remember me on this computer</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="buttons">
+          <p class="left"><a href="">&larr; Return to site</a> if you have came here accidentally.</p>
+          <button class="button right create main">Log in</button>
+        </fieldset>
+      </form>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="scripts/jquery.wysiwyg.js"></script>
+    <script src="scripts/jquery.wysiwyg.image.js"></script>
+    <script src="scripts/jquery.wysiwyg.link.js"></script>
+    <script src="scripts/jquery.wysiwyg.table.js"></script>
+    <script src="scripts/jquery.boxy.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/custom.js"></script>
+  </body>
+</html>

@@ -1,10 +1,11 @@
       <header>
-        <h2>Comments</h2>
+        <h1>Comments</h1>
 
         <ul class="actions">
           <li><a href="#" class="button create">New</a></li>
           <li>
             <a href="#" class="button delete confirmation"
+              data-type="delete"
               data-accept="Yes, delete"
               data-decline="No, do not delete"
               data-question="Do you really want to delete all records?"
@@ -21,7 +22,7 @@
 
       <div class="listing">
         <ul>
-          <li class="element selected">
+          <li class="element odd">
             <div class="info">
               <p>Donec id elit non mi porta gravida</p>
               <dl>
@@ -40,8 +41,6 @@
               <li><a href="#">Edit</a></li>
               <li><a href="#" class="confirmation" data-question="Do you really want to delete this product?">Delete&hellip;</a></li>
             </ul>
-            <div class="more">
-            </div>
           </li>
           <li class="element">
             <div class="info">
@@ -61,12 +60,12 @@
               <li><a href="#">Edit</a></li>
               <li><a href="#">Delete</a></li>
             </ul>
-            <div class="more">
-            </div>
           </li>
         </ul>
 
         <nav class="pagination">
+          <h2 class="outline">Pagination</h2>
+          <p>Showing <em>11-30</em> of <em>134</em> elements.</p>
           <ul>
             <li class="previous disabled">&laquo; Previous</li>
             <li><a href="#">1</a></li>
@@ -83,4 +82,5 @@
             <li class="next"><a href="#" rel="next">Next &raquo;</a></li>
           </ul>
         </nav>
+
       </div>

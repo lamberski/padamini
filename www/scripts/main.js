@@ -2,13 +2,14 @@
  *  Admin Panel Main JavaScripts (March 2011)
  *  Crafted with passion by http://lamberski.com
  */
-var AdminBase = {
+var AdminMain = {
 
   init: function() {
     this.initBoxy();
     this.performListingInfo();
     this.enableConfirmationModals();
     this.enableExternalLinks();
+    this.enableInputAutofocus();
   },
 
   initBoxy: function() {
@@ -39,6 +40,11 @@ var AdminBase = {
         if (response == anchor.data("accept")) window.location.href = anchor.attr("href");
       });
 
+      // Styling main action button
+      $("form.answers :last-child")
+        .addClass("main")
+        .addClass(anchor.data("type"));
+
       return false;
     });
   },
@@ -47,7 +53,7 @@ var AdminBase = {
 
     $(".external").attr("target", "_new");
 
-    $(".form .external").bind("click", function(){
+    $(".form .external").bind("click", function() {
 
       // Submiting form to the new tab/window
       $("form")
@@ -61,12 +67,18 @@ var AdminBase = {
         .attr("target", "_self");
 
       return false;
-
     });
+  },
+  
+  enableInputAutofocus: function() {
+
+    if ($("[autofocus]").length == 0) {
+      $(".field input, .field textarea").first().focus();
+    }
   }
 
 };
 
 $(function() {
-  AdminBase.init();
+  AdminMain.init();
 });
