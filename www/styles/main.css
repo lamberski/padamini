@@ -450,7 +450,6 @@ textarea {
 /*  Fixing inline-block in IE7
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-.grid .info dt,
 .boxy-wrapper .answers [type="button"],
 #content .filters .selected a,
 #content .button,
@@ -889,7 +888,7 @@ textarea {
 }
 
 .listing .element {
-  padding: 15px 0;
+  padding: 15px 10px;
   border-top: 1px solid #eee;
   display: block;
 }
@@ -965,8 +964,8 @@ textarea {
 }
 
 .grid img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 99%;
+  max-height: 99%;
   vertical-align: middle;
 }
 
@@ -1000,7 +999,7 @@ textarea {
   height: 180px;
   padding: 10px 15px;
   background: #f4f4f4;
-  background: rgba(245, 245, 245, .95);
+  background: rgba(245, 245, 245, .96);
 }
 
 .grid .info p {
@@ -1022,7 +1021,8 @@ textarea {
 }
 
 .grid .info dt {
-  display: inline-block;
+  display: block;
+  float: left;
 }
 
 .listing .info dd[title],
@@ -1031,11 +1031,11 @@ textarea {
 }
 
 .grid .info dt {
-  width: 30%;
+  width: 70px;
 }
 
 .grid .info dd {
-  width: 60%;
+  width: 100px;
 }
 
 .grid .info dt,
