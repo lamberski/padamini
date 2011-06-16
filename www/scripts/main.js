@@ -5,16 +5,15 @@
 var PadaminiMain = {
 
   init: function() {
-
     if (typeof Boxy != 'undefined') {
       this.initBoxy();
       this.enableConfirmationModals();
     }
-
     this.performListingInfo();
     this.enableExternalLinks();
     this.enableInputAutofocus();
     this.performGridInfo();
+    this.performConfirmationAnchors();
   },
 
   initBoxy: function() {
@@ -101,6 +100,10 @@ var PadaminiMain = {
     $(".grid .element, .grid").bind("mouseover", function() {
       unselect();
     });
+  },
+
+  performConfirmationAnchors: function() {
+    $(".confirmation").append("&hellip;");
   }
 
 };
