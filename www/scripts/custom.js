@@ -1,5 +1,5 @@
 /*
- *  Padamini Porzject-Specific JavaScripts (March 2011)
+ *  Padamini Project-Specific JavaScripts (March 2011)
  *  Crafted with passion by http://lamberski.com
  */
 var PadaminiCustom = {
