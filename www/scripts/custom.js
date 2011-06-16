@@ -1,8 +1,8 @@
 /*
- *  Admin Panel Custom JavaScripts (March 2011)
+ *  Padamini Porzject-Specific JavaScripts (March 2011)
  *  Crafted with passion by http://lamberski.com
  */
-var AdminCustom = {
+var PadaminiCustom = {
 
   init: function() {
     
@@ -11,5 +11,5 @@ var AdminCustom = {
 };
 
 $(function() {
-  AdminCustom.init();
+  PadaminiCustom.init();
 });

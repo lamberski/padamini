@@ -1,13 +1,17 @@
 /*
- *  Admin Panel Main JavaScripts (March 2011)
+ *  Padamini Main JavaScripts (June 2011)
  *  Crafted with passion by http://lamberski.com
  */
-var AdminMain = {
+var PadaminiMain = {
 
   init: function() {
-    this.initBoxy();
+
+    if (typeof Boxy != 'undefined') {
+      this.initBoxy();
+      this.enableConfirmationModals();
+    }
+
     this.performListingInfo();
-    this.enableConfirmationModals();
     this.enableExternalLinks();
     this.enableInputAutofocus();
     this.performGridInfo();
@@ -102,5 +106,5 @@ var AdminMain = {
 };
 
 $(function() {
-  AdminMain.init();
+  PadaminiMain.init();
 });
