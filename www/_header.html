@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Administration Panel</title>
-    <meta name="author" content="http://lamberski.com">
+    <title>Project Name Admin</title>
+    <meta name="author" content="Crafted with passion by http://lamberski.com">
     <link href="favicon.ico" rel="shortcut icon">
     <link href="styles/boxy.css" rel="stylesheet">
     <link href="styles/wysiwyg.css" rel="stylesheet">
@@ -15,22 +15,25 @@
     <![endif]-->
   </head>
   <body>
+    <a href="#main" class="accessibility"></a>
     <header role="banner">
-      <h3 class="outline">Administration Panel</h3>
+      <h3 class="outline">Project Name Admin</h3>
 
-      <div class="wrapper top">
+      <!-- Title section -->
+      <div class="wrapper top clearfix">
         <div class="title">
-          <a href="#" class="to-index"><em>Awesome Shop</em> Admin</a>
-          <a href="#" class="button external">Visit site &rarr;</a>
+          <a href="#" class="to-index left"><em>Project Name</em> Admin</a>
+          <a href="#" class="title-action left external">Visit site</a>
         </div>
 
         <div class="user-panel">
-          <p>Logged in as <em>Miszcz</em></p>
-          <a href="#" class="button logout">Logout</a>
+          <p>Logged in as <em>Test Tosteron</em></p>
+          <a href="#" class="title-action left">Logout</a>
         </div>
       </div>
 
-      <nav role="navigation">
+      <!-- Main navigation -->
+      <nav role="navigation" class="clearfix">
         <h4 class="outline">Main navigation</h4>
         <ul class="wrapper tabs">
           <li><a href="#">Dashboard</a></li>
@@ -43,7 +46,8 @@
         </ul>
       </nav>
 
-      <div class="subnavigation">
+      <!-- Subnavigation -->
+      <div class="subnavigation clearfix">
         <ul class="wrapper">
           <li><a href="#">Management</a></li>
           <li class="selected"><a href="#">Categories</a></li>
@@ -53,4 +57,4 @@
         </ul>
       </div>
     </header>
-    <section id="content" class="wrapper">
+    <section role="main" id="main" class="wrapper">

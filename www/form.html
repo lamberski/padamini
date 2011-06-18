@@ -1,11 +1,11 @@
-      <header>
+      <header class="page-header clearfix">
         <h1>New product</h1>
       </header>
 
       <form class="form" method="post" action="/">
         <fieldset class="fields">
           <legend><span>Basic</span></legend>
-          <div class="field required invalid">
+          <div class="field field-required field-invalid">
             <label>Title</label>
             <input type="text" class="medium">
             <p class="error block">Aenean lacinia bibendum nulla sed consectetur.</p>
@@ -16,7 +16,7 @@
             <textarea rows="6" cols="50" class="normal wysiwyg"></textarea>
             <p class="hint block">Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
           </div>
-          <div class="field plain required">
+          <div class="field field-plain required">
             <label class="block"><input type="checkbox"> Publish after adding</label>
             <p class="hint block">Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
             <label class="block"><input type="checkbox" checked> Send an e-mail to subscribers</label>
@@ -39,7 +39,7 @@
           </div>
         </fieldset>
 
-        <fieldset class="fields plain">
+        <fieldset class="fields fields-plain">
           <div class="field">
             <label>Current</label>
             <div class="block">
@@ -72,8 +72,8 @@
         </fieldset>
 
         <fieldset class="buttons">
-          <button class="button left create main">Create</button>
-          <button class="button left delete">Delete</button>
-          <button class="button right external" data-url="">Preview &rarr;</button>
+          <button class="button button-create button-main left">Create</button>
+          <button class="button button-delete left">Delete</button>
+          <button class="button right external" data-url="">Preview</button>
         </fieldset>
       </form>

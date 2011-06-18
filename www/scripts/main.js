@@ -1,5 +1,5 @@
 /*
- *  Padamini Main JavaScripts (June 2011)
+ *  Padamini (June 2011)
  *  Crafted with passion by http://lamberski.com
  */
 var PadaminiMain = {
@@ -14,6 +14,7 @@ var PadaminiMain = {
     this.enableInputAutofocus();
     this.performGridInfo();
     this.performConfirmationAnchors();
+    this.performExternalAnchors();
   },
 
   initBoxy: function() {
@@ -25,9 +26,9 @@ var PadaminiMain = {
   performListingInfo: function() {
 
     /*
-     * Setting title attribute for each <dd> in .element .info
+     * Setting title attribute for each <dd> in .info
      */
-    $(".listing .info dt").each(function() {
+    $(".listing-list .info dt").each(function() {
       currentDt = $(this);
 
       currentDt.next(":not([title])").attr("title", currentDt.text());
@@ -45,9 +46,12 @@ var PadaminiMain = {
       });
 
       // Styling main action button
+      $("form.answers *")
+        .addClass("button");
+
+      // Styling main action button
       $("form.answers :last-child")
-        .addClass("main")
-        .addClass(anchor.data("type"));
+        .addClass("button-main button-" + anchor.data("type"));
 
       return false;
     });
@@ -83,12 +87,12 @@ var PadaminiMain = {
 
   performGridInfo: function() {
 
-    $(".grid .actions a").bind("click", function() {
+    $(".listing-grid .actions a").bind("click", function() {
       $(this).parent().parent().parent().addClass("selected");
     });
 
     unselect = function() {
-      $(".grid .element.selected").each(function() {
+      $(".listing-grid > li.selected").each(function() {
         $(this).removeClass("selected");
       });
     }
@@ -97,13 +101,21 @@ var PadaminiMain = {
       unselect();
     });
 
-    $(".grid .element, .grid").bind("mouseover", function() {
+    $(".grid > li, .listing-grid").bind("mouseover", function() {
       unselect();
     });
   },
 
   performConfirmationAnchors: function() {
-    $(".confirmation").append("&hellip;");
+    $(".confirmation").each(function() {
+      $(this).text($(this).text() + $('<div/>').html("&hellip;").text());
+    });
+  },
+
+  performExternalAnchors: function() {
+    $(".external").each(function() {
+      $(this).text($(this).text() + $('<div/>').html(" &rarr;").text());
+    });
   }
 
 };

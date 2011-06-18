@@ -1,10 +1,10 @@
-      <header>
+      <header class="page-header clearfix">
         <h1>Comments</h1>
 
         <ul class="actions">
-          <li><a href="#" class="button create">New</a></li>
+          <li><a href="#" class="button button-create">New</a></li>
           <li>
-            <a href="#" class="button delete confirmation"
+            <a href="#" class="button button-delete confirmation"
               data-type="delete"
               data-accept="Yes, delete"
               data-decline="No, do not delete"
@@ -12,7 +12,7 @@
             >Delete all</a></li>
         </ul>
 
-        <ul class="filters">
+        <ul class="filters inset-shadow clearfix">
           <li><a href="#">All</a></li>
           <li><a href="#">Published</a></li>
           <li><a href="#" class="button">Unpublished</a></li>
@@ -20,66 +20,63 @@
         </ul>
       </header>
 
-      <div class="listing">
-        <ul>
-          <li class="element odd">
-            <div class="info">
-              <p>Donec id elit non mi porta gravida</p>
-              <dl>
-                <dt>Outstanding balance</dt>
-                <dd class="value red">-832.30$</dd>
-                <dt>Order value</dt>
-                <dd class="value green">8.50$</dd>
-                <dt>Added</dt>
-                <dd>13.11.2011</dd>
-                <dt>Status</dt>
-                <dd class="label yellow">Finished</dd>
-                <dd class="label green">Finished</dd>
-              </dl>
-            </div>
-            <ul class="actions">
-              <li><a href="#" class="external">Preview</a></li>
-              <li><a href="#">Edit</a></li>
-              <li><a href="#" class="confirmation" data-question="Do you really want to delete this product?">Delete</a></li>
-            </ul>
-          </li>
-          <li class="element">
-            <div class="info">
-              <p>Condimentum egestas dapibus <span>(Tortor mollis)</span></p>
-              <dl>
-                <dt>Added</dt>
-                <dd>13.11.2011</dd>
-                <dt>Status</dt>
-                <dd class="label">Finished</dd>
-                <dd class="label blue">Finished</dd>
-                <dd class="label red">Finished</dd>
-              </dl>
-            </div>
-            <ul class="actions">
-              <li><a href="#">Edit</a></li>
-              <li><a href="#">Delete</a></li>
-            </ul>
-          </li>
-        </ul>
-
-        <nav class="pagination">
-          <h2 class="outline">Pagination</h2>
-          <p>Displaying comments <em>11-30</em> of <em>134</em> in total.</p>
-          <ul>
-            <li class="previous disabled">&laquo; Previous</li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><span>&hellip;</span></li>
-            <li><a href="#">7</a></li>
-            <li><a href="#">8</a></li>
-            <li class="current"><span>9</span></li>
-            <li><a href="#">10</a></li>
-            <li><a href="#">11</a></li>
-            <li><span>&hellip;</span></li>
-            <li><a href="#">20</a></li>
-            <li><a href="#">21</a></li>
-            <li class="next"><a href="#" rel="next">Next &raquo;</a></li>
+      <ul class="listing listing-list">
+        <li class="odd clearfix">
+          <div class="info">
+            <p>Donec id elit non mi porta gravida</p>
+            <dl>
+              <dt>Outstanding balance</dt>
+              <dd class="value value-red">-832.30$</dd>
+              <dt>Order value</dt>
+              <dd class="value value-green">8.50$</dd>
+              <dt>Added</dt>
+              <dd>13.11.2011</dd>
+              <dt>Status</dt>
+              <dd class="label label-yellow inset-shadow">Finished</dd>
+              <dd class="label label-green inset-shadow">Finished</dd>
+            </dl>
+          </div>
+          <ul class="actions">
+            <li><a href="#" class="external">Preview</a></li>
+            <li><a href="#">Edit</a></li>
+            <li><a href="#" class="confirmation" data-question="Do you really want to delete this product?">Delete</a></li>
           </ul>
-        </nav>
+        </li>
+        <li class="clearfix">
+          <div class="info">
+            <p>Condimentum egestas dapibus <span>(Tortor mollis)</span></p>
+            <dl>
+              <dt>Added</dt>
+              <dd>13.11.2011</dd>
+              <dt>Status</dt>
+              <dd class="label inset-shadow">Finished</dd>
+              <dd class="label label-blue inset-shadow">Finished</dd>
+              <dd class="label label-red inset-shadow">Finished</dd>
+            </dl>
+          </div>
+          <ul class="actions">
+            <li><a href="#">Edit</a></li>
+            <li><a href="#" class="confirmation">Delete</a></li>
+          </ul>
+        </li>
+      </ul>
 
-      </div>
+      <nav class="pagination clearfix">
+        <h2 class="outline">Pagination</h2>
+        <p>Displaying comments <em>11-30</em> of <em>134</em> in total.</p>
+        <ul>
+          <li class="previous disabled">&laquo; Previous</li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><span>&hellip;</span></li>
+          <li><a href="#">7</a></li>
+          <li><a href="#">8</a></li>
+          <li class="current"><span>9</span></li>
+          <li><a href="#">10</a></li>
+          <li><a href="#">11</a></li>
+          <li><span>&hellip;</span></li>
+          <li><a href="#">20</a></li>
+          <li><a href="#">21</a></li>
+          <li class="next"><a href="#" rel="next">Next &raquo;</a></li>
+        </ul>
+      </nav>
