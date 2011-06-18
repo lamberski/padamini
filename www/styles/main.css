@@ -97,7 +97,7 @@ body {
 a {
   text-decoration: none;
   outline-width: 3px;
-  color: #6d769d;
+  color: #5b6696;
 }
 
 a:hover {
@@ -271,8 +271,9 @@ textarea {
 
 .filters a {
   text-decoration: none;
+  display: block;
   line-height: 26px;
-  padding: 0 11px;
+  padding: 0 10px;
 }
 
 .filters :hover {
@@ -282,7 +283,8 @@ textarea {
 /*  Content buttons (and selected filter tabs)
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-.button {
+.button,
+.button:hover {
   line-height: 26px;
   font-size: 11px;
   display: inline-block;
@@ -313,13 +315,14 @@ textarea {
 
 /* Create */
 
-.button-create {
+.button-create,
+.button-create:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#70ac64, endColorstr=#4e7f44);
   background: -webkit-gradient(linear, left top, left bottom, from(#70ac64), to(#4e7f44));
   background: -o-linear-gradient(#70ac64, #4e7f44);
   background: -moz-linear-gradient(top,  #70ac64,  #4e7f44);
   background-color: #58904d;
-  color: #fff !important;
+  color: #fff;
   border-color: #46733d;
 }
 
@@ -333,13 +336,14 @@ textarea {
 
 /* Delete */
 
-.button-delete {
+.button-delete,
+.button-delete:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d26e60, endColorstr=#b34332);
   background: -webkit-gradient(linear, left top, left bottom, from(#d26e60), to(#b34332));
   background: -o-linear-gradient(#d26e60, #b34332);
   background: -moz-linear-gradient(top,  #d26e60,  #b34332);
   background-color: #c74a38;
-  color: #fff !important;
+  color: #fff;
   border-color: #9f3b2d;
 }
 
@@ -357,10 +361,10 @@ textarea {
   font-weight: bold;
 }
 
-/*  Labels
+/*  Tags
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-.label {
+.tag {
   text-align: center;
   line-height: 20px;
   display: inline;
@@ -378,22 +382,22 @@ textarea {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
 }
 
-.label-yellow {
+.tag-yellow {
   background-color: #f1f1b8;
   color: #7c7054;
 }
 
-.label-green {
+.tag-green {
   background-color: #e5f5dd;
   color: #617654;
 }
 
-.label-red {
+.tag-red {
   background-color: #f7e8e6;
   color: #a65a50;
 }
 
-.label-blue {
+.tag-blue {
   background-color: #dbedf5;
   color: #53768b;
 }
@@ -982,7 +986,7 @@ textarea {
   min-height: 32px;
 }
 
-.form .field label:first-child {
+.form .field .label {
   color: #444;
   position: absolute;
   width: 120px;
@@ -1002,7 +1006,7 @@ textarea {
 
 /* Required */
 
-.form .field-required label:first-child:after {
+.form .field-required .label:after {
   color: #aaa;
   content: " *";
   color: #b44235;
@@ -1023,20 +1027,8 @@ textarea {
 /* Plain */
 
 .form .field-plain {
-  padding-left: 130px;
+  padding-left: 0;
   min-height: 0;
-}
-
-.form .field-plain label:first-child {
-  color: #444;
-  position: static;
-  width: auto;
-  font-size: 12px;
-  padding-top: 0;
-}
-
-.form .field-plain label:first-child:after {
-  content: "";
 }
 
 /*  Field elements
