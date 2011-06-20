@@ -10,6 +10,9 @@
               data-question="Do you really want to delete all records?"
             >Delete all</a></li>
         </ul>
+
+        {{ filters }}
+
       </header>
 
       <ul class="listing listing-grid clearfix">
@@ -111,13 +114,4 @@
 
       </ul>
 
-      <nav class="pagination clearfix">
-        <h2 class="outline">Pagination</h2>
-        <p>Displaying comments <em>11-30</em> of <em>134</em> in total.</p>
-        <ul>
-          <li class="previous disabled">&laquo; Previous</li>
-          <li class="current"><span>1</span></li>
-          <li><a href="#">2</a></li>
-          <li class="next"><a href="#" rel="next">Next &raquo;</a></li>
-        </ul>
-      </nav>
+      {{ pagination }}

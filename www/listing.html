@@ -2,7 +2,8 @@
         <h1>Comments</h1>
 
         <ul class="actions">
-          <li><a href="#" class="button button-create">New</a></li>
+          <li><a href="#" class="button">Button #1</a></li>
+          <li><a href="#" class="button button-create">Button #2</a></li>
           <li>
             <a href="#" class="button button-delete confirmation"
               data-type="delete"
@@ -12,12 +13,8 @@
             >Delete all</a></li>
         </ul>
 
-        <ul class="filters inset-shadow clearfix">
-          <li><a href="#">All</a></li>
-          <li><a href="#">Published</a></li>
-          <li><a href="#" class="button">Unpublished</a></li>
-          <li><a href="#">Trashed</a></li>
-        </ul>
+        {{ filters }}
+
       </header>
 
       <ul class="listing listing-list">
@@ -25,15 +22,12 @@
           <div class="info">
             <p>Donec id elit non mi porta gravida</p>
             <dl>
-              <dt>Outstanding balance</dt>
-              <dd class="value value-red">-832.30$</dd>
               <dt>Order value</dt>
               <dd class="value value-green">8.50$</dd>
+              <dt>Status</dt>
+              <dd class="tag tag-yellow">Ignored</dd>
               <dt>Added</dt>
               <dd>13.11.2011</dd>
-              <dt>Status</dt>
-              <dd class="tag tag-yellow inset-shadow">Finished</dd>
-              <dd class="tag tag-green inset-shadow">Finished</dd>
             </dl>
           </div>
           <ul class="actions">
@@ -46,12 +40,12 @@
           <div class="info">
             <p>Condimentum egestas dapibus <span>(Tortor mollis)</span></p>
             <dl>
+              <dt>Status</dt>
+              <dd class="tag">Normal</dd>
+              <dd class="tag tag-blue">Waiting</dd>
+              <dd class="tag tag-red">Chanceled</dd>
               <dt>Added</dt>
               <dd>13.11.2011</dd>
-              <dt>Status</dt>
-              <dd class="tag inset-shadow">Finished</dd>
-              <dd class="tag tag-blue inset-shadow">Finished</dd>
-              <dd class="tag tag-red inset-shadow">Finished</dd>
             </dl>
           </div>
           <ul class="actions">
@@ -59,24 +53,24 @@
             <li><a href="#" class="confirmation">Delete</a></li>
           </ul>
         </li>
+        <li class="odd clearfix">
+          <div class="info">
+            <p>Donec id elit non mi porta gravida</p>
+            <dl>
+              <dt>Outstanding balance</dt>
+              <dd class="value value-red">-832.30$</dd>
+              <dt>Status</dt>
+              <dd class="tag tag-green">Finished</dd>
+              <dt>Added</dt>
+              <dd>13.11.2011</dd>
+            </dl>
+          </div>
+          <ul class="actions">
+            <li><a href="#" class="external">Preview</a></li>
+            <li><a href="#">Edit</a></li>
+            <li><a href="#" class="confirmation" data-question="Do you really want to delete this product?">Delete</a></li>
+          </ul>
+        </li>
       </ul>
 
-      <nav class="pagination clearfix">
-        <h2 class="outline">Pagination</h2>
-        <p>Displaying comments <em>11-30</em> of <em>134</em> in total.</p>
-        <ul>
-          <li class="previous disabled">&laquo; Previous</li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><span>&hellip;</span></li>
-          <li><a href="#">7</a></li>
-          <li><a href="#">8</a></li>
-          <li class="current"><span>9</span></li>
-          <li><a href="#">10</a></li>
-          <li><a href="#">11</a></li>
-          <li><span>&hellip;</span></li>
-          <li><a href="#">20</a></li>
-          <li><a href="#">21</a></li>
-          <li class="next"><a href="#" rel="next">Next &raquo;</a></li>
-        </ul>
-      </nav>
+      {{ pagination }}
