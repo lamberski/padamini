@@ -53,9 +53,10 @@
 	/* Content Region */
 
 	.boxy-inner { overflow: hidden; background-color: white; padding: 0 }
-	.boxy-content { padding: 15px; }
+	.boxy-content { padding: 15px; overflow: hidden }
 
 	/* Question Boxes */
 
     .boxy-wrapper .question { width: 350px; min-height: 80px; }
-    .boxy-wrapper .answers { text-align: right; }
+    .boxy-wrapper .answers { float: right }
+    .boxy-wrapper .answers .button { float: left; margin-left: 5px; }
