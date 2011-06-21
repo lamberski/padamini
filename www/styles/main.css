@@ -783,17 +783,17 @@ textarea {
   border-bottom: 1px solid #eee;
 }
 
-.listing-list > li {
+.listing-list .element:nth-child(2n+1) {
+  background: #fafafa;
+}
+
+.listing-list .element {
   padding: 15px 10px;
   border-top: 1px solid #eee;
   display: block;
 }
 
-.listing-list > .odd {
-  background: #fafafa;
-}
-
-.listing-list > li:hover {
+.listing-list .element:hover {
   background: #f5f5f5;
 }
 
@@ -815,7 +815,7 @@ textarea {
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-.listing-grid > li {
+.listing-grid .element {
   float: left;
   display: block;
   width: 250px;
@@ -827,14 +827,14 @@ textarea {
   position: relative;
 }
 
-.listing-grid > li:first-child,
-.listing-grid > li:nth-child(2),
-.listing-grid > li:nth-child(3) {
+.listing-grid .element:first-child,
+.listing-grid .element:nth-child(2),
+.listing-grid .element:nth-child(3) {
   margin-top: 0;
 }
 
-.listing-grid > li:first-child,
-.listing-grid > li:nth-child(4n) {
+.listing-grid .element:first-child,
+.listing-grid .element:nth-child(4n) {
   margin-left: 0;
 }
 
@@ -866,10 +866,10 @@ textarea {
   transition: opacity .1s linear;
 }
 
-.listing-grid > .selected .info,
-.listing-grid > .selected .actions,
-.listing-grid > li:hover .info,
-.listing-grid > li:hover .actions {
+.listing-grid .element-selected .info,
+.listing-grid .element-selected .actions,
+.listing-grid .element:hover .info,
+.listing-grid .element:hover .actions {
   opacity: 1;
 }
 

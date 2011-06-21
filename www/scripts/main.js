@@ -88,12 +88,12 @@ var PadaminiMain = {
   performGridInfo: function() {
 
     $(".listing-grid .actions a").bind("click", function() {
-      $(this).parent().parent().parent().addClass("selected");
+      $(this).parent().parent().parent().addClass("element-selected");
     });
 
     unselect = function() {
-      $(".listing-grid > li.selected").each(function() {
-        $(this).removeClass("selected");
+      $(".listing-grid .element-selected").each(function() {
+        $(this).removeClass("element-selected");
       });
     }
 
@@ -101,7 +101,7 @@ var PadaminiMain = {
       unselect();
     });
 
-    $(".grid > li, .listing-grid").bind("mouseover", function() {
+    $(".listing-grid .element, .listing-grid").bind("mouseover", function() {
       unselect();
     });
   },
