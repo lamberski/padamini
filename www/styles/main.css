@@ -185,6 +185,17 @@ textarea {
   zoom: 1;
 }
 
+/*  Text overflow (https://developer.mozilla.org/En/CSS/text-overflow)
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.text-overflow {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
 /*  Message module
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -723,7 +734,7 @@ textarea {
   color: #444;
 }
 
-.listing .info p span {
+.listing .info p small {
   color: #999;
   font-size: 11px;
 }
