@@ -1008,7 +1008,6 @@ textarea {
   border-top: 1px solid rgba(0, 0, 0, .07);
   position: relative;
   padding-left: 130px;
-  min-height: 32px;
 }
 
 .form .field .label {
@@ -1017,7 +1016,7 @@ textarea {
   width: 120px;
   left: 0;
   font-size: 13px;
-  padding-top: 9px;
+  padding-top: 6px;
 }
 
 /* First */
