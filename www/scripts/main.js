@@ -81,7 +81,7 @@ var PadaminiMain = {
   enableInputAutofocus: function() {
 
     if ($("[autofocus]").length == 0) {
-      $(".field input, .field textarea").first().focus();
+      $(".field").first().find("input, textarea").first().focus();
     }
   },
 
