@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*
- *  Padamini Main Stylesheet (June 2011)
+ *  Padamini Main Stylesheet (July 2011)
  *  Crafted with passion by http://lamberski.com
  *
  *  1 Global
@@ -838,14 +838,11 @@ textarea {
   position: relative;
 }
 
-.listing-grid .element:first-child,
-.listing-grid .element:nth-child(2),
-.listing-grid .element:nth-child(3) {
+.listing-grid .element:nth-child(-n+3) {
   margin-top: 0;
 }
 
-.listing-grid .element:first-child,
-.listing-grid .element:nth-child(4n) {
+.listing-grid .element:nth-child(3n + 1) {
   margin-left: 0;
 }
 
