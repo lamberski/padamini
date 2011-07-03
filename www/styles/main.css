@@ -116,6 +116,10 @@ em {
   font-style: italic;
 }
 
+code {
+  font-family: Monaco, Consolas, "Lucida Console", "Courier New", monospace;
+}
+
 /* Inputs */
 
 input[type=password],
