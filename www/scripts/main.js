@@ -78,10 +78,12 @@ var PadaminiMain = {
     });
   },
 
-  enableInputAutofocus: function() {
+  enableInputAutofocus: function(element) {
+
+    element = element || $("body").find(".field").first();
 
     if ($("[autofocus]").length == 0) {
-      $(".field").first().find("input, textarea").first().focus();
+      element.find("input[type=password]:visible, input[type=text]:visible, input[type=email]:visible, input[type=url]:visible, input[type=number]:visible, textarea:visible").first().focus();
     }
   },
 
