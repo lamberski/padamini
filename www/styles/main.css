@@ -517,7 +517,8 @@ textarea {
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-[role="banner"] {
+[role="banner"],
+[role="banner"] > .wrapper {
   background: #3b3b3b;
 }
 
@@ -596,7 +597,7 @@ textarea {
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 [role="navigation"],
-[role="navigation"] .wrapper {
+[role="navigation"] > .wrapper {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7787a6, endColorstr=#68799c);
   background: -o-linear-gradient(#7787a6, #68799c);
   background: -webkit-gradient(linear, left top, left bottom, from(#7787a6), to(#68799c));
@@ -651,7 +652,8 @@ textarea {
 /*  Subnavigation
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-.subnavigation {
+.subnavigation,
+.subnavigation > .wrapper {
   background: #eee;
 }
 
@@ -846,7 +848,7 @@ textarea {
   margin-top: 0;
 }
 
-.listing-grid .element:nth-child(3n + 1) {
+.listing-grid .element:nth-child(3n+1) {
   margin-left: 0;
 }
 
