@@ -1,5 +1,5 @@
 /*
- *  Padamini (June 2011)
+ *  Padamini (July 2011)
  *  Crafted with passion by http://lamberski.com
  */
 var PadaminiMain = {
@@ -8,6 +8,7 @@ var PadaminiMain = {
     if (typeof Boxy != 'undefined') {
       this.initBoxy();
       this.enableConfirmationModals();
+      this.enableInformationModals();
     }
     this.performListingInfo();
     this.enableExternalLinks();
@@ -35,9 +36,25 @@ var PadaminiMain = {
     });
   },
 
+  enableInformationModals: function() {
+
+    $(".information").bind("click", function() {
+
+      anchor = $(this);
+
+      Boxy.ask(anchor.data("message"), [anchor.data("accept")]);
+
+      // Styling main action button
+      $(".boxy-inner form.answers *")
+        .addClass("button button-main");
+
+      return false;
+    });
+  },
+
   enableConfirmationModals: function() {
 
-    $(".confirmation").bind("click", function() {
+    $(".confirmation:not(.information)").bind("click", function() {
 
       anchor = $(this);
 
@@ -46,11 +63,11 @@ var PadaminiMain = {
       });
 
       // Styling main action button
-      $("form.answers *")
+      $(".boxy-inner form.answers *")
         .addClass("button");
 
       // Styling main action button
-      $("form.answers :last-child")
+      $(".boxy-inner form.answers :last-child")
         .addClass("button-main button-" + anchor.data("type"));
 
       return false;
