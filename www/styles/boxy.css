@@ -52,7 +52,7 @@
 
 	/* Content Region */
 
-	.boxy-inner { overflow: hidden; background-color: white; padding: 0 }
+	.boxy-inner { overflow: hidden; background-color: white; padding: 0; line-height: 16px }
 	.boxy-content { padding: 15px; overflow: hidden }
 
 	/* Question Boxes */
