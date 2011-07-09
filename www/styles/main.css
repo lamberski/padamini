@@ -91,6 +91,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: "Lucida Grande", Tahoma, sans-serif;
   font-size: 12px;
