@@ -132,6 +132,7 @@ input[type=email],
 input[type=url],
 input[type=number],
 textarea {
+  font-family: "Lucida Grande", Tahoma, sans-serif;
   font-size: 12px;
   padding: 7px 5px;
   outline-width: 3px;
@@ -1072,6 +1073,12 @@ textarea {
 
 /*  Field elements
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Inputs to edit code */
+
+.form .code {
+  font-family: Monaco, Consolas, "Lucida Console", "Courier New", monospace;
+}
 
 /* Input sizes */
 
