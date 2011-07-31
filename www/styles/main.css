@@ -812,6 +812,8 @@ textarea {
 .listing-list .element {
   padding: 15px 10px;
   border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-bottom: -1px;
   display: block;
 }
 
@@ -832,10 +834,38 @@ textarea {
   font-size: 12px;
 }
 
+/* Sortable */
+
+.listing-list .drag {
+  float: left;
+  padding: 10px 5px 10px 10px;
+  margin: -10px 0 -10px -10px;
+  cursor: move;
+  width: 10px;
+  height: 16px;
+  background: url("../images/arrow-move-y.png") no-repeat 7px 13px;
+  opacity: 0.15;
+}
+
+.listing-list .element:hover .drag {
+  opacity: 0.2;
+}
+
+.listing-list .element-locked .drag,
+.listing-list .element-locked:hover .drag {
+  opacity: 0;
+  cursor: default;
+}
+
 /*
  *  3.1.2 Grid
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.listing-grid {
+  margin-top: -25px;
+  margin-left: -25px;
+}
 
 .listing-grid .element {
   float: left;
@@ -847,14 +877,6 @@ textarea {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   position: relative;
-}
-
-.listing-grid .element:nth-child(-n+3) {
-  margin-top: 0;
-}
-
-.listing-grid .element:nth-child(3n+1) {
-  margin-left: 0;
 }
 
 /*  Image
@@ -890,6 +912,27 @@ textarea {
 .listing-grid .element:hover .info,
 .listing-grid .element:hover .actions {
   opacity: 1;
+}
+
+/* Sorting grip */
+
+.listing-grid .drag {
+  opacity: 0;
+  -moz-transition: opacity .1s linear;
+  -webkit-transition: opacity .1s linear;
+  -o-transition: opacity .1s linear;
+  transition: opacity .1s linear;
+}
+
+.listing-grid .element-selected .drag,
+.listing-grid .element:hover .drag {
+  opacity: 0.2;
+}
+
+.listing-grid .element-locked .drag,
+.listing-grid .element-locked:hover .drag {
+  display: none;
+  cursor: default;
 }
 
 /*  Info
@@ -954,6 +997,22 @@ textarea {
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+/* Sortable */
+
+.listing-grid .drag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  cursor: move;
+  width: 20px;
+  height: 20px;
+  background: url("../images/arrow-move.png") no-repeat center center;
+}
+
+.listing-grid .element:hover .drag {
+  opacity: 0.2;
 }
 
 /*
