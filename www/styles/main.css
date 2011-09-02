@@ -15,6 +15,9 @@
  *      3.1.2 Grid
  *    3.3 Form
  *  4 Footer
+ *  5 Libraries
+ *    5.1 Boxy
+ *    5.2 jWYSIWYG
  */
 
 /*
@@ -1258,4 +1261,57 @@ textarea {
   color: #bbb;
   font-size: 11px;
   text-align: right;
+}
+
+/*
+ *  5 Libraries
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/*
+ *  5.1 Boxy
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* Content Region */
+
+.boxy-inner {
+  line-height: 16px;
+}
+
+.boxy-content {
+  overflow: hidden;
+}
+
+/* Question Boxes */
+
+.boxy-wrapper .answers {
+  float: right;
+  text-align: left;
+}
+
+.boxy-wrapper .answers .button {
+  float: left;
+  margin-left: 5px;
+}
+
+/*
+ *  5.2 jWYSIWYG
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+div.wysiwyg {
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+/* Custom controls */
+
+body.wysiwyg h3 {
+  font-size: 14px;
+}
+
+body.wysiwyg h4 {
+  font-size: 13px;
 }
