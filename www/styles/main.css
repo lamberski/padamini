@@ -1089,9 +1089,11 @@ textarea {
   color: #444;
   position: absolute;
   width: 120px;
-  left: 0;
   font-size: 13px;
-  padding-top: 6px;
+  padding-top: 7px;
+  left: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 /* First */
