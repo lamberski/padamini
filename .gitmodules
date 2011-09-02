@@ -1,0 +1,6 @@
+[submodule "www/scripts/jwysiwyg"]
+	path = www/scripts/jwysiwyg
+	url = https://github.com/akzhan/jwysiwyg.git
+[submodule "www/scripts/boxy"]
+	path = www/scripts/boxy
+	url = git@github.com:jaz303/boxy.git
