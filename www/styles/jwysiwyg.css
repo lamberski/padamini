@@ -18,6 +18,11 @@ body.wysiwyg {
   font-size: 12px;
 }
 
+body.wysiwyg > :first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 div.wysiwyg {
   background: none;
   border: 0;
