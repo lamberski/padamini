@@ -15,13 +15,7 @@
  *      3.1.2 Grid
  *    3.3 Form
  *  4 Footer
- *  5 Libraries
- *    5.1 Boxy
- *    5.2 jWYSIWYG
  */
-
-@import url("../scripts/jwysiwyg/jquery.wysiwyg.css");
-@import url("../scripts/boxy/src/stylesheets/boxy.css");
 
 /*
  *  1 Global
@@ -1266,84 +1260,4 @@ textarea {
   color: #bbb;
   font-size: 11px;
   text-align: right;
-}
-
-/*
- *  5 Libraries
- *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-/*
- *  5.1 Boxy
- *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-/* Content Region */
-
-.boxy-inner {
-  line-height: 16px;
-}
-
-.boxy-content {
-  overflow: hidden;
-}
-
-/* Question Boxes */
-
-.boxy-wrapper .answers {
-  float: right;
-  text-align: left;
-}
-
-.boxy-wrapper .answers .button {
-  float: left;
-  margin-left: 5px;
-}
-
-/*
- *  5.2 jWYSIWYG
- *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-div.wysiwyg {
-  background: none;
-  border: 0;
-  padding: 0;
-}
-
-/* Custom controls */
-
-body.wysiwyg h3 {
-  font-size: 14px;
-}
-
-body.wysiwyg h4 {
-  font-size: 13px;
-}
-
-/* Toolbar */
-
-div.wysiwyg ul.toolbar {
-  border: 0;
-  padding-bottom: 5px;
-}
-
-div.wysiwyg ul.toolbar li {
-  border: 1px solid #f4f4f4;
-  padding: 0;
-}
-
-div.wysiwyg ul.toolbar li.disabled,
-div.wysiwyg ul.toolbar li.wysiwyg-button-hover.disabled,
-div.wysiwyg ul.toolbar li.active.disabled {
-  border: 1px solid #f4f4f4;
-  padding: 0;
-}
-
-/* Iframe */
-
-div.wysiwyg iframe {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none; 
 }

@@ -204,22 +204,26 @@ var PadaminiMain = {
 
     $(".jwysiwyg").wysiwyg({
 
-      initialContent: '<p></p>',
-      css:            $("link[href*='main.css']").attr("href"),
-/*       css:            "styles/jwysiwyg.css", */
-      autoGrow:       true,
-      rmUnwantedBr:   true,
+      initialContent:   "<p></p>",
+      css:              $("link[href*='jwysiwyg']").attr("href"),
+      autoGrow:         true,
+      rmUnwantedBr:     true,
+      rmUnusedControls: true,
 
       controls: {
         insertHorizontalRule: { visible: false },
-        insertImage: { visible: false },
-        insertTable: { visible: false },
-        h1: { visible: false },
-        h3: { visible: false },
-        code: { visible: false },
-        html: { visible: true },
-  			increaseFontSize : { visible : true },
-  			decreaseFontSize : { visible : true }
+        insertImage:          { visible: false },
+        insertTable:          { visible: false },
+        h1:                   { visible: false },
+        code:                 { visible: false },
+        indent:               { visible: false },
+        outdent:              { visible: false },
+        undo:                 { visible: false },
+        redo:                 { visible: false },
+        html:                 { visible: true },
+  			increaseFontSize:     { visible: true },
+  			decreaseFontSize:     { visible: true },
+  			insertImage:          { visible: true }
       }
     });
 
@@ -233,7 +237,6 @@ var PadaminiMain = {
       toolbar.find(".removeFormat").appendTo(toolbar);
     });
 
-    // Adding
     $("div.wysiwyg").each(function() {
       $(this).attr("rel", $(this).next().attr("name"));
     });

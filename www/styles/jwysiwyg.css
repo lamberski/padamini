@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/*
+ *  jWYSIWYG custom styles (September 2011)
+ *  Crafted with passion by http://lamberski.com
+ */
+
+@import url("../scripts/jwysiwyg/jquery.wysiwyg.css");
+@import url("../scripts/jwysiwyg/jquery.wysiwyg.modal.css");
+
+/*
+ *  Custom styles
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+body.wysiwyg {
+  font-family: "Lucida Grande", Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+div.wysiwyg {
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+/* Custom controls */
+
+body.wysiwyg h3 {
+  font-size: 14px;
+}
+
+body.wysiwyg h4 {
+  font-size: 13px;
+}
+
+/* Toolbar */
+
+div.wysiwyg ul.toolbar {
+  border: 0;
+  padding-bottom: 3px;
+}
+
+div.wysiwyg ul.toolbar li {
+  border: 1px solid #f4f4f4;
+  padding: 0;
+}
+
+div.wysiwyg ul.toolbar li.disabled,
+div.wysiwyg ul.toolbar li.wysiwyg-button-hover.disabled,
+div.wysiwyg ul.toolbar li.active.disabled {
+  border: 1px solid #f4f4f4;
+  padding: 0;
+}
+
+/* Iframe */
+
+div.wysiwyg iframe {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; 
+}
+
+div.wysiwyg iframe body {
+  background: black;
+}

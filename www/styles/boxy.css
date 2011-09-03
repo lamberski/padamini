@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/*
+ *  jWYSIWYG custom styles (September 2011)
+ *  Crafted with passion by http://lamberski.com
+ */
+
+@import url("../scripts/boxy/src/stylesheets/boxy.css");
+
+/*
+ *  Custom styles
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* Content Region */
+
+.boxy-inner {
+  line-height: 16px;
+}
+
+.boxy-content {
+  overflow: hidden;
+}
+
+/* Question Boxes */
+
+.boxy-wrapper .answers {
+  float: right;
+  text-align: left;
+}
+
+.boxy-wrapper .answers .button {
+  float: left;
+  margin-left: 5px;
+}
