@@ -200,7 +200,7 @@ var PadaminiMain = {
 
   enableCloseMessageButtons: function() {
     $(".message .close").bind("click", function() {
-      $(this).parent().slideUp(150);
+      $(this).parent().animate({ opacity: 0 }, 200).slideUp(200);
 
       return false;
     });
