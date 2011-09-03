@@ -5,15 +5,22 @@
 var PadaminiMain = {
 
   init: function() {
-    this.initBoxy();
-    this.enableConfirmationModals();
-    this.enableInformationModals();
     this.performListingInfo();
     this.enableExternalLinks();
     this.enableInputAutofocus();
     this.performGridInfo();
     this.performConfirmationAnchors();
     this.performExternalAnchors();
+
+    // jWYSIWYG
+    this.enableJWYSIWYG();
+
+    // Boxy
+    this.initBoxy();
+    this.enableConfirmationModals();
+    this.enableInformationModals();
+
+    // JQuery UI
     this.enableDraggingOnList();
   },
 
@@ -191,6 +198,45 @@ var PadaminiMain = {
     });
 
     $(".listing-sortable .element").disableSelection();
+  },
+
+  enableJWYSIWYG: function() {
+
+    $(".jwysiwyg").wysiwyg({
+
+      initialContent: '<p></p>',
+      css:            $("link[href*='main.css']").attr("href"),
+/*       css:            "styles/jwysiwyg.css", */
+      autoGrow:       true,
+      rmUnwantedBr:   true,
+
+      controls: {
+        insertHorizontalRule: { visible: false },
+        insertImage: { visible: false },
+        insertTable: { visible: false },
+        h1: { visible: false },
+        h3: { visible: false },
+        code: { visible: false },
+        html: { visible: true },
+  			increaseFontSize : { visible : true },
+  			decreaseFontSize : { visible : true }
+      }
+    });
+
+    // Moving "Undo", "Redo", "Remove formatting" and separator to the end of toolbar
+    $("ul.toolbar").each(function() {
+      var toolbar = $(this);
+      toolbar.find(".superscript + li").appendTo(toolbar);
+      toolbar.find(".redo").appendTo(toolbar);
+      toolbar.find(".undo").appendTo(toolbar);
+      toolbar.find(".removeFormat + li").appendTo(toolbar);
+      toolbar.find(".removeFormat").appendTo(toolbar);
+    });
+
+    // Adding
+    $("div.wysiwyg").each(function() {
+      $(this).attr("rel", $(this).next().attr("name"));
+    });
   }
 
 };

@@ -20,6 +20,9 @@
  *    5.2 jWYSIWYG
  */
 
+@import url("../scripts/jwysiwyg/jquery.wysiwyg.css");
+@import url("../scripts/boxy/src/stylesheets/boxy.css");
+
 /*
  *  1 Global
  *
@@ -129,6 +132,8 @@ code {
 
 /* Inputs */
 
+
+div.wysiwyg iframe,
 input[type=password],
 input[type=text],
 input[type=email],
@@ -1314,4 +1319,31 @@ body.wysiwyg h3 {
 
 body.wysiwyg h4 {
   font-size: 13px;
+}
+
+/* Toolbar */
+
+div.wysiwyg ul.toolbar {
+  border: 0;
+  padding-bottom: 5px;
+}
+
+div.wysiwyg ul.toolbar li {
+  border: 1px solid #f4f4f4;
+  padding: 0;
+}
+
+div.wysiwyg ul.toolbar li.disabled,
+div.wysiwyg ul.toolbar li.wysiwyg-button-hover.disabled,
+div.wysiwyg ul.toolbar li.active.disabled {
+  border: 1px solid #f4f4f4;
+  padding: 0;
+}
+
+/* Iframe */
+
+div.wysiwyg iframe {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; 
 }
