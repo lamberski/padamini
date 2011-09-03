@@ -11,6 +11,7 @@ var PadaminiMain = {
     this.performGridInfo();
     this.performConfirmationAnchors();
     this.performExternalAnchors();
+    this.enableCloseMessageButtons();
 
     // Boxy
     this.initBoxy();
@@ -195,6 +196,14 @@ var PadaminiMain = {
     });
 
     $(".listing-sortable .element").disableSelection();
+  },
+
+  enableCloseMessageButtons: function() {
+    $(".message .close").bind("click", function() {
+      $(this).parent().slideUp(150);
+
+      return false;
+    });
   }
 
 };

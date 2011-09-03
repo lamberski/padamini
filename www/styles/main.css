@@ -223,6 +223,7 @@ textarea {
   padding: 15px 20px;
   background: #eee;
   color: #666;
+  position: relative;
 }
 
 .message > * {
@@ -236,6 +237,16 @@ textarea {
 .message > ul {
   margin-left: 25px;
   list-style: disc;
+}
+
+.message .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  margin: 0;
+  font-size: 11px;
+  text-decoration: underline;
+  line-height: 1;
 }
 
 /* Success */
