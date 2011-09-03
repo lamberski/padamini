@@ -126,6 +126,8 @@ code {
 
 /* Inputs */
 
+
+div.wysiwyg iframe,
 input[type=password],
 input[type=text],
 input[type=email],

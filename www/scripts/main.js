@@ -5,17 +5,20 @@
 var PadaminiMain = {
 
   init: function() {
-    if (typeof Boxy != 'undefined') {
-      this.initBoxy();
-      this.enableConfirmationModals();
-      this.enableInformationModals();
-    }
     this.performListingInfo();
     this.enableExternalLinks();
     this.enableInputAutofocus();
     this.performGridInfo();
     this.performConfirmationAnchors();
     this.performExternalAnchors();
+
+    // Boxy
+    this.initBoxy();
+    this.enableConfirmationModals();
+    this.enableInformationModals();
+
+    // JQuery UI
+    this.enableDraggingOnList();
   },
 
   initBoxy: function() {
@@ -135,6 +138,63 @@ var PadaminiMain = {
     $(".external").each(function() {
       $(this).text($(this).text() + $('<div/>').html(" &rarr;").text());
     });
+  },
+
+  enableDraggingOnList: function() {
+
+    // Adding drag handle to normal list
+    $(".listing-list.listing-sortable .element").each(function() {
+      $("<div/>")
+        .prependTo($(this))
+        .addClass("drag");
+    });
+
+    // Adding drag handle to grid list
+    $(".listing-grid.listing-sortable .element").each(function() {
+      $("<div/>")
+        .appendTo($(this))
+        .addClass("drag");
+    });
+
+    $(".listing-sortable").sortable({
+      revert: 200,
+      containment: "parent",
+      tolerance: "pointer",
+      handle: ".drag",
+      start: function(event, ui) {
+        $(this).data("positions", $(this).find(".element")
+          .map(function () { return $(this).data("position"); })
+          .get());
+
+        $(".element-locked", this).each(function(){
+          $(this).data("pos", $(this).index());
+        });
+      },
+      cancel: ".element-locked",
+      change: function() {
+        sortable = $(this);
+        statics = $(".element-locked", this).detach();
+        helper = $("<li></li>").prependTo(this);
+        statics.each(function() {
+          $(this).insertAfter($("> li", sortable).eq($(this).data("pos")));
+        });
+        helper.remove();
+      },
+      update: function(event, ui) {
+        var previous = $(this).data("positions")
+        var current = {};
+
+        $(this).find(".element").each(function(index, value) {
+          $(this).data("position", previous[index]);
+          current[$(this).data("id")] = previous[index];
+        });
+
+        // Update db data with new order
+        $.get($(this).data("update-url"), { positions: current });
+      },
+    });
+
+    $(".listing-sortable .element").disableSelection();
   }
 
 };
