@@ -208,7 +208,7 @@ var PadaminiMain = {
       css:              $("link[href*='jwysiwyg']").attr("href"),
       autoGrow:         true,
       rmUnwantedBr:     true,
-      rmUnusedControls: true,
+      rmUnusedControls: false,
 
       controls: {
         insertHorizontalRule: { visible: false },
