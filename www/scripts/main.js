@@ -210,13 +210,16 @@ var PadaminiMain = {
   glowAffectedRows: function() {
     $(".listing").each(function() {
       var listing = $(this);
-      var elements = $(this).data("affected-elements").split(",");
+      var elements = $(this).data("affected-elements");
+
+      if (elements) {
+        elements = elements.split(",");
+      }
 
       $(elements).each(function(index, key) {
         var element = listing.find("[data-id=" + key + "]");
 
-        if (element.length)
-        {
+        if (element.length) {
           element
             .data("previous-background-color", element.css("background-color"))
             .addClass("element-affected");
