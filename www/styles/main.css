@@ -971,6 +971,16 @@ textarea {
   position: relative;
 }
 
+/* Affected row */
+
+.listing-grid .element-affected {
+  background-color: #fbfbd3;
+}
+
+.listing-grid .element-affected img {
+  opacity: 0.5;
+}
+
 /*  Image
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -985,6 +995,7 @@ textarea {
   max-width: 99%;
   max-height: 99%;
   vertical-align: middle;
+  opacity: 1;
 }
 
 /*  Info/actions slow fading in/out

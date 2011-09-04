@@ -46,7 +46,6 @@ var PadaminiMain = {
     $(".information").bind("click", function() {
 
       anchor = $(this);
-
       Boxy.ask(anchor.data("message"), [anchor.data("accept")]);
 
       // Styling main action button
@@ -131,12 +130,14 @@ var PadaminiMain = {
   },
 
   performConfirmationAnchors: function() {
+
     $(".confirmation").each(function() {
       $(this).text($(this).text() + $('<div/>').html("&hellip;").text());
     });
   },
 
   performExternalAnchors: function() {
+
     $(".external").each(function() {
       $(this).text($(this).text() + $('<div/>').html(" &rarr;").text());
     });
@@ -200,6 +201,7 @@ var PadaminiMain = {
   },
 
   enableCloseMessageButtons: function() {
+
     $(".message .close").bind("click", function() {
       $(this).parent().animate({ opacity: 0 }, 200).slideUp(200);
 
@@ -208,27 +210,50 @@ var PadaminiMain = {
   },
 
   glowAffectedRows: function() {
+
     $(".listing").each(function() {
       var listing = $(this);
       var elements = $(this).data("affected-elements");
 
       if (elements) {
-        elements = elements.split(",");
+        elements = elements.toString().match(/^.*,.*$/) ? elements.split(",") : elements;
       }
 
       $(elements).each(function(index, key) {
         var element = listing.find("[data-id=" + key + "]");
 
+        // Highlighting affected elements on list
         if (element.length) {
-          element
-            .data("previous-background-color", element.css("background-color"))
-            .addClass("element-affected");
+          if (listing.hasClass("listing-list")) {
+            element
+              .data("previous-background-color", element.css("background-color"))
+              .addClass("element-affected");
+  
+            element.animate({
+                "background-color": element.data("previous-background-color")
+              }, 3000, function() {
+                element.removeClass("element-affected");
+              });
+          } else if (listing.hasClass("listing-grid")) {
+            var image = element.find("img");
 
-          element.animate({
-              "background-color": element.data("previous-background-color")
-            }, 3000, function() {
-              element.removeClass("element-affected");
-            });
+            element
+              .data("previous-background-color", element.css("background-color"))
+              .addClass("element-affected");
+  
+            element.animate({
+                "background-color": element.data("previous-background-color"),
+              }, 3000, function() {
+                element.removeClass("element-affected");
+              });
+
+            image
+              .data("previous-opacity", element.css("opacity"));
+  
+            image.animate({
+                "opacity": image.data("previous-opacity"),
+              }, 3000);
+          }
         }
       });
     });
