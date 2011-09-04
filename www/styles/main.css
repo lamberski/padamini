@@ -872,7 +872,7 @@ textarea {
 }
 
 .listing-list .element:hover {
-  background: #f5f5f5;
+  background: #f5f5f5 !important;
 }
 
 /* Info */
@@ -909,6 +909,13 @@ textarea {
 .listing-list .element-locked:hover .drag {
   opacity: 0;
   cursor: default;
+}
+
+/* Affected row */
+
+.listing-list .element-affected:nth-child(2n+1),
+.listing-list .element-affected {
+  background-color: #fbfbd3;
 }
 
 /*

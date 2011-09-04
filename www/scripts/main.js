@@ -12,6 +12,7 @@ var PadaminiMain = {
     this.performConfirmationAnchors();
     this.performExternalAnchors();
     this.enableCloseMessageButtons();
+    this.glowAffectedRows();
 
     // Boxy
     this.initBoxy();
@@ -203,6 +204,30 @@ var PadaminiMain = {
       $(this).parent().animate({ opacity: 0 }, 200).slideUp(200);
 
       return false;
+    });
+  },
+
+  glowAffectedRows: function() {
+    $(".listing").each(function() {
+      var listing = $(this);
+      var elements = $(this).data("affected-elements").split(",");
+
+      $(elements).each(function(index, key) {
+        var element = listing.find("[data-id=" + key + "]");
+
+        if (element.length)
+        {
+          element
+            .data("previous-background-color", element.css("background-color"))
+            .addClass("element-affected");
+
+          element.animate({
+              "background-color": element.data("previous-background-color")
+            }, 3000, function() {
+              element.removeClass("element-affected");
+            });
+        }
+      });
     });
   }
 
