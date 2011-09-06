@@ -193,7 +193,7 @@ var PadaminiMain = {
         });
 
         // Update db data with new order
-        $.get($(this).data("update-url"), { positions: current });
+        $.get($(this).data("sort-url"), { positions: current });
       },
     });
 
@@ -213,7 +213,7 @@ var PadaminiMain = {
 
     $(".listing").each(function() {
       var listing = $(this);
-      var elements = $(this).data("affected-elements");
+      var elements = $(this).data("affected-ids");
 
       if (elements) {
         elements = elements.toString().match(/^.*,.*$/) ? elements.split(",") : elements;
