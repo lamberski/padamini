@@ -213,7 +213,7 @@ var PadaminiMain = {
 
     $(".listing").each(function() {
       var listing = $(this);
-      var elements = $(this).data("affected-ids");
+      var elements = $(this).data("affected-elements");
 
       if (elements) {
         elements = elements.toString().match(/^.*,.*$/) ? elements.split(",") : elements;
