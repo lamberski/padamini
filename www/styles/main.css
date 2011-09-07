@@ -468,6 +468,16 @@ textarea {
   margin-left: 3px;
 }
 
+/* Select */
+
+.filters-select,
+.filters-select:hover {
+  margin: 0;
+  padding: 3px 3px 3px 10px;
+  font-size: 10px;
+  line-height: 22px;
+}
+
 /*  Pagination
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 

@@ -13,6 +13,7 @@ var PadaminiMain = {
     this.performExternalAnchors();
     this.enableCloseMessageButtons();
     this.glowAffectedRows();
+    this.enableSelectFilters();
 
     // Boxy
     this.initBoxy();
@@ -258,6 +259,12 @@ var PadaminiMain = {
           }
         }
       });
+    });
+  },
+
+  enableSelectFilters: function() {
+    $(".filters-select").bind("change", function() {
+      window.location.href = $(".filters-select option:selected").data("url");
     });
   }
 
