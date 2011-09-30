@@ -1209,6 +1209,10 @@ textarea {
   padding-left: 130px;
 }
 
+.form .field-hidden {
+  display: none;
+}
+
 .form .field .label {
   color: #444;
   position: absolute;
@@ -1224,6 +1228,7 @@ textarea {
 /* First */
 
 .form .field:first-child,
+.form .field-hidden + .field,
 .form legend + .field {
   padding-top: 0;
   margin-top: 0;
