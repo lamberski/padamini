@@ -1,37 +1,87 @@
-/*
- *  Padamini (September 2011)
- *  Crafted with passion by http://lamberski.com
- */
+/*******************************************************************************
+ *
+ *  Padamini (January 2012) - jQuery implementation of Padmini
+ *  Crafted with passion by Maciek Lamberski (http://lamberski.com).
+ *
+ ******************************************************************************/
+
 var Padamini = {
 
+	/**
+	 * Executes all other methods.
+	 */
   init: function() {
 
-    // Executing all of the properties (except init())
     $.each(this, function(key, value) {
       if (key != "init") value();
     });
   },
 
-  enableSubmenu: function() {
-    $("nav[role] .tabs li").each(function(
-/*       if */
-    ));
+	/**
+	 * Sets title attribute for each <dd> in listing item' information.
+	 */
+  performListingInfo: function() {
+
+    $(".listing-list .info dt").each(function() {
+      currentDt = $(this);
+
+      currentDt
+      	.next(":not([title])")
+      	.attr("title", currentDt.text());
+    });
   },
+
+	/**
+	 * Configes links with rel="external" to open in new browser tab/window and
+	 * forms to submit into new tab/window.
+	 */
+  enableExternalLinks: function() {
+
+    $("[rel=external]").attr("target", "_new");
+
+    $(".form .button[rel=external]").bind("click", function() {
+
+      // Submiting form into the new tab/window
+      $(".form")
+        .attr("action", $(this).data("url"))
+        .attr("target", "_new")
+        .submit();
+
+      // Restoring old values to attributes
+      $(".form")
+        .attr("action", "")
+        .attr("target", "_self");
+
+      return false;
+    });
+  },
+
+	/**
+	 * Adds closing/hiding flash message boxes  by clicking in close link.
+	 */
+  enableCloseMessageButtons: function() {
+
+    $(".message .close").bind("click", function() {
+      $(this)
+      	.closest(".message")
+      	.animate({"opacity": 0}, 200)
+      	.slideUp(200, function() {
+	        $(this).animate({"margin-bottom": 0}, 200);
+	      });
+
+      return false;
+    });
+  },
+
+
+
+
+
 
   initBoxy: function() {
 
     Boxy.MODAL_OPACITY = 0.3;
     Boxy.DEFAULTS.hideShrink = false;
-  },
-
-  performListingInfo: function() {
-
-    // Setting title attribute for each <dd> in .info
-    $(".listing-list .info dt").each(function() {
-      currentDt = $(this);
-
-      currentDt.next(":not([title])").attr("title", currentDt.text());
-    });
   },
 
   enableInformationModals: function() {
@@ -70,26 +120,7 @@ var Padamini = {
     });
   },
 
-  enableExternalLinks: function() {
 
-    $("[rel=external]").attr("target", "_new");
-
-    $(".form .button[rel=external]").bind("click", function() {
-
-      // Submiting form to the new tab/window
-      $(".form")
-        .attr("action", $(this).data("url"))
-        .attr("target", "_new")
-        .submit();
-
-      // Restoring old values to attributes
-      $(".form")
-        .attr("action", "")
-        .attr("target", "_self");
-
-      return false;
-    });
-  },
 
   enableInputAutofocus: function(element) {
 
@@ -192,17 +223,6 @@ var Padamini = {
     $(".listing-sortable .drag").disableSelection();
   },
 
-  enableCloseMessageButtons: function() {
-
-    $(".message .close").bind("click", function() {
-      $(this).parent().animate({ "opacity": 0 }, 200).slideUp(200, function() {
-        $(this).animate({ "margin-bottom": 0 }, 200);
-      });
-
-      return false;
-    });
-  },
-
   glowAffectedRows: function() {
 
     $(".listing").each(function() {
@@ -222,7 +242,7 @@ var Padamini = {
             element
               .data("previous-background-color", element.css("background-color"))
               .addClass("element-affected");
-  
+
             element.animate({
                 "background-color": element.data("previous-background-color")
               }, 3000, function() {
@@ -234,7 +254,7 @@ var Padamini = {
             element
               .data("previous-background-color", element.css("background-color"))
               .addClass("element-affected");
-  
+
             element.animate({
                 "background-color": element.data("previous-background-color"),
               }, 3000, function() {
@@ -243,7 +263,7 @@ var Padamini = {
 
             image
               .data("previous-opacity", element.css("opacity"));
-  
+
             image.animate({
                 "opacity": image.data("previous-opacity"),
               }, 3000);
