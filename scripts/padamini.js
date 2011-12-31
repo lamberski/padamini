@@ -12,6 +12,12 @@ var Padamini = {
     });
   },
 
+  enableSubmenu: function() {
+    $("nav[role] .tabs li").each(function(
+/*       if */
+    ));
+  },
+
   initBoxy: function() {
 
     Boxy.MODAL_OPACITY = 0.3;

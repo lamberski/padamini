@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*
- *  Padamini (September 2011)
+ *  Padamini (December 2011)
  *  Crafted with passion by http://lamberski.com
  *
  *  1 Global
@@ -718,13 +718,14 @@ textarea {
   font-weight: bold;
 }
 
-[role="navigation"] a:hover {
+[role="navigation"] li:hover > a {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#8695b0, endColorstr=#7787a6);
   background: -o-linear-gradient(#8695b0, #7787a6);
   background: -webkit-gradient(linear, left top, left bottom, from(#8695b0), to(#7787a6));
   background: -moz-linear-gradient(top,  #8695b0,  #7787a6);
 }
 
+[role="navigation"] .selected:hover a,
 [role="navigation"] .selected a {
   background: #eee;
   color: #444;
@@ -747,6 +748,40 @@ textarea {
   background-color: #7787a6;
 }
 
+/*  Dropdown
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+[role="navigation"] li ul {
+  display: none;
+  position: absolute;
+  background: #7787a6;
+  z-index: 999;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+}
+
+[role="navigation"] li:hover ul {
+  display: block;
+}
+
+[role="navigation"] li li {
+	float: none;
+}
+
+/* Links */
+
+[role="navigation"] li ul a {
+  text-transform: none;
+  padding: 0 30px 0 10px;
+  line-height: 30px;
+  font-weight: normal;
+}
+
+[role="navigation"] li ul a:hover {
+	background: #6D7E9F;
+}
+
 /*  Subnavigation
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -758,14 +793,15 @@ textarea {
 .subnavigation li {
   float: left;
   display: block;
+  height: 30px;
 }
 
 .subnavigation a {
   font-size: 12px;
   display: block;
-  line-height: 30px;
   padding: 0 5px;
   margin: 0 5px;
+  line-height: 30px;
   color: #777;
   text-decoration: none;
 }
