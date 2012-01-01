@@ -7,9 +7,9 @@
 
 var Padamini = {
 
-	/**
-	 * Executes all other methods.
-	 */
+  /**
+   * Executes all other methods.
+   */
   init: function() {
 
     $.each(this, function(key, value) {
@@ -17,24 +17,24 @@ var Padamini = {
     });
   },
 
-	/**
-	 * Sets title attribute for each <dd> in listing item' information.
-	 */
+  /**
+   * Sets title attribute for each <dd> in listing item' information.
+   */
   performListingInfo: function() {
 
     $(".listing-list .info dt").each(function() {
       currentDt = $(this);
 
       currentDt
-      	.next(":not([title])")
-      	.attr("title", currentDt.text());
+        .next(":not([title])")
+        .attr("title", currentDt.text());
     });
   },
 
-	/**
-	 * Configes links with rel="external" to open in new browser tab/window and
-	 * forms to submit into new tab/window.
-	 */
+  /**
+   * Configes links with rel="external" to open in new browser tab/window and
+   * forms to submit into new tab/window.
+   */
   enableExternalLinks: function() {
 
     $("[rel=external]").attr("target", "_new");
@@ -56,18 +56,18 @@ var Padamini = {
     });
   },
 
-	/**
-	 * Adds closing/hiding flash message boxes  by clicking in close link.
-	 */
+  /**
+   * Adds closing/hiding flash message boxes  by clicking in close link.
+   */
   enableCloseMessageButtons: function() {
 
     $(".message .close").bind("click", function() {
       $(this)
-      	.closest(".message")
-      	.animate({"opacity": 0}, 200)
-      	.slideUp(200, function() {
-	        $(this).animate({"margin-bottom": 0}, 200);
-	      });
+        .closest(".message")
+        .animate({"opacity": 0}, 200)
+        .slideUp(200, function() {
+          $(this).animate({"margin-bottom": 0}, 200);
+        });
 
       return false;
     });
