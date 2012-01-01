@@ -1,4 +1,4 @@
-      <header class="header header-page clearfix">
+      <header class="header header-page cf">
         <h1 class="heading heading-page">Photos</h1>
 
         <ul class="actions">
@@ -11,12 +11,12 @@
             >Delete all</a></li>
         </ul>
 
-        {{ filters }}
+        {{> filters}}
 
       </header>
 
       <div>
-        <ul class="listing listing-grid clearfix" data-sort-url="" data-affected-ids="1">
+        <ul class="listing listing-grid cf" data-sort-url="" data-affected-ids="1">
           <li class="element" data-id="1" data-position="5">
             <div class="image-container">
               <img src="http://spelunkyworld.com/images/spelunky-pc-screen.png" alt="">
@@ -115,4 +115,4 @@
         </ul>
       </div>
 
-      {{ pagination }}
+      {{> pagination}}

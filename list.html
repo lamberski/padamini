@@ -1,4 +1,4 @@
-      <header class="header header-page clearfix">
+      <header class="header header-page cf">
         <h1 class="heading heading-page">Comments</h1>
 
         <ul class="actions">
@@ -13,12 +13,12 @@
             >Delete all</a></li>
         </ul>
 
-        {{ filters }}
+        {{> filters}}
 
       </header>
 
       <ul class="listing listing-list listing-sortable" data-sort-url="" data-affected-ids="1,4">
-        <li class="element clearfix" data-id="1" data-position="5">
+        <li class="element cf" data-id="1" data-position="5">
           <div class="info">
             <p class="text-overflow">Donec id elit non mi porta gravida</p>
             <dl>
@@ -36,7 +36,7 @@
             <li><a href="#">Delete</a></li>
           </ul>
         </li>
-        <li class="element clearfix" data-id="4" data-position="4">
+        <li class="element cf" data-id="4" data-position="4">
           <div class="info">
             <p class="text-overflow">Condimentum egestas dapibus <small>(Tortor mollis)</small></p>
             <dl>
@@ -53,7 +53,7 @@
             <li><a href="#" class="confirmation">Delete</a></li>
           </ul>
         </li>
-        <li class="element clearfix" data-id="2" data-position="3">
+        <li class="element cf" data-id="2" data-position="3">
           <div class="info">
             <p class="text-overflow">Donec id elit non mi porta gravida</p>
             <dl>
@@ -73,4 +73,4 @@
         </li>
       </ul>
 
-      {{ pagination }}
+      {{> pagination}}
