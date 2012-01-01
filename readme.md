@@ -1,6 +1,6 @@
 # Padamini
 
-Padamini is a set of components that can be used/reused when creating the admin user interface. They are grouped by type on separate pages. Among the components are:
+Padamini is a set of components that can be used/reused to create admin user interface. They are grouped by type on separate pages. Among the components are:
 
 * listings (including grid/gallery view),
 * drag and drop support on listings,
@@ -18,7 +18,7 @@ Padamini is written in HTML5 with attention to semantics. CSS styles are constru
 
 ### Browsers support
 
-Padamini was tested on latest versions of Firefox, Opera, Safari and Chrome, and Internet Explorer 7+.
+Padamini was tested on latest versions of Firefox, Opera, Safari, Chrome, and Internet Explorer 7+.
 
 ## License
 
