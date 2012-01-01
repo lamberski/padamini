@@ -20,6 +20,8 @@
  *    2.3 Navigation
  *    2.4 Content
  *    2.5 Footer
+ *    2.5 Listings
+ *    2.5 Forms
  *
  ******************************************************************************/
 
@@ -313,7 +315,6 @@ textarea {
   background:         linear-gradient(top, #7787a6 0%, #68799c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7787a6", endColorstr="#68799c", GradientType=0);
   border-bottom: 4px solid #eee;
-  margin-bottom: 30px
 }
 
 #navigation li {
@@ -352,6 +353,7 @@ textarea {
 
 #navigation .arrow {
 	margin-left: 3px;
+  font-style: normal;
 }
 
 /* Badge */
@@ -447,6 +449,10 @@ textarea {
 
 /*  2.4 Content
  *============================================================================*/
+
+#content {
+	padding-top: 30px;
+}
 
 #content > * {
   margin-bottom: 30px;
@@ -825,6 +831,29 @@ textarea {
   color: #fff;
 }
 
+/*  Headers
+ *----------------------------------------------------------------------------*/
+
+/* Page */
+
+.header-page .filters,
+.header-page .actions {
+  float: right;
+  margin-left: 10px;
+}
+
+.header-page .actions li {
+  display: block;
+  float: left;
+  margin-left: 5px;
+}
+
+/* Section */
+
+.header-section {
+  padding-bottom: 10px;
+}
+
 /*  Headings
  *----------------------------------------------------------------------------*/
 
@@ -851,29 +880,6 @@ textarea {
   line-height: 28px;
 }
 
-/*  Headers
- *----------------------------------------------------------------------------*/
-
-/* Page */
-
-.header-page .filters,
-.header-page .actions {
-  float: right;
-  margin-left: 10px;
-}
-
-.header-page .actions li {
-  display: block;
-  float: left;
-  margin-left: 5px;
-}
-
-/* Section */
-
-.header-section {
-  padding-bottom: 10px;
-}
-
 /*  Sections
  *----------------------------------------------------------------------------*/
 
@@ -897,7 +903,7 @@ textarea {
  *============================================================================*/
 
 #footer {
-  margin-bottom: 20px;
+	padding-bottom: 30px;
   color: #bbb;
   font-size: 11px;
   text-align: right;
@@ -1481,17 +1487,16 @@ textarea {
 
 /* Overwriting default .wrapper width */
 
-.login {
+.wrapper-login {
   width: 380px;
 }
 
 /* Smaller label width */
 
-.login .form .field {
+.wrapper-login .form .field {
   padding-left: 80px;
 }
 
-.login .form .field label:first-child {
+.wrapper-login .form .field label:first-child {
   width: 70px;
 }
-
