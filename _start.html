@@ -1,66 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 7]>         <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>Project Name Admin</title>
+    <title>Project Name CMS</title>
     <link href="styles/boxy.css" rel="stylesheet">
     <link href="styles/jwysiwyg.css" rel="stylesheet">
     <link href="styles/padamini.css" rel="stylesheet">
-    <link href="styles/main.css" rel="stylesheet">
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
   <body>
-    <a href="#main" class="accessibility"></a>
-    <header role="banner">
+    <nav class="hidden">
+      <ol>
+        <li><a href="#navigation">Skip to navigation</a></li>
+        <li><a href="#content">Skip to content</a></li>
+      </ol>
+    </nav>
 
-      <!-- Title section -->
-      <div class="wrapper top cf">
-        <div class="title">
-          <h1><a href="#" class="to-index left"><em>Project Name</em> Admin</a></h1>
-          <a href="#" class="title-action left external">Visit site</a>
-        </div>
+    <hr>
+
+    <header id="header" role="banner">
+      <div class="wrapper cf">
+	      <h1>
+	        <a href="#" class="logo" rel="index" title="Return to the homepage"><em>Project Name</em> CMS</a>
+	      </h1>
+
+	      <a href="#" class="action" rel="external">Visit site</a>
 
         <div class="user-panel">
-          <p>Logged in as <em>Test Tosteron</em></p>
-          <a href="#" class="title-action left">Logout</a>
+          <p>Logged in as <em>User Name</em></p>
+          <a href="#" class="action">Logout</a>
         </div>
-      </div>
+			</div>
+		</header>
 
-      <!-- Main navigation -->
-      <nav role="navigation">
-        <h4 class="hidden">Main navigation</h4>
-        <ul class="wrapper tabs cf">
-          <li><a href="#">Dashboard</a></li>
-          <li class="selected"><a href="#">Comments <small>12</small></a></li>
-          <li>
-            <a href="#">Products</a>
-            <ul>
-              <li><a href="#">Management</a></li>
-              <li><a href="#">Categories</a></li>
-              <li><a href="#">Parameters</a></li>
-              <li><a href="#">Stats</a></li>
-              <li><a href="#">Payments</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Orders <small>5</small></a></li>
-          <li><a href="#">Users</a></li>
-          <li><a href="#">Static pages</a></li>
-          <li><a href="#">Parameters</a></li>
-        </ul>
-      </nav>
+    <nav id="navigation" role="navigation">
+      <h4 class="hidden">Main navigation</h4>
 
-      <!-- Subnavigation -->
-      <div class="subnavigation">
+      <ul class="wrapper cf">
+        <li>
+        	<a href="#">Dashboard</a>
+<!--
+          <ul class="subnavigation cf">
+            <li><a href="#">Add New</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Bans</a></li>
+            <li><a href="#">Warnings</a></li>
+          </ul>
+-->
+        </li>
+        <li class="selected">
+        	<a href="#">Comments <span class="badge">37</span></a>
+        </li>
+        <li>
+          <a href="#">Products <span class="arrow">&darr;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Add New</a></li>
+            <li><a href="#">Management</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Stats</a></li>
+            <li><a href="#">Payments</a></li>
+          </ul>
+        </li>
+        <li>
+        	<a href="#">Reviews</a>
+        </li>
+        <li>
+        	<a href="#">Users</a>
+        </li>
+        <li>
+        	<a href="#">Pages</a>
+        </li>
+        <li>
+        	<a href="#">Orders <span class="badge">5</span></a>
+        </li>
+        <li>
+        	<a href="#">Settings</a>
+        </li>
+        <li>
+        	<a href="#">Backups</a>
+        </li>
+      </ul>
+
+			<div class="subnavigation">
         <ul class="wrapper cf">
-          <li><a href="#">Management</a></li>
-          <li><a href="#">Categories</a></li>
-          <li><a href="#">Parameters</a></li>
-          <li><a href="#">Stats</a></li>
-          <li><a href="#">Payments</a></li>
+          <li><a href="#">Add New</a></li>
+          <li class="selected"><a href="#">Search</a></li>
+          <li><a href="#">Bans</a></li>
+          <li><a href="#">Warnings</a></li>
         </ul>
-      </div>
-    </header>
-    <section role="main" id="main" class="wrapper">
+			</div>
+    </nav>
+
+    <hr>
+
+    <div id="content" role="main" class="wrapper">
