@@ -20,8 +20,13 @@
  *    2.3 Navigation
  *    2.4 Content
  *    2.5 Footer
- *    2.5 Listings
- *    2.5 Forms
+ *
+ *  3 MODULES
+ *    3.1 List
+ *    3.2 Grid
+ *    3.3 Form
+ *    3.4 Login
+ *    3.5 Dashboard
  *
  ******************************************************************************/
 
@@ -214,9 +219,9 @@ textarea {
   -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, .1);
      -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, .1);
           box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, .1);
-	-webkit-border-radius: 2px;
-	   -moz-border-radius: 2px;
-	        border-radius: 2px;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
 }
 
 /*  2 COMMON
@@ -307,13 +312,14 @@ textarea {
  *============================================================================*/
 
 #navigation {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7787a6), color-stop(100%, #68799c));
-  background: -webkit-linear-gradient(top, #7787a6 0%, #68799c 100%);
-  background:    -moz-linear-gradient(top, #7787a6 0%, #68799c 100%);
-  background:      -o-linear-gradient(top, #7787a6 0%, #68799c 100%);
-  background:     -ms-linear-gradient(top, #7787a6 0%, #68799c 100%);
-  background:         linear-gradient(top, #7787a6 0%, #68799c 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7787a6", endColorstr="#68799c", GradientType=0);
+  background: #70809F;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #70809F), color-stop(100%, #586787));
+  background: -webkit-linear-gradient(top, #70809F 0%, #586787 100%);
+  background:    -moz-linear-gradient(top, #70809F 0%, #586787 100%);
+  background:      -o-linear-gradient(top, #70809F 0%, #586787 100%);
+  background:     -ms-linear-gradient(top, #70809F 0%, #586787 100%);
+  background:         linear-gradient(top, #70809F 0%, #586787 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#70809F", endColorstr="#586787", GradientType=0);
   border-bottom: 4px solid #eee;
 }
 
@@ -334,25 +340,25 @@ textarea {
 }
 
 #navigation li:hover > a {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8695b0), color-stop(100%, #7787a6));
-  background: -webkit-linear-gradient(top, #8695b0 0%, #7787a6 100%);
-  background:    -moz-linear-gradient(top, #8695b0 0%, #7787a6 100%);
-  background:      -o-linear-gradient(top, #8695b0 0%, #7787a6 100%);
-  background:     -ms-linear-gradient(top, #8695b0 0%, #7787a6 100%);
-  background:         linear-gradient(top, #8695b0 0%, #7787a6 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8695b0", endColorstr="#7787a6", GradientType=0);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8695b0), color-stop(100%, #70809F));
+  background: -webkit-linear-gradient(top, #8695b0 0%, #70809F 100%);
+  background:    -moz-linear-gradient(top, #8695b0 0%, #70809F 100%);
+  background:      -o-linear-gradient(top, #8695b0 0%, #70809F 100%);
+  background:     -ms-linear-gradient(top, #8695b0 0%, #70809F 100%);
+  background:         linear-gradient(top, #8695b0 0%, #70809F 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8695b0", endColorstr="#70809F", GradientType=0);
 }
 
 #navigation .selected:hover a,
 #navigation .selected a {
   background: #eee;
-  color: #444;
+  color: #333;
 }
 
 /* Arrow */
 
 #navigation .arrow {
-	margin-left: 3px;
+  margin-left: 3px;
   font-style: normal;
 }
 
@@ -375,11 +381,11 @@ textarea {
 }
 
 .ie7 #navigation .badge {
-	width: 12px;
+  width: 12px;
 }
 
 #navigation .selected .badge {
-  background-color: #7787a6;
+  background-color: #70809F;
 }
 
 /*  Dropdown
@@ -396,7 +402,7 @@ textarea {
 }
 
 #navigation .dropdown li {
-	float: none;
+  float: none;
 }
 
 /* Links */
@@ -406,11 +412,11 @@ textarea {
   padding: 0 40px 0 10px;
   line-height: 30px;
   font-weight: normal;
-  background: #7787a6;
+  background: #70809F;
 }
 
 #navigation .dropdown a:hover {
-	background: #68799c;
+  background: #657594;
 }
 
 /*  Subnavigation
@@ -422,7 +428,6 @@ textarea {
   border-top: 2px solid #eee;
 }
 
-/* #navigation li:hover > a { */
 #navigation .subnavigation li:hover a,
 #navigation .subnavigation a {
   background: none;
@@ -444,14 +449,14 @@ textarea {
 }
 
 #navigation .subnavigation .selected a {
-  color: #ccc;
+  color: #aaa;
 }
 
 /*  2.4 Content
  *============================================================================*/
 
 #content {
-	padding-top: 30px;
+  padding-top: 30px;
 }
 
 #content > * {
@@ -576,6 +581,7 @@ textarea {
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
+	background: #7D7D7D;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #999999), color-stop(100%, #666666));
   background: -webkit-linear-gradient(top, #999999 0%, #666666 100%);
   background:    -moz-linear-gradient(top, #999999 0%, #666666 100%);
@@ -587,6 +593,7 @@ textarea {
 
 .button:hover {
   text-decoration: none;
+  background: #8E8E8E;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #aaaaaa), color-stop(100%, #777777));
   background: -webkit-linear-gradient(top, #aaaaaa 0%, #777777 100%);
   background:    -moz-linear-gradient(top, #aaaaaa 0%, #777777 100%);
@@ -600,6 +607,7 @@ textarea {
 
 .button-positive,
 .button-positive:hover {
+	background: #5E9553;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #70ac64), color-stop(100%, #4e7f44));
   background: -webkit-linear-gradient(top, #70ac64 0%, #4e7f44 100%);
   background:    -moz-linear-gradient(top, #70ac64 0%, #4e7f44 100%);
@@ -610,6 +618,7 @@ textarea {
 }
 
 .button-positive:hover {
+	background: #6AA15F;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fb575), color-stop(100%, #58904d));
   background: -webkit-linear-gradient(top, #7fb575 0%, #58904d 100%);
   background:    -moz-linear-gradient(top, #7fb575 0%, #58904d 100%);
@@ -623,6 +632,7 @@ textarea {
 
 .button-negative,
 .button-negative:hover {
+	background: #C15646;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d26e60), color-stop(100%, #b34332));
   background: -webkit-linear-gradient(top, #d26e60 0%, #b34332 100%);
   background:    -moz-linear-gradient(top, #d26e60 0%, #b34332 100%);
@@ -633,6 +643,7 @@ textarea {
 }
 
 .button-negative:hover {
+	background: #CF6455;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d88074), color-stop(100%, #c74a38));
   background: -webkit-linear-gradient(top, #d88074 0%, #c74a38 100%);
   background:    -moz-linear-gradient(top, #d88074 0%, #c74a38 100%);
@@ -640,6 +651,20 @@ textarea {
   background:     -ms-linear-gradient(top, #d88074 0%, #c74a38 100%);
   background:         linear-gradient(top, #d88074 0%, #c74a38 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d88074", endColorstr="#c74a38", GradientType=0);
+}
+
+/* Disabled */
+
+.button-disabled,
+.button-disabled:hover {
+	background: #D6D6D6;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dfdfdf), color-stop(100%, #cccccc));
+  background: -webkit-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
+  background:    -moz-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
+  background:      -o-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
+  background:     -ms-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
+  background:         linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dfdfdf", endColorstr="#cccccc", GradientType=0);
 }
 
 /* Main action */
@@ -827,7 +852,7 @@ textarea {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
-  background: #7787a6;
+  background: #70809F;
   color: #fff;
 }
 
@@ -859,7 +884,7 @@ textarea {
 
 .heading {
   font-weight: bold;
-  color: #444;
+  color: #333;
 }
 
 .heading em {
@@ -880,83 +905,24 @@ textarea {
   line-height: 28px;
 }
 
-/*  Sections
+/*  Record meta
  *----------------------------------------------------------------------------*/
 
-.section {
-  float: left;
-  width: 385px;
-  margin-left: 30px;
-  padding-top: 20px;
-}
-
-.section:first-child,
-.section:nth-child(2n+1) {
-  margin-left: 0;
-}
-
-.section:nth-child(-n+2) {
-  padding-top: 0;
-}
-
-/*  2.5 Footer
- *============================================================================*/
-
-#footer {
-	padding-bottom: 30px;
-  color: #bbb;
-  font-size: 11px;
-  text-align: right;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*  Navigation
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-
-/*
- *  3 Content
- *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-
-/*
- *  3.1 Listing
- *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-/*  Info
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-.listing .info p {
+.meta p {
   display: inline-block;
   line-height: 20px;
   font-size: 13px;
-  color: #444;
+  color: #333;
 }
 
-.listing .info p small {
+.meta p small {
   color: #999;
   font-size: 11px;
 }
 
 /* Info attributes */
 
-.listing .info dl {
+.meta dl {
   position: absolute;
   right: 0;
   top: 0;
@@ -965,33 +931,33 @@ textarea {
   font-size: 10px;
 }
 
-.listing .info dl,
-.listing .info dd {
+.meta dl,
+.meta dd {
   display: block;
   float: left;
   margin-left: 10px;
 }
 
-.listing .info dt {
+.meta dt {
   display: none;
 }
 
-.listing .info dd[title] {
+.meta dd[title] {
   cursor: help;
 }
 
-/*  Actions
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Record operations
+ *----------------------------------------------------------------------------*/
 
-.listing .actions {
+.operations {
   float: right;
 }
 
-.listing .actions li {
+.operations li {
   float: left;
 }
 
-.listing .actions a {
+.operations a {
   display: block;
   margin: 0 3px;
   padding: 0 2px;
@@ -1000,20 +966,31 @@ textarea {
   line-height: 20px;
 }
 
-/*
- *  3.1.1 List
- *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*  2.5 Footer
+ *============================================================================*/
 
-.listing-list {
+#footer {
+  padding-bottom: 30px;
+  color: #bbb;
+  font-size: 11px;
+  text-align: right;
+}
+
+/*  3 MODULES
+ ******************************************************************************/
+
+/*  3.1 List
+ *============================================================================*/
+
+.list {
   border-bottom: 1px solid #eee;
 }
 
-.listing-list .element:nth-child(2n+1) {
+.list .element:nth-child(2n+1) {
   background: #fafafa;
 }
 
-.listing-list .element {
+.list .element {
   padding: 15px 10px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
@@ -1021,26 +998,27 @@ textarea {
   display: block;
 }
 
-.listing-list .element:hover {
+.list .element:hover {
   background: #f5f5f5 !important;
 }
 
-/* Info */
+/* List-specific .meta */
 
-.listing-list .info {
+.meta-list {
   float: left;
   width: 75%;
   position: relative;
 }
 
-.listing-list .info p {
+.meta-list p {
   font-weight: bold;
   font-size: 12px;
 }
 
-/* Sortable */
+/*  Sortable list
+ *----------------------------------------------------------------------------*/
 
-.listing-list .drag {
+.list .drag {
   float: left;
   padding: 10px 5px 10px 10px;
   margin: -10px 0 -10px -10px;
@@ -1051,65 +1029,32 @@ textarea {
   opacity: 0.15;
 }
 
-.listing-list .element:hover .drag {
+.list .element:hover .drag {
   opacity: 0.2;
 }
 
-.listing-list .element-locked .drag,
-.listing-list .element-locked:hover .drag {
+.list .element-locked .drag,
+.list .element-locked:hover .drag {
   opacity: 0;
   cursor: default;
 }
 
 /* Affected row */
 
-.listing-list .element-affected:nth-child(2n+1),
-.listing-list .element-affected {
+.list .element-affected:nth-child(2n+1),
+.list .element-affected {
   background-color: #fbfbd3;
 }
 
-/*
- *  3.1.2 Section
- *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*  3.2 Grid
+ *============================================================================*/
 
-.listing-section {
-  border-bottom: 1px solid #eee;
-}
-
-.listing-section .element:nth-child(2n+1) {
-  background: #fafafa;
-}
-
-.listing-section .element {
-  padding: 10px 7px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  margin-bottom: -1px;
-  display: block;
-  line-height: 20px;
-}
-
-.listing-section .element:hover {
-  background: #f5f5f5;
-}
-
-.listing-section .additional {
-  float: right;
-  color: #aaa;
-}
-
-/*
- *  3.1.3 Grid
- *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-.listing-grid {
+.grid {
   margin-top: -25px;
   margin-left: -25px;
 }
 
-.listing-grid .element {
+.grid .element {
   float: left;
   display: block;
   width: 250px;
@@ -1123,25 +1068,41 @@ textarea {
 
 /* Affected row */
 
-.listing-grid .element-affected {
+.grid .element-affected {
   background-color: #fbfbd3;
 }
 
-.listing-grid .element-affected img {
+.grid .element-affected img {
   opacity: 0.5;
 }
 
-/*  Image
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* Sortable */
 
-.listing-grid .image-container {
+.grid .drag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  cursor: move;
+  width: 20px;
+  height: 20px;
+  background: url("../images/arrow-move.png") no-repeat center center;
+}
+
+.grid .element:hover .drag {
+  opacity: 0.2;
+}
+
+/*  Image
+ *----------------------------------------------------------------------------*/
+
+.grid .image-container {
   width: 250px;
   height: 200px;
   line-height: 198px;
   text-align: center;
 }
 
-.listing-grid img {
+.grid img {
   max-width: 99%;
   max-height: 99%;
   vertical-align: middle;
@@ -1149,10 +1110,10 @@ textarea {
 }
 
 /*  Info/actions slow fading in/out
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+ *----------------------------------------------------------------------------*/
 
-.listing-grid .info,
-.listing-grid .actions {
+.meta-grid,
+.operations-grid {
   opacity: 0;
   -webkit-transition: opacity .1s linear;
      -moz-transition: opacity .1s linear;
@@ -1160,16 +1121,16 @@ textarea {
           transition: opacity .1s linear;
 }
 
-.listing-grid .element-selected .info,
-.listing-grid .element-selected .actions,
-.listing-grid .element:hover .info,
-.listing-grid .element:hover .actions {
+.grid .element-selected .meta-grid,
+.grid .element-selected .operations-grid,
+.grid .element:hover .meta-grid,
+.grid .element:hover .operations-grid {
   opacity: 1;
 }
 
 /* Sorting grip */
 
-.listing-grid .drag {
+.grid .drag {
   opacity: 0;
   -webkit-transition: opacity .1s linear;
      -moz-transition: opacity .1s linear;
@@ -1177,21 +1138,21 @@ textarea {
           transition: opacity .1s linear;
 }
 
-.listing-grid .element-selected .drag,
-.listing-grid .element:hover .drag {
+.grid .element-selected .drag,
+.grid .element:hover .drag {
   opacity: 0.2;
 }
 
-.listing-grid .element-locked .drag,
-.listing-grid .element-locked:hover .drag {
+.grid .element-locked .drag,
+.grid .element-locked:hover .drag {
   display: none;
   cursor: default;
 }
 
-/*  Info
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Grid-specific .meta
+ *----------------------------------------------------------------------------*/
 
-.listing-grid .info {
+.meta-grid {
   position: absolute;
   top: 0;
   left: 0;
@@ -1202,76 +1163,58 @@ textarea {
   background: rgba(245, 245, 245, .96);
 }
 
-.listing-grid .info p {
+.meta-grid p {
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 10px;
   line-height: 18px;
 }
 
-.listing-grid .info dl {
+.meta-grid dl {
   display: block;
   position: static;
   line-height: 14px;
 }
 
-.listing-grid .info dl,
-.listing-grid .info dd {
+.meta-grid dl,
+.meta-grid dd {
   margin-left: 0;
 }
 
-.listing-grid .info dt {
+.meta-grid dt {
   display: block;
   float: left;
 }
 
-.listing-grid .info dd[title],
-.listing-grid .info dd[title] {
+.meta-grid dd[title],
+.meta-grid dd[title] {
   cursor: default;
 }
 
-.listing-grid .info dt {
+.meta-grid dt {
   width: 70px;
 }
 
-.listing-grid .info dd {
+.meta-grid dd {
   width: 100px;
 }
 
-.listing-grid .info dt,
-.listing-grid .info dd {
+.meta-grid dt,
+.meta-grid dd {
   margin-bottom: 7px;
 }
 
-/*  Actions
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Grid-specific .operations
+ *----------------------------------------------------------------------------*/
 
-.listing-grid .actions {
+.operations-grid {
   position: absolute;
   bottom: 10px;
   right: 10px;
 }
 
-/* Sortable */
-
-.listing-grid .drag {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  cursor: move;
-  width: 20px;
-  height: 20px;
-  background: url("../images/arrow-move.png") no-repeat center center;
-}
-
-.listing-grid .element:hover .drag {
-  opacity: 0.2;
-}
-
-/*
- *  3.3 Form
- *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*  3.3 Form
+ *============================================================================*/
 
 /* Images in form */
 
@@ -1282,7 +1225,7 @@ textarea {
 }
 
 /*  Main form elements
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+ *----------------------------------------------------------------------------*/
 
 /* Fields fieldset */
 
@@ -1328,7 +1271,7 @@ textarea {
 }
 
 /*  Fields
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+ *----------------------------------------------------------------------------*/
 
 .form .field {
   padding-top: 20px;
@@ -1339,7 +1282,7 @@ textarea {
 }
 
 .form .field .label {
-  color: #444;
+  color: #333;
   position: absolute;
   width: 120px;
   font-size: 13px;
@@ -1387,7 +1330,7 @@ textarea {
 }
 
 /*  Field elements
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+ *----------------------------------------------------------------------------*/
 
 /* Inputs to edit code */
 
@@ -1437,7 +1380,7 @@ textarea {
 /* Label */
 
 .form .field label:first-child ~ label {
-  color: #444;
+  color: #333;
 }
 
 /* Hint & Error */
@@ -1449,16 +1392,15 @@ textarea {
 }
 
 .form .hint {
-  color: #999;
+  color: #888;
 }
 
 .form .error {
   color: #b44235;
 }
 
-
 /*  Buttons
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+ *----------------------------------------------------------------------------*/
 
 .form .buttons {
   line-height: 28px;
@@ -1482,8 +1424,8 @@ textarea {
   margin-left: 5px;
 }
 
-/*  Login form
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  3.4 Login
+ *============================================================================*/
 
 /* Overwriting default .wrapper width */
 
@@ -1500,3 +1442,58 @@ textarea {
 .wrapper-login .form .field label:first-child {
   width: 70px;
 }
+
+/*  3.5 Dashboard
+ *============================================================================*/
+
+/*  Sections
+ *----------------------------------------------------------------------------*/
+
+.dashboard .section {
+  float: left;
+  width: 385px;
+  margin-left: 30px;
+  padding-top: 20px;
+}
+
+.dashboard .section:first-child,
+.dashboard .section:nth-child(2n+1) {
+  margin-left: 0;
+}
+
+.dashboard .section:nth-child(-n+2) {
+  padding-top: 0;
+}
+
+/*  Dashboard List
+ *----------------------------------------------------------------------------*/
+
+.list-dashboard {
+  border-bottom: 1px solid #eee;
+}
+
+.list-dashboard .element:nth-child(2n+1) {
+  background: #fafafa;
+}
+
+.list-dashboard .element {
+  padding: 10px 7px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-bottom: -1px;
+  display: block;
+  line-height: 20px;
+}
+
+.list-dashboard .element:hover {
+  background: #f5f5f5;
+}
+
+.list-dashboard .additional {
+  float: right;
+  color: #aaa;
+}
+
+/*  Dashboard Grid
+ *----------------------------------------------------------------------------*/
+

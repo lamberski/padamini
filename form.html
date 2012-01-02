@@ -24,35 +24,62 @@
         </fieldset>
 
         <fieldset class="fields">
-          <legend><span>Photos</span></legend>
+          <legend><span>Photo</span></legend>
 
           <div class="field">
-            <label class="label">Current</label>
-            <ul>
-              <li>
-                <img src="http://t3.gstatic.com/images?q=tbn:ANd9GcRg_OSJGzeDnM73QbrmZ6Dt61TAepan8H9gUCHOdL_tsTBr7W-h-Q">
-              </li>
-              <li>
-                <img src="http://economictimes.indiatimes.com/photo/5951402.cms">
-              </li>
-            </ul>
+            <label class="label" for="form-photo">Current</label>
+						<input type="file" id="form-photo" name="photo">
+						<p class="hint block">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor.</p>
+            <img src="http://placehold.it/150x100" class="block">
           </div>
         </fieldset>
 
+		    <fieldset class="fields">
+          <legend><span>Export data</span></legend>
+
+		      <div class="field">
+            <label class="label">Database Data</label>
+
+		        <div class="block cf">
+	            <a href="#" class="button left">Download ZIP archive with data</a>
+		        </div>
+		
+		        <div class="block cf">
+	            <span class="button button-disabled left">Drop all tables</span>
+		        </div>
+		
+		        <p class="hint block">Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+		      </div>
+		
+		      <div class="field">
+            <label class="label">Website Files</label>
+		
+		        <div class="block cf">
+	            <a href="#" class="button button-positive left">Download ZIP archive with data</a>
+		        </div>
+		
+		        <div class="block cf">
+	            <a href="#" class="button button-negative left">Delete all files</a>
+		        </div>
+		
+		        <p class="hint block">Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+		      </div>
+		    </fieldset>
+
         <fieldset class="fields fields-plain">
           <div class="field">
-            <label class="label">Current</label>
+            <label class="label">Sizes</label>
             <div class="block">
               <input type="text" readonly value="10 ml" class="small">
               <input type="text" readonly value="12.00" class="small">
               <input type="text" name="sizes[44][number]" value="1" class="tiny">
-              <label><input type="checkbox" class="remove" name="sizes[44][delete]"> Usuń</label>
+              <label><input type="checkbox" class="remove" name="sizes[44][delete]"> Delete</label>
             </div>
             <div class="block">
               <input type="text" readonly value="15 ml" class="small">
               <input type="text" readonly value="17.50" class="small">
               <input type="text" name="sizes[45][number]" value="4" class="tiny">
-              <label><input type="checkbox" class="remove" name="sizes[45][delete]"> Usuń</label>
+              <label><input type="checkbox" class="remove" name="sizes[45][delete]"> Delete</label>
             </div>
             <p class="hint block">Donec sed odio dui.</p>
           </div>
@@ -60,13 +87,10 @@
           <div class="field required">
             <label class="label">New</label>
             <div class="block form">
-              <input type="hidden" name="fragrances[id][new]" value="1" disabled>
-              <input type="text" name="fragrances[id][name]" class="small" disabled>
-              <input type="text" name="fragrances[id][description]" class="normal" disabled>
-              <a href="#" class="remove">Usuń</a>
-            </div>
-            <div class="block">
-              <a href="#" class="add">Add next</a>
+              <input type="hidden" name="sizes[id][new]" value="1">
+              <input type="text" name="sizes[id][name]" class="small">
+              <input type="text" name="sizes[id][description]" class="small">
+              <input type="text" name="sizes[id][description]" class="tiny">
             </div>
           </div>
         </fieldset>

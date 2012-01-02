@@ -168,21 +168,14 @@ var Padamini = {
 
   enableDraggingOnList: function() {
 
-    // Adding drag handle to normal list
-    $(".listing-list.listing-sortable .element").each(function() {
+    // Adding drag handle
+    $("[data-sort-url] .element").each(function() {
       $("<div/>")
         .prependTo($(this))
         .addClass("drag");
     });
 
-    // Adding drag handle to grid list
-    $(".listing-grid.listing-sortable .element").each(function() {
-      $("<div/>")
-        .appendTo($(this))
-        .addClass("drag");
-    });
-
-    $(".listing-sortable").sortable({
+    $("[data-sort-url]").sortable({
       revert: 200,
       containment: "parent",
       tolerance: "pointer",
@@ -220,12 +213,12 @@ var Padamini = {
       },
     });
 
-    $(".listing-sortable .drag").disableSelection();
+    $("[data-sort-url] .drag").disableSelection();
   },
 
   glowAffectedRows: function() {
 
-    $(".listing").each(function() {
+    $("[data-affected-ids]").each(function() {
       var listing = $(this);
       var elements = $(this).data("affected-ids");
 
@@ -238,7 +231,7 @@ var Padamini = {
 
         // Highlighting affected elements on list
         if (element.length) {
-          if (listing.hasClass("listing-list")) {
+          if (listing.hasClass("list")) {
             element
               .data("previous-background-color", element.css("background-color"))
               .addClass("element-affected");
@@ -248,7 +241,7 @@ var Padamini = {
               }, 3000, function() {
                 element.removeClass("element-affected");
               });
-          } else if (listing.hasClass("listing-grid")) {
+          } else if (listing.hasClass("grid")) {
             var image = element.find("img");
 
             element
