@@ -474,6 +474,23 @@ textarea {
   float: left;
 }
 
+/* AJAX Loader */
+
+.loader {
+	display: block;
+	height: 16px;
+	width: 16px;
+	text-indent: -999em;
+	overflow: hidden;
+	background: url("../images/ajax-loader.gif") no-repeat center;
+}
+
+.loader-header {
+	margin-left: 10px;
+	float: left;
+	height: 28px;
+}
+
 /*  Text overflow (https://developer.mozilla.org/En/CSS/text-overflow)
  *----------------------------------------------------------------------------*/
 
