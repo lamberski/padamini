@@ -459,7 +459,8 @@ textarea {
   padding-top: 30px;
 }
 
-#content > * {
+#content > *,
+#content noscript > * {
   margin-bottom: 30px;
 }
 
