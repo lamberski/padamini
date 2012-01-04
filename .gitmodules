@@ -4,3 +4,6 @@
 [submodule "www/scripts/boxy"]
 	path = www/scripts/boxy
 	url = git@github.com:jaz303/boxy.git
+[submodule "scripts/autoResize"]
+	path = scripts/autoResize
+	url = https://github.com/padolsey/jQuery.fn.autoResize.git
