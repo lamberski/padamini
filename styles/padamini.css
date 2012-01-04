@@ -196,10 +196,6 @@ a:focus {
 
 /* Forms */
 
-input, textarea, select {
-
-}
-
 textarea {
   overflow: auto;
 }
@@ -222,6 +218,11 @@ textarea {
   -webkit-border-radius: 2px;
      -moz-border-radius: 2px;
           border-radius: 2px;
+}
+
+input[disabled],
+textarea[disabled] {
+  color: #555;
 }
 
 /*  2 COMMON
@@ -477,18 +478,18 @@ textarea {
 /* AJAX Loader */
 
 .loader {
-	display: block;
-	height: 16px;
-	width: 16px;
-	text-indent: -999em;
-	overflow: hidden;
-	background: url("../images/ajax-loader.gif") no-repeat center;
+  display: block;
+  height: 16px;
+  width: 16px;
+  text-indent: -999em;
+  overflow: hidden;
+  background: url("../images/ajax-loader.gif") no-repeat center;
 }
 
 .loader-header {
-	margin-left: 10px;
-	float: left;
-	height: 28px;
+  margin-left: 10px;
+  float: left;
+  height: 28px;
 }
 
 /*  Text overflow (https://developer.mozilla.org/En/CSS/text-overflow)
@@ -599,7 +600,7 @@ textarea {
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
-	background: #7D7D7D;
+  background: #7D7D7D;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #999999), color-stop(100%, #666666));
   background: -webkit-linear-gradient(top, #999999 0%, #666666 100%);
   background:    -moz-linear-gradient(top, #999999 0%, #666666 100%);
@@ -625,7 +626,7 @@ textarea {
 
 .button-positive,
 .button-positive:hover {
-	background: #5E9553;
+  background: #5E9553;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #70ac64), color-stop(100%, #4e7f44));
   background: -webkit-linear-gradient(top, #70ac64 0%, #4e7f44 100%);
   background:    -moz-linear-gradient(top, #70ac64 0%, #4e7f44 100%);
@@ -636,7 +637,7 @@ textarea {
 }
 
 .button-positive:hover {
-	background: #6AA15F;
+  background: #6AA15F;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fb575), color-stop(100%, #58904d));
   background: -webkit-linear-gradient(top, #7fb575 0%, #58904d 100%);
   background:    -moz-linear-gradient(top, #7fb575 0%, #58904d 100%);
@@ -650,7 +651,7 @@ textarea {
 
 .button-negative,
 .button-negative:hover {
-	background: #C15646;
+  background: #C15646;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d26e60), color-stop(100%, #b34332));
   background: -webkit-linear-gradient(top, #d26e60 0%, #b34332 100%);
   background:    -moz-linear-gradient(top, #d26e60 0%, #b34332 100%);
@@ -661,7 +662,7 @@ textarea {
 }
 
 .button-negative:hover {
-	background: #CF6455;
+  background: #CF6455;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d88074), color-stop(100%, #c74a38));
   background: -webkit-linear-gradient(top, #d88074 0%, #c74a38 100%);
   background:    -moz-linear-gradient(top, #d88074 0%, #c74a38 100%);
@@ -675,7 +676,7 @@ textarea {
 
 .button-disabled,
 .button-disabled:hover {
-	background: #D6D6D6;
+  background: #D6D6D6;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dfdfdf), color-stop(100%, #cccccc));
   background: -webkit-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
   background:    -moz-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
@@ -980,6 +981,10 @@ textarea {
   display: block;
   margin: 0 3px;
   padding: 0 2px;
+
+  margin: -1px 0;
+  padding: 1px 5px;
+
   font-weight: bold;
   font-size: 11px;
   line-height: 20px;
@@ -1037,7 +1042,7 @@ textarea {
 /*  Sortable list
  *----------------------------------------------------------------------------*/
 
-.list .drag {
+.list .grip {
   float: left;
   padding: 10px 5px 10px 10px;
   margin: -10px 0 -10px -10px;
@@ -1048,12 +1053,12 @@ textarea {
   opacity: 0.15;
 }
 
-.list .element:hover .drag {
+.list .element:hover .grip {
   opacity: 0.2;
 }
 
-.list .element-locked .drag,
-.list .element-locked:hover .drag {
+.list .element-locked .grip,
+.list .element-locked:hover .grip {
   opacity: 0;
   cursor: default;
 }
@@ -1097,7 +1102,7 @@ textarea {
 
 /* Sortable */
 
-.grid .drag {
+.grid .grip {
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -1105,10 +1110,7 @@ textarea {
   width: 20px;
   height: 20px;
   background: url("../images/arrow-move.png") no-repeat center center;
-}
-
-.grid .element:hover .drag {
-  opacity: 0.2;
+  z-index: 1;
 }
 
 /*  Image
@@ -1143,13 +1145,15 @@ textarea {
 .grid .element-selected .meta-grid,
 .grid .element-selected .operations-grid,
 .grid .element:hover .meta-grid,
-.grid .element:hover .operations-grid {
+.grid .element:hover .operations-grid,
+.grid .element-dragged .meta-grid,
+.grid .element-dragged .operations-grid {
   opacity: 1;
 }
 
 /* Sorting grip */
 
-.grid .drag {
+.grid .grip {
   opacity: 0;
   -webkit-transition: opacity .1s linear;
      -moz-transition: opacity .1s linear;
@@ -1157,13 +1161,14 @@ textarea {
           transition: opacity .1s linear;
 }
 
-.grid .element-selected .drag,
-.grid .element:hover .drag {
+.grid .element-selected .grip,
+.grid .element:hover .grip,
+.grid .element-dragged .grip {
   opacity: 0.2;
 }
 
-.grid .element-locked .drag,
-.grid .element-locked:hover .drag {
+.grid .element-locked .grip,
+.grid .element-locked:hover .grip {
   display: none;
   cursor: default;
 }
@@ -1175,8 +1180,8 @@ textarea {
   position: absolute;
   top: 0;
   left: 0;
-  width: 220px;
-  height: 180px;
+  bottom: 0;
+  right: 0;
   padding: 10px 15px;
   background: #f4f4f4;
   background: rgba(245, 245, 245, .96);
@@ -1265,8 +1270,10 @@ textarea {
   margin-top: 0;
 }
 
+/* Legend */
+
 .form legend {
-	margin-left: -20px;
+  margin-left: -20px;
 }
 
 .form legend span {
@@ -1341,7 +1348,7 @@ textarea {
   border-color: #ce8981;
 }
 
-/* Plain */
+/* Field without main label (and left indentation) */
 
 .form .field-plain {
   padding-left: 0;

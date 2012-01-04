@@ -11,10 +11,46 @@ var Padamini = {
    * Executes all other methods.
    */
   init: function() {
+    Padamini.autofocusFirstField();
+    Padamini.performListingInfo();
+    Padamini.enableExternalLinks();
+    Padamini.enableCloseMessageButtons();
+    Padamini.addLinkTypeIndicators();
+    Padamini.glowAffectedRows();
+    Padamini.enableDraggingOnList();
+  },
 
-    $.each(this, function(key, value) {
-      if (key != "init") value();
-    });
+  /**
+   * Shows/hides AJAX loader next to main heading.
+   */
+  toggleAJAXLoader: function() {
+
+    // Showing loader.
+    if (!$(".loader-header").length) {
+      $("<div>")
+        .addClass("loader loader-header")
+        .hide()
+        .fadeIn(250)
+        .insertAfter(".heading-page");
+
+    // Hiding loader.
+    } else {
+      $(".loader-header").fadeOut(250, function() {
+        $(this).remove();
+      });
+    }
+  },
+
+  /**
+   * Focuses first input/textarea/select in the form.
+   */
+  autofocusFirstField: function(element) {
+    if ($("[autofocus]").length) return false;
+
+    (element || $(".form .field").first())
+      .find("input:visible, select:visible, textarea:visible")
+      .first()
+      .focus();
   },
 
   /**
@@ -57,7 +93,7 @@ var Padamini = {
   },
 
   /**
-   * Adds closing/hiding flash message boxes  by clicking in close link.
+   * Adds closing/hiding flash message boxes by clicking in close link.
    */
   enableCloseMessageButtons: function() {
 
@@ -72,6 +108,140 @@ var Padamini = {
       return false;
     });
   },
+
+  /**
+   * Adds ellipsis or arrow to indicate type of link.
+   */
+  addLinkTypeIndicators: function() {
+
+    $(".confirmation").each(function() {
+      $(this).text($(this).text() + $('<div>').html("&hellip;").text());
+    });
+
+    $("[rel=external]").each(function() {
+      $(this).text($(this).text() + $('<div>').html(" &rarr;").text());
+    });
+  },
+
+  /**
+   * Glows listing elements that changed in previous action.
+   */
+  glowAffectedRows: function() {
+
+    $("[data-affected-ids]").each(function() {
+      var listing = $(this);
+      var elements = $(this).data("affected-ids")
+        .toString()
+        .split(",");
+
+      $(elements).each(function(index, key) {
+        var element = listing.find("[data-id=" + key + "]");
+        var image = element.find("img");
+
+        if (element.length) {
+
+          // Highlighting affected elements on list.
+          if (listing.hasClass("list")) {
+            element
+              .data("previous-background-color", element.css("background-color"))
+              .addClass("element-affected")
+              .animate({
+                "background-color": element.data("previous-background-color")
+              }, 3000, function() {
+                element.removeClass("element-affected");
+              });
+
+          // Highlighting affected elements on grid.
+          } else if (listing.hasClass("grid")) {
+            element
+              .data("previous-background-color", element.css("background-color"))
+              .addClass("element-affected")
+              .animate({
+                "background-color": element.data("previous-background-color"),
+              }, 3000, function() {
+                element.removeClass("element-affected");
+              });
+
+            image
+              .data("previous-opacity", element.css("opacity"))
+              .animate({
+                "opacity": image.data("previous-opacity"),
+              }, 3000);
+          }
+        }
+      });
+    });
+  },
+
+  /**
+   * Allows dragging list elements and submits new order to given URL.
+   */
+  enableDraggingOnList: function() {
+
+    // Adding drag handle.
+    $("[data-sort-url] .element").each(function() {
+      $("<div>")
+        .prependTo($(this))
+        .addClass("grip");
+    });
+
+    $("[data-sort-url]").sortable({
+      revert: 200,
+      containment: "parent",
+      tolerance: "pointer",
+      handle: ".grip",
+      start: function(event, ui) {
+        $(this).data("positions", $(this).find(".element")
+          .map(function () { return $(this).data("position"); })
+          .get());
+
+        ui.item.addClass("element-dragged");
+
+        $(".element-locked", this).each(function() {
+          $(this).data("pos", $(this).index());
+        });
+      },
+      stop: function(event, ui) {
+        ui.item.removeClass("element-dragged");
+      },
+      cancel: ".element-locked",
+      change: function(event, ui) {
+        sortable = $(this);
+        statics = $(".element-locked", this).detach();
+        helper = $("<li></li>").prependTo(this);
+        statics.each(function() {
+          $(this).insertAfter($("> li", sortable).eq($(this).data("pos")));
+        });
+        helper.remove();
+      },
+      update: function(event, ui) {
+        var previous = $(this).data("positions")
+        var current = {};
+
+        $(this).find(".element").each(function(index, value) {
+          $(this).data("position", previous[index]);
+          current[$(this).data("id")] = previous[index];
+        });
+
+        Padamini.toggleAJAXLoader();
+
+        // Update DB data with new order.
+        $.get($(this).data("sort-url"), { positions: current }, function() {
+          Padamini.toggleAJAXLoader();
+        });
+      },
+    });
+
+    $("[data-sort-url] .grip").disableSelection();
+  },
+
+
+
+
+
+
+
+
 
 
 
@@ -122,15 +292,8 @@ var Padamini = {
 
 
 
-  enableInputAutofocus: function(element) {
 
-    element = element || $(".field").first();
-
-    if ($("[autofocus]").length == 0) {
-      element.find("input:visible, select:visible, textarea:visible").first().focus();
-    }
-  },
-
+/*
   performGridInfo: function() {
 
     $(".listing-grid .actions a").bind("click", function() {
@@ -151,120 +314,11 @@ var Padamini = {
       unselect();
     });
   },
+*/
 
-  performConfirmationAnchors: function() {
 
-    $(".confirmation").each(function() {
-      $(this).text($(this).text() + $('<div/>').html("&hellip;").text());
-    });
-  },
 
-  performExternalAnchors: function() {
 
-    $("[rel=external]").each(function() {
-      $(this).text($(this).text() + $('<div/>').html(" &rarr;").text());
-    });
-  },
-
-  enableDraggingOnList: function() {
-
-    // Adding drag handle
-    $("[data-sort-url] .element").each(function() {
-      $("<div/>")
-        .prependTo($(this))
-        .addClass("drag");
-    });
-
-    $("[data-sort-url]").sortable({
-      revert: 200,
-      containment: "parent",
-      tolerance: "pointer",
-      handle: ".drag",
-      start: function(event, ui) {
-        $(this).data("positions", $(this).find(".element")
-          .map(function () { return $(this).data("position"); })
-          .get());
-
-        $(".element-locked", this).each(function(){
-          $(this).data("pos", $(this).index());
-        });
-      },
-      cancel: ".element-locked",
-      change: function() {
-        sortable = $(this);
-        statics = $(".element-locked", this).detach();
-        helper = $("<li></li>").prependTo(this);
-        statics.each(function() {
-          $(this).insertAfter($("> li", sortable).eq($(this).data("pos")));
-        });
-        helper.remove();
-      },
-      update: function(event, ui) {
-        var previous = $(this).data("positions")
-        var current = {};
-
-        $(this).find(".element").each(function(index, value) {
-          $(this).data("position", previous[index]);
-          current[$(this).data("id")] = previous[index];
-        });
-
-        // Update db data with new order
-        $.get($(this).data("sort-url"), { positions: current });
-      },
-    });
-
-    $("[data-sort-url] .drag").disableSelection();
-  },
-
-  glowAffectedRows: function() {
-
-    $("[data-affected-ids]").each(function() {
-      var listing = $(this);
-      var elements = $(this).data("affected-ids");
-
-      if (elements) {
-        elements = elements.toString().match(/^.*,.*$/) ? elements.split(",") : elements;
-      }
-
-      $(elements).each(function(index, key) {
-        var element = listing.find("[data-id=" + key + "]");
-
-        // Highlighting affected elements on list
-        if (element.length) {
-          if (listing.hasClass("list")) {
-            element
-              .data("previous-background-color", element.css("background-color"))
-              .addClass("element-affected");
-
-            element.animate({
-                "background-color": element.data("previous-background-color")
-              }, 3000, function() {
-                element.removeClass("element-affected");
-              });
-          } else if (listing.hasClass("grid")) {
-            var image = element.find("img");
-
-            element
-              .data("previous-background-color", element.css("background-color"))
-              .addClass("element-affected");
-
-            element.animate({
-                "background-color": element.data("previous-background-color"),
-              }, 3000, function() {
-                element.removeClass("element-affected");
-              });
-
-            image
-              .data("previous-opacity", element.css("opacity"));
-
-            image.animate({
-                "opacity": image.data("previous-opacity"),
-              }, 3000);
-          }
-        }
-      });
-    });
-  },
 
   enableSelectFilters: function() {
 
