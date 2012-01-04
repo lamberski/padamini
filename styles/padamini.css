@@ -1258,7 +1258,6 @@ textarea {
   margin-top: 20px;
   background: #f4f4f4;
   padding: 20px;
-  padding-top: 60px;
   position: relative;
 }
 
@@ -1266,21 +1265,17 @@ textarea {
   margin-top: 0;
 }
 
+.form legend {
+	margin-left: -20px;
+}
+
 .form legend span {
   color: #bbb;
   text-transform: uppercase;
   font-weight: bold;
-  margin-top: 20px;
   display: block;
   position: absolute;
-  left: 0;
-  padding-left: 20px;
-}
-
-/* Plain fields fieldset (no legend) */
-
-.form .fields-plain {
-  padding: 20px;
+  padding: 20px 0 0 20px;
 }
 
 /* Buttons fieldset */
@@ -1314,9 +1309,14 @@ textarea {
 
 /* First */
 
-.form .field:first-child,
-.form legend + .field {
+.form .field:first-child {
   padding-top: 0;
+  margin-top: 0;
+  border-top: 0;
+}
+
+.form legend + .field {
+  padding-top: 40px;
   margin-top: 0;
   border-top: 0;
 }
