@@ -683,6 +683,7 @@ textarea {
   background:     -ms-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
   background:         linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dfdfdf", endColorstr="#cccccc", GradientType=0);
+  cursor: default;
 }
 
 /* Main action */
