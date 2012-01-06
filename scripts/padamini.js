@@ -18,6 +18,8 @@ var Padamini = {
     Padamini.addLinkTypeIndicators();
     Padamini.glowAffectedRows();
     Padamini.enableDraggingOnList();
+    Padamini.enableFormFilter();
+    Padamini.enableTinyMCE();
   },
 
   /**
@@ -58,7 +60,7 @@ var Padamini = {
    */
   performListingInfo: function() {
 
-    $(".listing-list .info dt").each(function() {
+    $(".list .meta dt").each(function() {
       currentDt = $(this);
 
       currentDt
@@ -235,8 +237,48 @@ var Padamini = {
     $("[data-sort-url] .grip").disableSelection();
   },
 
+  /**
+   * Redirects to the new url specified in filter's data-url attribute.
+   */
+  enableFormFilter: function() {
+
+    $(".filter-form *").bind("change", function() {
+			if ($(this).is("select")) {
+	      window.location.href = $(this).find("option:selected").data("url");
+			} else {
+	      window.location.href = $(this).data("url");
+			}
+    });
+  },
+
+	enableTinyMCE: function() {
+		tinyMCE.init({
+      mode: "textareas",
+      editor_selector :"tinymce",
+      theme: "advanced",
+			theme_advanced_toolbar_location: "top",
+			theme_advanced_toolbar_align: "center",
+      theme_advanced_buttons1: "bold,italic,underline,strikethrough,forecolor,|,blockquote,sub,sup,|,bullist,numlist,link,unlink,image,|,formatselect,removeformat,undo,redo,|,code",
+      theme_advanced_buttons2: "",
+      theme_advanced_buttons3: "",
+      theme_advanced_resizing: true
+
+/*
+			formats: {
+				alignleft : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'left'},
+				aligncenter : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'center'},
+				alignright : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'right'},
+				alignfull : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'full'},
+				bold : {inline : 'span', 'classes' : 'bold'},
+				italic : {inline : 'span', 'classes' : 'italic'},
+				underline : {inline : 'span', 'classes' : 'underline', exact : true},
+				strikethrough : {inline : 'del'},
+			}
+*/
 
 
+		});
+	},
 
 
 
@@ -320,12 +362,6 @@ var Padamini = {
 
 
 
-  enableSelectFilters: function() {
-
-    $(".filters-select").bind("change", function() {
-      window.location.href = $(".filters-select option:selected").data("url");
-    });
-  },
 
   enableJWYSIWYG: function() {
 

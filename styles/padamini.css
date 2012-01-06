@@ -793,11 +793,11 @@ textarea[disabled] {
 /*  Filters
  *----------------------------------------------------------------------------*/
 
-.filters {
+.filter {
   margin: 2px 0;
 }
 
-.filters li {
+.filter li {
   display: block;
   float: left;
   margin-left: 3px;
@@ -805,10 +805,9 @@ textarea[disabled] {
 
 /* HTML <select> dropdown filter */
 
-.filters-select,
-.filters-select:hover {
-  margin: 0;
-  padding: 3px 3px 3px 10px;
+.filter-form,
+.filter-form:hover {
+  padding: 3px 10px 3px 10px;
   font-size: 10px;
   line-height: 22px;
 }
@@ -879,24 +878,26 @@ textarea[disabled] {
 /*  Headers
  *----------------------------------------------------------------------------*/
 
-/* Page */
-
-.header-page .filters,
-.header-page .actions {
-  float: right;
-  margin-left: 10px;
+.header {
+  margin: 0 -5px;
 }
 
-.header-page .actions li {
-  display: block;
-  float: left;
-  margin-left: 5px;
+.header > * {
+  margin: 0 5px;
 }
 
-/* Section */
+/* Section Header */
 
 .header-section {
   padding-bottom: 10px;
+}
+
+/* Actions */
+
+.header .actions li {
+  display: block;
+  float: left;
+  margin-left: 5px;
 }
 
 /*  Headings

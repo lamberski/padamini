@@ -1,7 +1,10 @@
       <header class="header header-page cf">
         <h1 class="heading heading-page">Photos</h1>
 
-        <ul class="actions">
+        <ul class="actions right">
+          <li>
+            <a href="#" class="button button-positive">Add</a>
+          </li>
           <li>
             <a href="#" class="button button-negative confirmation"
               data-type="negative"
@@ -11,7 +14,19 @@
             >Delete all</a></li>
         </ul>
 
-        {{> filters}}
+        <form method="post" action="" class="filter filter-form concave concave-selected cf right">
+          <label for="filter-jump-to">Filter by</label>
+          <select id="filter-jump-to">
+            <option value="" data-url="#">All</option>
+            <option value="" data-url="#">Cursus Nullam Amet</option>
+            <option value="" data-url="#">Mattis Fringilla</option>
+            <option value="" data-url="#">Condimentum Porta Parturient Sit</option>
+            <option value="" data-url="#">Risus Nibh</option>
+          </select>
+
+          <input type="checkbox" id="filter-published" data-url="#">
+          <label for="filter-published">Published?</label>
+        </form>
 
       </header>
 
