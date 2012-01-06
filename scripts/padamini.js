@@ -13,7 +13,7 @@ var Padamini = {
   init: function() {
     Padamini.autofocusFirstField();
     Padamini.performListingInfo();
-    Padamini.enableExternalLinks();
+    Padamini.enableNewTabBehavior();
     Padamini.enableCloseMessageButtons();
     Padamini.addLinkTypeIndicators();
     Padamini.glowAffectedRows();
@@ -69,23 +69,23 @@ var Padamini = {
   },
 
   /**
-   * Configes links with rel="external" to open in new browser tab/window and
-   * forms to submit into new tab/window.
+   * Configes elements with data-behavior="new-tab" to open in new browser
+   * tab/window and forms to submit into new tab/window.
    */
-  enableExternalLinks: function() {
+  enableNewTabBehavior: function() {
 
-    $("[rel=external]").attr("target", "_new");
+    $("a[data-behavior=new-tab]").attr("target", "_new");
 
-    $(".form .button[rel=external]").bind("click", function() {
+    $(".form .button[data-behavior=new-tab]").bind("click", function() {
 
       // Submiting form into the new tab/window
-      $(".form")
+      $(this).closest(".form")
         .attr("action", $(this).data("url"))
         .attr("target", "_new")
         .submit();
 
       // Restoring old values to attributes
-      $(".form")
+      $(this).closest(".form")
         .attr("action", "")
         .attr("target", "_self");
 
@@ -119,7 +119,7 @@ var Padamini = {
       $(this).text($(this).text() + $('<div>').html("&hellip;").text());
     });
 
-    $("[rel=external]").each(function() {
+    $("[data-behavior=new-tab]").each(function() {
       $(this).text($(this).text() + $('<div>').html(" &rarr;").text());
     });
   },
