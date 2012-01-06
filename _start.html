@@ -14,13 +14,6 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-    <script src="scripts/autoResize/jquery.autoresize.js"></script>
-    <script src="scripts/boxy/src/javascripts/jquery.boxy.js"></script>
-    <script src="scripts/jwysiwyg/jquery.wysiwyg.js"></script>
-    <script src="scripts/jwysiwyg/controls/wysiwyg.colorpicker.js"></script>
-    <script src="scripts/jwysiwyg/controls/wysiwyg.image.js"></script>
-    <script src="scripts/jwysiwyg/controls/wysiwyg.link.js"></script>
-    <script src="scripts/tinymce/jscripts/tiny_mce/tiny_mce_dev.js"></script>
     <script src="scripts/padamini.js"></script>
     <script src="scripts/main.js"></script>
   </head>
@@ -57,17 +50,15 @@
       <ul class="wrapper cf">
         <li>
           <a href="#">Dashboard</a>
-<!--
-          <ul class="subnavigation cf">
-            <li><a href="#">Add New</a></li>
-            <li><a href="#">Search</a></li>
-            <li><a href="#">Bans</a></li>
-            <li><a href="#">Warnings</a></li>
-          </ul>
--->
         </li>
         <li class="selected">
-          <a href="#">Comments <em class="badge">37</em></a>
+          <a href="#">Comments <em class="arrow">&darr;</em></a>
+          <ul class="dropdown">
+            <li><a href="#">Manage</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Flagged</a></li>
+            <li><a href="#">Trash</a></li>
+          </ul>
         </li>
         <li>
           <a href="#">Products <em class="arrow">&darr;</em></a>
@@ -81,7 +72,7 @@
           </ul>
         </li>
         <li>
-          <a href="#">Reviews</a>
+          <a href="#">Reviews <em class="badge">37</em></a>
         </li>
         <li>
           <a href="#">Users</a>
@@ -102,10 +93,10 @@
 
       <div class="subnavigation">
         <ul class="wrapper cf">
-          <li><a href="#">Add New</a></li>
-          <li class="selected"><a href="#">Search</a></li>
-          <li><a href="#">Bans</a></li>
-          <li><a href="#">Warnings</a></li>
+          <li><a href="#">Manage</a></li>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Flagged</a></li>
+          <li><a href="#">Trash</a></li>
         </ul>
       </div>
     </nav>

@@ -350,12 +350,6 @@ textarea[disabled] {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8695b0", endColorstr="#70809F", GradientType=0);
 }
 
-#navigation .selected:hover a,
-#navigation .selected a {
-  background: #eee;
-  color: #333;
-}
-
 /* Arrow */
 
 #navigation .arrow {
@@ -410,7 +404,7 @@ textarea[disabled] {
 
 #navigation .dropdown a {
   text-transform: none;
-  padding: 0 40px 0 10px;
+  padding: 0 50px 0 10px;
   line-height: 30px;
   font-weight: normal;
   background: #70809F;
@@ -420,6 +414,20 @@ textarea[disabled] {
   background: #657594;
 }
 
+/*  Selected Item
+ *----------------------------------------------------------------------------*/
+
+#navigation .selected:hover a,
+#navigation .selected a {
+  background: #eee;
+  color: #333;
+}
+
+#navigation .selected .dropdown,
+#navigation .selected:hover .dropdown {
+  display: none;
+}
+
 /*  Subnavigation
  *----------------------------------------------------------------------------*/
 
@@ -427,6 +435,11 @@ textarea[disabled] {
   background: #eee;
   margin-bottom: -2px;
   border-top: 2px solid #eee;
+  height: 30px;
+}
+
+#navigation li .subnavigation {
+  display: none;
 }
 
 #navigation .subnavigation li:hover a,

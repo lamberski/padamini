@@ -19,7 +19,6 @@ var Padamini = {
     Padamini.glowAffectedRows();
     Padamini.enableDraggingOnList();
     Padamini.enableFormFilter();
-    Padamini.enableTinyMCE();
   },
 
   /**
@@ -243,161 +242,11 @@ var Padamini = {
   enableFormFilter: function() {
 
     $(".filter-form *").bind("change", function() {
-			if ($(this).is("select")) {
-	      window.location.href = $(this).find("option:selected").data("url");
-			} else {
-	      window.location.href = $(this).data("url");
-			}
-    });
-  },
-
-	enableTinyMCE: function() {
-		tinyMCE.init({
-      mode: "textareas",
-      editor_selector :"tinymce",
-      theme: "advanced",
-			theme_advanced_toolbar_location: "top",
-			theme_advanced_toolbar_align: "center",
-      theme_advanced_buttons1: "bold,italic,underline,strikethrough,forecolor,|,blockquote,sub,sup,|,bullist,numlist,link,unlink,image,|,formatselect,removeformat,undo,redo,|,code",
-      theme_advanced_buttons2: "",
-      theme_advanced_buttons3: "",
-      theme_advanced_resizing: true
-
-/*
-			formats: {
-				alignleft : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'left'},
-				aligncenter : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'center'},
-				alignright : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'right'},
-				alignfull : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'full'},
-				bold : {inline : 'span', 'classes' : 'bold'},
-				italic : {inline : 'span', 'classes' : 'italic'},
-				underline : {inline : 'span', 'classes' : 'underline', exact : true},
-				strikethrough : {inline : 'del'},
-			}
-*/
-
-
-		});
-	},
-
-
-
-
-
-
-
-
-
-
-
-  initBoxy: function() {
-
-    Boxy.MODAL_OPACITY = 0.3;
-    Boxy.DEFAULTS.hideShrink = false;
-  },
-
-  enableInformationModals: function() {
-
-    $(".information").bind("click", function() {
-      anchor = $(this);
-
-      Boxy.ask(anchor.data("message"), [anchor.data("accept")]);
-
-      // Styling main action button
-      $(".boxy-inner form.answers *")
-        .addClass("button button-main");
-
-      return false;
-    });
-  },
-
-  enableConfirmationModals: function() {
-
-    $(".confirmation:not(.information)").bind("click", function() {
-      anchor = $(this);
-
-      Boxy.ask(anchor.data("question"), [anchor.data("decline"), anchor.data("accept")], function(response) {
-        if (response == anchor.data("accept")) window.location.href = anchor.attr("href");
-      });
-
-      // Styling main action button
-      $(".boxy-inner form.answers *")
-        .addClass("button");
-
-      // Styling main action button
-      $(".boxy-inner form.answers :last-child")
-        .addClass("button-main button-" + anchor.data("type"));
-
-      return false;
-    });
-  },
-
-
-
-
-/*
-  performGridInfo: function() {
-
-    $(".listing-grid .actions a").bind("click", function() {
-      $(this).closest("element").addClass("element-selected");
-    });
-
-    unselect = function() {
-      $(".listing-grid .element-selected").each(function() {
-        $(this).removeClass("element-selected");
-      });
-    }
-
-    $(".boxy-wrapper .answers [type=\"button\"]").live("click", function() {
-      unselect();
-    });
-
-    $(".listing-grid .element, .listing-grid").bind("mouseover", function() {
-      unselect();
-    });
-  },
-*/
-
-
-
-
-
-
-  enableJWYSIWYG: function() {
-
-    // Initializing jWYSIWYG with default options
-    $(".jwysiwyg").wysiwyg({
-      initialContent:   "<p>&thinsp;</p>",
-      css:              $("link[href*='jwysiwyg']").attr("href"),
-      autoGrow:         true,
-      rmUnwantedBr:     true,
-      rmUnusedControls: false,
-
-      controls: {
-        insertHorizontalRule: { visible: false },
-        insertImage:          { visible: false },
-        insertTable:          { visible: false },
-        h1:                   { visible: false },
-        code:                 { visible: false },
-        indent:               { visible: false },
-        outdent:              { visible: false },
-        undo:                 { visible: false },
-        redo:                 { visible: false },
-        html:                 { visible: true },
-        increaseFontSize:     { visible: true },
-        decreaseFontSize:     { visible: true }
+      if ($(this).is("select")) {
+        window.location.href = $(this).find("option:selected").data("url");
+      } else {
+        window.location.href = $(this).data("url");
       }
-    });
-
-    // Place controls in specific order
-    $("ul.toolbar").each(function() {
-      var toolbar = $(this);
-
-      toolbar.find(".superscript + li").appendTo(toolbar);
-      toolbar.find(".redo").appendTo(toolbar);
-      toolbar.find(".undo").appendTo(toolbar);
-      toolbar.find(".removeFormat + li").appendTo(toolbar);
-      toolbar.find(".removeFormat").appendTo(toolbar);
     });
   }
 
