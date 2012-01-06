@@ -115,7 +115,7 @@ var Padamini = {
    */
   addLinkTypeIndicators: function() {
 
-    $(".confirmation").each(function() {
+    $("[data-behavior=confirmation]").each(function() {
       $(this).text($(this).text() + $('<div>').html("&hellip;").text());
     });
 
