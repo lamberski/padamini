@@ -22,7 +22,7 @@ Pages was tested on latest versions of Firefox, Opera, Safari, Chrome, and Inter
 
 ### Vendors
 
-Padamini contains [Frontline](http://github.com/lamberski/frontline/) - to separate and reuse common parts like header and footer (more info in its [readme](https://github.com/lamberski/frontline/blob/master/readme.md)). It can be easily removed by deleting */frontline* directory and *.htaccess* file.
+Padamini contains [Frontline](http://github.com/lamberski/frontline/) to separate and reuse common parts like header and footer (more info in its [readme](https://github.com/lamberski/frontline/blob/master/readme.md)). It can be easily removed by deleting */frontline* directory and *.htaccess* file.
 
 ## License
 
