@@ -1471,6 +1471,7 @@ textarea[disabled] {
 
 .wrapper-login {
   width: 380px;
+  margin-top: 75px;
 }
 
 /* Smaller label width */
