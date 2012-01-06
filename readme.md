@@ -14,11 +14,15 @@ so basically everything that is needed to create a complete CMS dashboard for sm
 
 ## Technical details
 
-Padamini is written in HTML5 with attention to semantics. CSS styles are constructed on the basis of [OOCSS](http://oocss.org/) to allow each component to be reused and extended.
+Markup is written in HTML5 with attention to semantics. CSS styles are constructed on the basis of [OOCSS](http://oocss.org/) to allow each component to be reused and extended.
 
 ### Browsers support
 
-Padamini was tested on latest versions of Firefox, Opera, Safari, Chrome, and Internet Explorer 7+.
+Pages was tested on latest versions of Firefox, Opera, Safari, Chrome, and Internet Explorer 7+.
+
+### Vendors
+
+Padamini contains [Frontline](http://github.com/lamberski/frontline/) - to separate and reuse common parts like header and footer (more info in its [readme](https://github.com/lamberski/frontline/blob/master/readme.md)). It can be easily removed by deleting */frontline* directory and *.htaccess* file.
 
 ## License
 
