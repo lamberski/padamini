@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *  Padamini (January 2012) - jQuery implementation of Padmini
+ *  Padamini (January 2012)
  *  Crafted with passion by Maciek Lamberski (http://lamberski.com).
  *
  ******************************************************************************/
