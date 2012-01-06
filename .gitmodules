@@ -7,3 +7,6 @@
 [submodule "scripts/autoResize"]
 	path = scripts/autoResize
 	url = https://github.com/padolsey/jQuery.fn.autoResize.git
+[submodule "scripts/tinymce"]
+	path = scripts/tinymce
+	url = https://github.com/tinymce/tinymce.git
