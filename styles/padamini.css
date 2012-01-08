@@ -340,7 +340,8 @@ textarea[disabled] {
   font-weight: bold;
 }
 
-#navigation li:hover > a {
+#navigation .tab:hover > a {
+	background: #7B8AA7;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8695b0), color-stop(100%, #70809F));
   background: -webkit-linear-gradient(top, #8695b0 0%, #70809F 100%);
   background:    -moz-linear-gradient(top, #8695b0 0%, #70809F 100%);
@@ -417,9 +418,10 @@ textarea[disabled] {
 /*  Selected Item
  *----------------------------------------------------------------------------*/
 
-#navigation .selected:hover a,
-#navigation .selected a {
+#navigation .selected:hover > a,
+#navigation .selected > a {
   background: #eee;
+  filter: none;
   color: #333;
 }
 
@@ -1537,3 +1539,4 @@ textarea[disabled] {
 /*  Dashboard Grid
  *----------------------------------------------------------------------------*/
 
+/* To do */
