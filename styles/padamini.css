@@ -1488,6 +1488,11 @@ textarea[disabled] {
 /*  3.5 Dashboard
  *============================================================================*/
 
+.dashboard {
+	margin-top: -20px;
+	margin-left: -30px;
+}
+
 /*  Sections
  *----------------------------------------------------------------------------*/
 
@@ -1496,15 +1501,6 @@ textarea[disabled] {
   width: 385px;
   margin-left: 30px;
   padding-top: 20px;
-}
-
-.dashboard .section:first-child,
-.dashboard .section:nth-child(2n+1) {
-  margin-left: 0;
-}
-
-.dashboard .section:nth-child(-n+2) {
-  padding-top: 0;
 }
 
 /*  Dashboard List
