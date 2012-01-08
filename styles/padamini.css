@@ -1309,6 +1309,10 @@ textarea[disabled] {
   padding: 20px 0 0 20px;
 }
 
+.ie8 .form legend span {
+	padding-top: 0;
+}
+
 /* Buttons fieldset */
 
 .form .buttons {
@@ -1324,6 +1328,10 @@ textarea[disabled] {
   border-top: 1px solid rgba(0, 0, 0, .07);
   position: relative;
   padding-left: 130px;
+}
+
+.ie8 .form .field {
+  border-top: 1px solid #E3E3E3;
 }
 
 .form .field .label {
@@ -1346,9 +1354,17 @@ textarea[disabled] {
   border-top: 0;
 }
 
+.ie8 .form .field:first-child {
+  border-top: 0;
+}
+
 .form legend + .field {
   padding-top: 40px;
   margin-top: 0;
+  border-top: 0;
+}
+
+.ie8 .form legend + .field {
   border-top: 0;
 }
 
