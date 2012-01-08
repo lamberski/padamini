@@ -18,7 +18,7 @@ Markup is written in HTML5 with attention to semantics. CSS styles are construct
 
 ### Browsers support
 
-Pages was tested on latest versions of Firefox, Opera, Safari, Chrome, and Internet Explorer 7+.
+Pages was tested on latest versions of Firefox, Opera, Safari, Chrome, and Internet Explorer 8+.
 
 ### Vendors
 
