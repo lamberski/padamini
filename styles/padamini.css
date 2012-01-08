@@ -1066,15 +1066,18 @@ textarea[disabled] {
   height: 16px;
   background: url("../images/arrow-move-y.png") no-repeat 7px 13px;
   opacity: 0.15;
+  filter: alpha(opacity=15);
 }
 
 .list .element:hover .grip {
   opacity: 0.2;
+  filter: alpha(opacity=20);
 }
 
 .list .element-locked .grip,
 .list .element-locked:hover .grip {
   opacity: 0;
+  filter: alpha(opacity=0);
   cursor: default;
 }
 
@@ -1113,6 +1116,7 @@ textarea[disabled] {
 
 .grid .element-affected img {
   opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 
 /* Sortable */
@@ -1143,6 +1147,7 @@ textarea[disabled] {
   max-height: 99%;
   vertical-align: middle;
   opacity: 1;
+  filter: alpha(opacity=100);
 }
 
 /*  Info/actions slow fading in/out
@@ -1151,6 +1156,7 @@ textarea[disabled] {
 .meta-grid,
 .operations-grid {
   opacity: 0;
+  filter: alpha(opacity=0);
   -webkit-transition: opacity .1s linear;
      -moz-transition: opacity .1s linear;
        -o-transition: opacity .1s linear;
@@ -1164,12 +1170,14 @@ textarea[disabled] {
 .grid .element-dragged .meta-grid,
 .grid .element-dragged .operations-grid {
   opacity: 1;
+  filter: alpha(opacity=100);
 }
 
 /* Sorting grip */
 
 .grid .grip {
   opacity: 0;
+  filter: alpha(opacity=0);
   -webkit-transition: opacity .1s linear;
      -moz-transition: opacity .1s linear;
        -o-transition: opacity .1s linear;
@@ -1180,6 +1188,7 @@ textarea[disabled] {
 .grid .element:hover .grip,
 .grid .element-dragged .grip {
   opacity: 0.2;
+  filter: alpha(opacity=20);
 }
 
 .grid .element-locked .grip,
