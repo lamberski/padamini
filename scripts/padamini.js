@@ -15,10 +15,10 @@ var Padamini = {
     Padamini.performListingInfo();
     Padamini.enableNewTabBehavior();
     Padamini.enableCloseMessageButtons();
-    Padamini.addLinkTypeIndicators();
     Padamini.glowAffectedRows();
     Padamini.enableDraggingOnList();
     Padamini.enableFormFilter();
+    Padamini.initConfirmationModals();
   },
 
   /**
@@ -58,7 +58,7 @@ var Padamini = {
    * Sets title attribute for each <dd> in listing item' information.
    */
   performListingInfo: function() {
-		if (!$(".list").length) return false;
+    if (!$(".list").length) return false;
 
     $(".list .meta dt").each(function() {
       currentDt = $(this);
@@ -74,6 +74,11 @@ var Padamini = {
    * tab/window and forms to submit into new tab/window.
    */
   enableNewTabBehavior: function() {
+
+    // Add link action type indicator
+    $("[data-behavior=new-tab]").each(function() {
+      $(this).text($(this).text() + $('<div>').html(" &rarr;").text());
+    });
 
     $("a[data-behavior=new-tab]").attr("target", "_new");
 
@@ -98,7 +103,7 @@ var Padamini = {
    * Adds closing/hiding flash message boxes by clicking in close link.
    */
   enableCloseMessageButtons: function() {
-		if (!$(".message").length) return false;
+    if (!$(".message").length) return false;
 
     $(".message .close").bind("click", function() {
       $(this)
@@ -109,20 +114,6 @@ var Padamini = {
         });
 
       return false;
-    });
-  },
-
-  /**
-   * Adds ellipsis or arrow to indicate type of link.
-   */
-  addLinkTypeIndicators: function() {
-
-    $("[data-behavior=confirmation]").each(function() {
-      $(this).text($(this).text() + $('<div>').html("&hellip;").text());
-    });
-
-    $("[data-behavior=new-tab]").each(function() {
-      $(this).text($(this).text() + $('<div>').html(" &rarr;").text());
     });
   },
 
@@ -249,6 +240,53 @@ var Padamini = {
       } else {
         window.location.href = $(this).data("url");
       }
+    });
+  },
+
+  /**
+   * Redirects to the new url specified in filter's data-url attribute.
+   */
+  initConfirmationModals: function() {
+    var links = $("[data-behavior=confirmation]");
+
+    if (!links.length) return false;
+
+    links.each(function() {
+      var link = $(this);
+
+      // Add link action type indicator
+      link.text(link.text() + $('<div>').html("&hellip;").text());
+
+      // Bind action to open modal window
+      link.click(function() {
+				var modal   = $("<div>").addClass("modal");
+				var text    = $("<p>").text(link.data("question"))
+				var actions = $("<div>").addClass("actions");
+				var accept  = $("<a>")
+          .text(link.data("accept"))
+          .addClass("button button-" + link.data("type"))
+          .click(function() {
+          	window.location.href = link.attr("href");
+          });
+        var decline = $("<a>")
+          .text(link.data("decline"))
+          .addClass("button")
+          .attr("rel", "modal:close");
+
+				modal
+					.append(text)
+					.append(actions.append(accept).append(decline))
+					.appendTo("body")
+					.modal({
+						"showClose"   : false,
+						"escapeClose" : false,
+						"clickClose"  : false,
+						"overlay"     : "#eee",
+						"opacity"     : .8
+					});
+
+				return false;
+      });
     });
   }
 

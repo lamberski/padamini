@@ -1607,5 +1607,31 @@ textarea[disabled] {
  *============================================================================*/
 
 .modal {
-	display: none;
+  display: none;
+  position: relative;
+  padding: 15px 15px 50px;
+  width: 350px;
+  min-height: 65px;
+  border: 4px solid #555;
+  background: #fff;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+     -moz-box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+          box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+}
+
+.modal .actions {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding: 10px;
+	background: #eee;
+}
+
+.modal .button {
+	float: right;
+	margin-left: 5px;
 }
