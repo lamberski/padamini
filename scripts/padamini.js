@@ -58,6 +58,7 @@ var Padamini = {
    * Sets title attribute for each <dd> in listing item' information.
    */
   performListingInfo: function() {
+		if (!$(".list").length) return false;
 
     $(".list .meta dt").each(function() {
       currentDt = $(this);
@@ -97,6 +98,7 @@ var Padamini = {
    * Adds closing/hiding flash message boxes by clicking in close link.
    */
   enableCloseMessageButtons: function() {
+		if (!$(".message").length) return false;
 
     $(".message .close").bind("click", function() {
       $(this)
