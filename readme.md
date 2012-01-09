@@ -7,7 +7,7 @@ Padamini is a set of components that can be used/reused to create admin user int
 * forms (with validation states, field types, hints),
 * flash messages,
 * primary navigation (suitable for simple and complex menu),
-* modal windows,
+* confirmation modals,
 * login page,
 
 so basically everything that is needed to create a complete CMS dashboard for small and medium-sized websites.
