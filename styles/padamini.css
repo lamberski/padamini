@@ -27,6 +27,7 @@
  *    3.3 Form
  *    3.4 Login
  *    3.5 Dashboard
+ *    3.6 Modal
  *
  ******************************************************************************/
 
@@ -1167,6 +1168,8 @@ textarea[disabled] {
   cursor: move;
   width: 20px;
   height: 20px;
+  padding: 5px;
+  margin: -5px;
   background: url("../images/arrow-move.png") no-repeat center center;
   z-index: 1;
 }
@@ -1599,3 +1602,10 @@ textarea[disabled] {
  *----------------------------------------------------------------------------*/
 
 /* To do */
+
+/*  3.6 Modal
+ *============================================================================*/
+
+.modal {
+	display: none;
+}
