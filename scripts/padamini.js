@@ -273,7 +273,7 @@ var Padamini = {
                   window.location.href = link.attr("href");
                 })
             )
-	          .append(
+            .append(
               $("<a>")
                 .text(link.data("decline"))
                 .addClass("button")
@@ -284,7 +284,7 @@ var Padamini = {
         if (link.data("behavior") == "information") {
           var actions = $("<div>")
             .addClass("actions")
-	          .append(
+            .append(
               $("<a>")
                 .text("OK")
                 .addClass("button")
@@ -298,7 +298,7 @@ var Padamini = {
           .appendTo("body")
           .modal({
             "showClose"   : false,
-            "escapeClose" : false,
+            "escapeClose" : true,
             "clickClose"  : false,
             "overlay"     : "#eee",
             "opacity"     : .8
