@@ -1,0 +1,3 @@
+[submodule "scripts/modal"]
+	path = scripts/modal
+	url = https://github.com/kylefox/jquery-modal.git
