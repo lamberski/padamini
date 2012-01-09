@@ -18,7 +18,7 @@ var Padamini = {
     Padamini.glowAffectedRows();
     Padamini.enableDraggingOnList();
     Padamini.enableFormFilter();
-    Padamini.initConfirmationModals();
+    Padamini.initModals();
   },
 
   /**
@@ -246,8 +246,8 @@ var Padamini = {
   /**
    * Redirects to the new url specified in filter's data-url attribute.
    */
-  initConfirmationModals: function() {
-    var links = $("[data-behavior=confirmation]");
+  initModals: function() {
+    var links = $("[data-behavior=confirmation], [data-behavior=information]");
 
     if (!links.length) return false;
 
@@ -259,33 +259,52 @@ var Padamini = {
 
       // Bind action to open modal window
       link.click(function() {
-				var modal   = $("<div>").addClass("modal");
-				var text    = $("<p>").text(link.data("question"))
-				var actions = $("<div>").addClass("actions");
-				var accept  = $("<a>")
-          .text(link.data("accept"))
-          .addClass("button button-" + link.data("type"))
-          .click(function() {
-          	window.location.href = link.attr("href");
+        var modal   = $("<div>").addClass("modal");
+        var text    = $("<p>").text(link.data("message"))
+
+        if (link.data("behavior") == "confirmation") {
+          var actions = $("<div>")
+            .addClass("actions")
+            .append(
+              $("<a>")
+                .text(link.data("accept"))
+                .addClass("button button-" + link.data("type"))
+                .click(function() {
+                  window.location.href = link.attr("href");
+                })
+            )
+	          .append(
+              $("<a>")
+                .text(link.data("decline"))
+                .addClass("button")
+                .attr("rel", "modal:close")
+            );
+        }
+
+        if (link.data("behavior") == "information") {
+          var actions = $("<div>")
+            .addClass("actions")
+	          .append(
+              $("<a>")
+                .text("OK")
+                .addClass("button")
+                .attr("rel", "modal:close")
+            );
+        }
+
+        modal
+          .append(text)
+          .append(actions)
+          .appendTo("body")
+          .modal({
+            "showClose"   : false,
+            "escapeClose" : false,
+            "clickClose"  : false,
+            "overlay"     : "#eee",
+            "opacity"     : .8
           });
-        var decline = $("<a>")
-          .text(link.data("decline"))
-          .addClass("button")
-          .attr("rel", "modal:close");
 
-				modal
-					.append(text)
-					.append(actions.append(accept).append(decline))
-					.appendTo("body")
-					.modal({
-						"showClose"   : false,
-						"escapeClose" : false,
-						"clickClose"  : false,
-						"overlay"     : "#eee",
-						"opacity"     : .8
-					});
-
-				return false;
+        return false;
       });
     });
   }
