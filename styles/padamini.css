@@ -904,7 +904,7 @@ textarea[disabled] {
 .table th,
 .table td {
   vertical-align: center;
-  border: 1px solid #eee;
+  border: 1px solid #eaeaea;
   padding: 7px;
 }
 
@@ -1062,7 +1062,7 @@ textarea[disabled] {
  *============================================================================*/
 
 .list {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .list .element:nth-child(2n+1) {
@@ -1071,8 +1071,8 @@ textarea[disabled] {
 
 .list .element {
   padding: 15px 10px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
   margin-bottom: -1px;
   display: block;
 }
@@ -1143,8 +1143,8 @@ textarea[disabled] {
   margin-left: 25px;
   margin-top: 25px;
   background: #fafafa;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
   position: relative;
 }
 
@@ -1573,7 +1573,7 @@ textarea[disabled] {
  *----------------------------------------------------------------------------*/
 
 .list-dashboard {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .list-dashboard .element:nth-child(2n+1) {
@@ -1582,8 +1582,8 @@ textarea[disabled] {
 
 .list-dashboard .element {
   padding: 10px 7px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
   margin-bottom: -1px;
   display: block;
   line-height: 20px;
