@@ -28,6 +28,7 @@
  *    3.4 Login
  *    3.5 Dashboard
  *    3.6 Modal
+ *    3.7 Table
  *
  ******************************************************************************/
 
@@ -891,45 +892,6 @@ textarea[disabled] {
   color: #fff;
 }
 
-/*  Tabelar data
- *----------------------------------------------------------------------------*/
-
-.table {
-  border-spacing: 0;
-  width: 100%;
-  line-height: 17px;
-}
-
-.table,
-.table th,
-.table td {
-  vertical-align: center;
-  border: 1px solid #eaeaea;
-  padding: 7px;
-}
-
-.table th {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 11px;
-  background: #F5F5F5;
-}
-
-.table td {
-  background: #fafafa;
-}
-
-.table tr:nth-child(2n+1) td {
-  background: #fff;
-}
-
-/* Centered */
-
-.table .centered,
-.table-centered td {
-  text-align: center;
-}
-
 /*  Headers
  *----------------------------------------------------------------------------*/
 
@@ -1572,25 +1534,9 @@ textarea[disabled] {
 /*  Dashboard List
  *----------------------------------------------------------------------------*/
 
-.list-dashboard {
-  border-bottom: 1px solid #eaeaea;
-}
-
-.list-dashboard .element:nth-child(2n+1) {
-  background: #fafafa;
-}
-
 .list-dashboard .element {
   padding: 10px 7px;
-  border-top: 1px solid #eaeaea;
-  border-bottom: 1px solid #eaeaea;
-  margin-bottom: -1px;
-  display: block;
   line-height: 20px;
-}
-
-.list-dashboard .element:hover {
-  background: #f5f5f5;
 }
 
 .list-dashboard .additional {
@@ -1634,4 +1580,43 @@ textarea[disabled] {
 .modal .button {
   float: right;
   margin-left: 5px;
+}
+
+/*  3.7 Table
+ *============================================================================*/
+
+.table {
+  border-spacing: 0;
+  width: 100%;
+  line-height: 17px;
+}
+
+.table,
+.table th,
+.table td {
+  vertical-align: center;
+  border: 1px solid #eaeaea;
+  padding: 7px;
+}
+
+.table th {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+  background: #F5F5F5;
+}
+
+.table td {
+  background: #fafafa;
+}
+
+.table tr:nth-child(2n+1) td {
+  background: #fff;
+}
+
+/* Centered */
+
+.table .centered,
+.table-centered td {
+  text-align: center;
 }
