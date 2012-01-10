@@ -237,6 +237,7 @@ textarea[disabled] {
   margin: 0 auto;
   position: relative;
   width: 800px;
+  padding: 0 80px;
 }
 
 /*  2.2 Header
@@ -775,7 +776,7 @@ textarea[disabled] {
   padding: 0 7px;
   line-height: 24px;
   display: block;
-  color: #444;
+  color: #555;
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
@@ -880,7 +881,7 @@ textarea[disabled] {
 .concave-page-disabled,
 .concave-page-disabled:hover {
   color: #ccc;
-  background: #fafafa;
+  background: #f8f8f8;
 }
 
 .concave-page-current,
@@ -1020,23 +1021,23 @@ textarea[disabled] {
  *============================================================================*/
 
 .list {
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .list .element:nth-child(2n+1) {
-  background: #fafafa;
+  background: #f8f8f8;
 }
 
 .list .element {
   padding: 15px 10px;
-  border-top: 1px solid #eaeaea;
-  border-bottom: 1px solid #eaeaea;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
   margin-bottom: -1px;
   display: block;
 }
 
 .list .element:hover {
-  background: #f5f5f5 !important;
+  background: #f3f3f3 !important;
 }
 
 /* List-specific .meta */
@@ -1100,9 +1101,9 @@ textarea[disabled] {
   width: 250px;
   margin-left: 25px;
   margin-top: 25px;
-  background: #fafafa;
-  border-top: 1px solid #eaeaea;
-  border-bottom: 1px solid #eaeaea;
+  background: #f8f8f8;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
   position: relative;
 }
 
@@ -1325,13 +1326,9 @@ textarea[disabled] {
 .form .field {
   padding-top: 20px;
   margin-top: 20px;
-  border-top: 1px solid rgba(0, 0, 0, .07);
+  border-top: 1px solid #e2e2e2;
   position: relative;
   padding-left: 130px;
-}
-
-.ie8 .form .field {
-  border-top: 1px solid #E3E3E3;
 }
 
 .form .field .label {
@@ -1591,7 +1588,7 @@ textarea[disabled] {
 .table th,
 .table td {
   vertical-align: center;
-  border: 1px solid #eaeaea;
+  border: 1px solid #e8e8e8;
   padding: 7px;
 }
 
@@ -1599,11 +1596,11 @@ textarea[disabled] {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 11px;
-  background: #F5F5F5;
+  background: #f3f3f3;
 }
 
 .table td {
-  background: #fafafa;
+  background: #f8f8f8;
 }
 
 .table tr:nth-child(2n+1) td {
