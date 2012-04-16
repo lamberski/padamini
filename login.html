@@ -1,40 +1,38 @@
-{% standalone %}
+{{#standalone}}
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 7]>         <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>Project Name Admin</title>
-    <link href="favicon.ico" rel="shortcut icon">
-    <link href="styles/boxy.css" rel="stylesheet">
-    <link href="styles/jwysiwyg.css" rel="stylesheet">
+    <title>Padamini CMS</title>
     <link href="styles/padamini.css" rel="stylesheet">
-    <link href="styles/main.css" rel="stylesheet">
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
   <body>
-    <a href="#main" class="accessibility"></a>
-    <section role="main" id="main" class="wrapper login">
-      <header class="header header-page clearfix">
-        <h1 class="heading heading-page">Project Name <em>Admin</em></h1>
+    <section id="content" class="wrapper wrapper-login" role="main">
+      <header class="header header-page cf">
+        <h1 class="heading heading-page">Padamini <em>CMS</em></h1>
       </header>
+
+      <hr>
 
       <div class="message message-error message-centered">
         <p>There is no user with given username and password.</p>
       </div>
 
-      <form class="form" method="post" action="/">
+      <form class="form" method="post" action="#" novalidate>
 
         <fieldset class="fields fields-plain">
           <div class="field">
             <label class="label">Username</label>
-            <input type="text" class="medium" name="username">
+            <input type="text" class="medium" name="username" required>
           </div>
           <div class="field">
             <label class="label">Password</label>
-            <input type="password" class="medium" name="password">
+            <input type="password" class="medium" name="password" required>
             <p class="hint block"><a href="#">Forgot password?</a></p>
           </div>
           <div class="field field-plain">
@@ -43,13 +41,14 @@
         </fieldset>
 
         <fieldset class="buttons">
-          <p class="left"><a href="">&larr; Return to site</a> if you have came here accidentally.</p>
+          <p class="left"><a href="#">&larr; Return to site</a> if you have came here accidentally.</p>
           <button class="button button-positive button-main right">Log in</button>
         </fieldset>
       </form>
     </section>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
     <script src="scripts/boxy/src/javascripts/jquery.boxy.js"></script>
     <script src="scripts/jwysiwyg/jquery.wysiwyg.js"></script>
     <script src="scripts/jwysiwyg/controls/wysiwyg.colorpicker.js"></script>

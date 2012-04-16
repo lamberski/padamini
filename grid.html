@@ -1,27 +1,43 @@
-      <header class="header header-page clearfix">
+      <header class="header header-page cf">
         <h1 class="heading heading-page">Photos</h1>
 
-        <ul class="actions">
+        <ul class="actions right">
           <li>
-            <a href="#" class="button button-negative confirmation"
+            <a href="#" class="button button-positive">Add</a>
+          </li>
+          <li>
+            <a href="#" class="button button-negative"
+              data-behavior="confirmation"
               data-type="negative"
               data-accept="Yes, delete"
               data-decline="No, do not delete"
-              data-question="Do you really want to delete all records?"
+              data-message="Do you really want to delete all records?"
             >Delete all</a></li>
         </ul>
 
-        {{ filters }}
+        <form method="post" action="#" class="filter filter-form concave concave-selected cf right">
+          <label for="filter-jump-to">Filter by</label>
+          <select id="filter-jump-to">
+            <option value="" data-url="#">All</option>
+            <option value="" data-url="#">Cursus Nullam Amet</option>
+            <option value="" data-url="#">Mattis Fringilla</option>
+            <option value="" data-url="#">Condimentum Porta Parturient Sit</option>
+            <option value="" data-url="#">Risus Nibh</option>
+          </select>
+
+          <input type="checkbox" id="filter-published" data-url="#">
+          <label for="filter-published">Published?</label>
+        </form>
 
       </header>
 
       <div>
-        <ul class="listing listing-grid clearfix" data-sort-url="" data-affected-ids="1">
+        <ul class="grid cf" data-sort-url="" data-affected-ids="1">
           <li class="element" data-id="1" data-position="5">
             <div class="image-container">
-              <img src="http://spelunkyworld.com/images/spelunky-pc-screen.png" alt="">
+              <img src="http://placehold.it/250x200" alt>
             </div>
-            <div class="info">
+            <div class="meta meta-grid">
               <p>Donec id elit non mi porta gravida</p>
               <dl>
                 <dt>Outstanding</dt>
@@ -34,18 +50,18 @@
                 <dd class="tag tag-blue">Waiting</dd>
               </dl>
             </div>
-            <ul class="actions">
-              <li><a href="#" rel="external">Show</a></li>
+            <ul class="operations operations-grid">
+              <li><a href="#" data-behavior="new-tab">Show</a></li>
               <li><a href="#">Edit</a></li>
-              <li><a href="#" class="confirmation" data-question="Do you really want to delete this product?">Delete</a></li>
+              <li><a href="#" data-behavior="confirmation" data-message="Do you really want to delete this product?">Delete</a></li>
             </ul>
           </li>
-  
+
           <li class="element" data-id="4" data-position="4">
             <div class="image-container">
-              <img src="http://lorempixum.com/250/203/" alt="">
+              <img src="http://placehold.it/250x180" alt>
             </div>
-            <div class="info">
+            <div class="meta meta-grid">
               <p>Donec id elit non mi porta gravida</p>
               <dl>
                 <dt>Outstanding</dt>
@@ -58,18 +74,17 @@
                 <dd class="tag tag-blue">Waiting</dd>
               </dl>
             </div>
-            <ul class="actions">
-              <li><a href="#" rel="external">Show</a></li>
+            <ul class="operations operations-grid">
+              <li><a href="#" data-behavior="new-tab">Show</a></li>
               <li><a href="#">Edit</a></li>
-              <li><a href="#" class="confirmation" data-question="Do you really want to delete this product?">Delete</a></li>
             </ul>
           </li>
-  
+
           <li class="element" data-id="2" data-position="3">
             <div class="image-container">
-              <img src="http://lorempixum.com/250/202/" alt="">
+              <img src="http://placehold.it/220x150" alt>
             </div>
-            <div class="info">
+            <div class="meta meta-grid">
               <p>Donec id elit non mi porta gravida</p>
               <dl>
                 <dt>Outstanding</dt>
@@ -82,18 +97,17 @@
                 <dd class="tag tag-blue">Waiting</dd>
               </dl>
             </div>
-            <ul class="actions">
-              <li><a href="#" rel="external">Show</a></li>
+            <ul class="operations operations-grid">
+              <li><a href="#" data-behavior="new-tab">Show</a></li>
               <li><a href="#">Edit</a></li>
-              <li><a href="#" class="confirmation" data-question="Do you really want to delete this product?">Delete</a></li>
             </ul>
           </li>
-  
+
           <li class="element" data-id="7" data-position="1">
             <div class="image-container">
-              <img src="http://lorempixum.com/250/204/" alt="">
+              <img src="http://placehold.it/100x80" alt>
             </div>
-            <div class="info">
+            <div class="meta meta-grid">
               <p>Donec id elit non mi porta gravida</p>
               <dl>
                 <dt>Outstanding</dt>
@@ -106,13 +120,12 @@
                 <dd class="tag tag-blue">Waiting</dd>
               </dl>
             </div>
-            <ul class="actions">
-              <li><a href="#" rel="external">Show</a></li>
+            <ul class="operations operations-grid">
+              <li><a href="#" data-behavior="new-tab">Show</a></li>
               <li><a href="#">Edit</a></li>
-              <li><a href="#" class="confirmation" data-question="Do you really want to delete this product?">Delete</a></li>
             </ul>
           </li>
         </ul>
       </div>
 
-      {{ pagination }}
+      {{> pagination}}

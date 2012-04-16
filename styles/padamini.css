@@ -1,0 +1,1615 @@
+@charset "UTF-8";
+
+/*******************************************************************************
+ *
+ *  Padamini (January 2012)
+ *  Crafted with passion by Maciek Lamberski (http://lamberski.com).
+ *
+ *******************************************************************************
+ *
+ *  1 BASE
+ *    1.1 Reset
+ *    1.2 Hidden
+ *    1.3 Clearfix
+ *    1.4 Image Replacement
+ *    1.5 Defaults
+ *
+ *  2 COMMON
+ *    2.1 Wrapper
+ *    2.2 Header
+ *    2.3 Navigation
+ *    2.4 Content
+ *    2.5 Footer
+ *
+ *  3 MODULES
+ *    3.1 List
+ *    3.2 Grid
+ *    3.3 Form
+ *    3.4 Login
+ *    3.5 Dashboard
+ *    3.6 Modal
+ *    3.7 Table
+ *
+ ******************************************************************************/
+
+/*  1 BASE
+ ******************************************************************************/
+
+/*  1.1 Reset (based on Reset v2.0 by Eric Meyer)
+ *============================================================================*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Reset for buttons in Firefox */
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  padding: 0;
+  margin: 0;
+}
+
+/*  1.2 Hidden
+ *============================================================================*/
+
+.hidden {
+  position: fixed;
+  left: -999em;
+}
+
+/*  1.3 Clearfix
+ *============================================================================*/
+
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.ie7 .cf {
+  zoom: 1;
+}
+
+/*  1.4 Image Replacement
+ *============================================================================*/
+
+.ir {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.ir span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.ie7 .ir a span,
+.ie7 a.ir span {
+  cursor: pointer;
+}
+
+/*  1.5 Defaults
+ *============================================================================*/
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font: 12px "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif;
+  color: #333;
+}
+
+hr {
+  display: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+address, cite, dfn {
+  font-style: normal;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted #999;
+  cursor: help;
+}
+
+/* Links */
+
+a {
+  text-decoration: none;
+  outline-width: 3px;
+  color: #566b93;
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Forms */
+
+textarea {
+  overflow: auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="url"],
+input[type="search"],
+textarea {
+  margin: 0;
+  padding: 7px 5px;
+  font: 12px/1.4em "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif;
+  outline-width: 3px;
+  border: 1px solid #bbb;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, .1);
+     -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, .1);
+          box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, .1);
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+}
+
+input[disabled],
+textarea[disabled] {
+  color: #444;
+}
+
+/*  2 COMMON
+ ******************************************************************************/
+
+/*  2.1 Wrapper
+ *============================================================================*/
+
+.wrapper {
+  margin: 0 auto;
+  position: relative;
+  width: 800px;
+  padding: 0 80px;
+}
+
+/*  2.2 Header
+ *============================================================================*/
+
+#header,
+#header .wrapper {
+  background: #333;
+}
+
+/* Logo */
+
+#header .logo {
+  margin: 10px 0;
+  line-height: 30px;
+  float: left;
+  display: block;
+  color: #999;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#header .logo em {
+  color: #fff;
+  font-style: normal;
+}
+
+#header .logo:hover {
+  color: #888;
+}
+
+#header .logo:hover em {
+  color: #ececec;
+}
+
+/* Action button */
+
+#header .action {
+  display: block;
+  float: left;
+  margin: 14px 0 14px 10px;
+  font-size: 9px;
+  padding: 5px 6px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #666;
+  color: #eee;
+}
+
+#header .action:hover {
+  background: #5e5e5e;
+}
+
+/* User panel */
+
+#header .user-panel {
+  float: right;
+}
+
+#header .user-panel p {
+  float: left;
+  font-size: 12px;
+  line-height: 50px;
+  color: #999;
+}
+
+#header .user-panel em {
+  color: #ccc;
+  font-style: normal;
+}
+
+/*  2.3 Navigation
+ *============================================================================*/
+
+#navigation {
+  background: #70809F;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #70809F), color-stop(100%, #586787));
+  background: -webkit-linear-gradient(top, #70809F 0%, #586787 100%);
+  background:    -moz-linear-gradient(top, #70809F 0%, #586787 100%);
+  background:      -o-linear-gradient(top, #70809F 0%, #586787 100%);
+  background:     -ms-linear-gradient(top, #70809F 0%, #586787 100%);
+  background:         linear-gradient(top, #70809F 0%, #586787 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#70809F", endColorstr="#586787", GradientType=0);
+  border-bottom: 4px solid #eee;
+}
+
+#navigation li {
+  float: left;
+  display: block;
+}
+
+#navigation a {
+  font-size: 11px;
+  display: block;
+  line-height: 38px;
+  text-transform: uppercase;
+  padding: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#navigation .tab:hover > a {
+  background: #7B8AA7;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8695b0), color-stop(100%, #70809F));
+  background: -webkit-linear-gradient(top, #8695b0 0%, #70809F 100%);
+  background:    -moz-linear-gradient(top, #8695b0 0%, #70809F 100%);
+  background:      -o-linear-gradient(top, #8695b0 0%, #70809F 100%);
+  background:     -ms-linear-gradient(top, #8695b0 0%, #70809F 100%);
+  background:         linear-gradient(top, #8695b0 0%, #70809F 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8695b0", endColorstr="#70809F", GradientType=0);
+}
+
+/* Arrow */
+
+#navigation .arrow {
+  margin-left: 3px;
+  font-style: normal;
+}
+
+/* Badge */
+
+#navigation .badge {
+  color: #fff;
+  background-color: #a6b0c4;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 10px;
+  display: inline-block;
+  padding: 3px 6px;
+  margin-left: 3px;
+  text-align: center;
+  -webkit-border-radius: 7px;
+     -moz-border-radius: 7px;
+          border-radius: 7px;
+  min-width: 12px;
+}
+
+.ie7 #navigation .badge {
+  width: 12px;
+}
+
+#navigation .selected .badge {
+  background-color: #70809F;
+}
+
+/*  Dropdown
+ *----------------------------------------------------------------------------*/
+
+#navigation .dropdown {
+  display: none;
+  position: absolute;
+  z-index: 999;
+}
+
+#navigation li:hover .dropdown {
+  display: block;
+}
+
+#navigation .dropdown li {
+  float: none;
+}
+
+/* Links */
+
+#navigation .dropdown a {
+  text-transform: none;
+  padding: 0 50px 0 10px;
+  line-height: 30px;
+  font-weight: normal;
+  background: #70809F;
+}
+
+#navigation .dropdown a:hover {
+  background: #657594;
+}
+
+/*  Selected Item
+ *----------------------------------------------------------------------------*/
+
+#navigation .selected:hover > a,
+#navigation .selected > a {
+  background: #eee;
+  filter: none;
+  color: #333;
+}
+
+#navigation .selected .dropdown,
+#navigation .selected:hover .dropdown {
+  display: none;
+}
+
+/*  Subnavigation
+ *----------------------------------------------------------------------------*/
+
+#navigation .subnavigation {
+  background: #eee;
+  margin-bottom: -2px;
+  border-top: 2px solid #eee;
+  height: 30px;
+}
+
+#navigation li .subnavigation {
+  display: none;
+}
+
+#navigation .subnavigation li:hover a,
+#navigation .subnavigation a {
+  background: none;
+}
+
+#navigation .subnavigation a {
+  font-size: 12px;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  display: block;
+  padding: 0 10px;
+  line-height: 30px;
+  color: #555;
+}
+
+#navigation .subnavigation a:hover {
+  color: #333;
+}
+
+#navigation .subnavigation .selected a {
+  color: #999;
+}
+
+/*  2.4 Content
+ *============================================================================*/
+
+#content {
+  padding-top: 30px;
+}
+
+#content > *,
+#content noscript > * {
+  margin-bottom: 30px;
+}
+
+/* Aligns */
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+/* AJAX Loader */
+
+.loader {
+  display: block;
+  height: 16px;
+  width: 16px;
+  text-indent: -999em;
+  overflow: hidden;
+  background: url("../images/ajax-loader.gif") no-repeat center;
+}
+
+.loader-header {
+  margin-left: 10px;
+  float: left;
+  height: 28px;
+}
+
+/*  Text overflow (https://developer.mozilla.org/En/CSS/text-overflow)
+ *----------------------------------------------------------------------------*/
+
+.text-overflow {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
+
+/*  Message
+ *----------------------------------------------------------------------------*/
+
+.message {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  font-size: 13px;
+  line-height: 1.4em;
+  padding: 15px 20px;
+  background: #eee;
+  color: #555;
+  position: relative;
+}
+
+.message > * {
+  margin-top: 7px;
+}
+
+.message :first-child {
+  margin-top: 0;
+}
+
+.message ul {
+  margin-left: 25px;
+  list-style: disc;
+}
+
+.message .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  margin: 0;
+  font-size: 11px;
+  text-decoration: underline;
+  line-height: 1em;
+}
+
+/* Centered */
+
+.message-centered {
+  text-align: center;
+}
+
+/* Success */
+
+.message-success {
+  background-color: #e5f5dd;
+  color: #546a47;
+}
+
+/* Error */
+
+.message-error {
+  background-color: #f7e8e6;
+  color: #9a4c42;
+}
+
+/* Info */
+
+.message-info {
+  background-color: #dbedf5;
+  color: #456a80;
+}
+
+/* Warning */
+
+.message-warning {
+  background-color: #f1f1b8;
+  color: #716445;
+}
+
+/*  Tag
+ *----------------------------------------------------------------------------*/
+
+.tag {
+  text-align: center;
+  line-height: 20px;
+  display: inline;
+  text-transform: uppercase;
+  background: #eee;
+  color: #555;
+  padding: 0 5px;
+  font-size: 9px;
+  font-weight: bold;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.tag-yellow {
+  background-color: #f1f1b8;
+  color: #716445;
+}
+
+.tag-green {
+  background-color: #e5f5dd;
+  color: #546a47;
+}
+
+.tag-red {
+  background-color: #f7e8e6;
+  color: #9a4c42;
+}
+
+.tag-blue {
+  background-color: #dbedf5;
+  color: #456a80;
+}
+
+/* Value */
+
+.value {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.value-green {
+  color: #679a41;
+}
+
+.value-red {
+  color: #c74a38;
+}
+
+/*  Button
+ *----------------------------------------------------------------------------*/
+
+.button,
+.button:hover {
+  line-height: 28px;
+  height: 28px;
+  font-size: 11px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  color: #fff;
+  padding: 0 10px;
+  margin-left: 0;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  background: #7D7D7D;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #999999), color-stop(100%, #666666));
+  background: -webkit-linear-gradient(top, #999999 0%, #666666 100%);
+  background:    -moz-linear-gradient(top, #999999 0%, #666666 100%);
+  background:      -o-linear-gradient(top, #999999 0%, #666666 100%);
+  background:     -ms-linear-gradient(top, #999999 0%, #666666 100%);
+  background:         linear-gradient(top, #999999 0%, #666666 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#999999", endColorstr="#666666", GradientType=0);
+}
+
+.button:hover {
+  text-decoration: none;
+  background: #8E8E8E;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #aaaaaa), color-stop(100%, #777777));
+  background: -webkit-linear-gradient(top, #aaaaaa 0%, #777777 100%);
+  background:    -moz-linear-gradient(top, #aaaaaa 0%, #777777 100%);
+  background:      -o-linear-gradient(top, #aaaaaa 0%, #777777 100%);
+  background:     -ms-linear-gradient(top, #aaaaaa 0%, #777777 100%);
+  background:         linear-gradient(top, #aaaaaa 0%, #777777 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#aaaaaa", endColorstr="#777777", GradientType=0);
+}
+
+/* Create */
+
+.button-positive,
+.button-positive:hover {
+  background: #5E9553;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #70ac64), color-stop(100%, #4e7f44));
+  background: -webkit-linear-gradient(top, #70ac64 0%, #4e7f44 100%);
+  background:    -moz-linear-gradient(top, #70ac64 0%, #4e7f44 100%);
+  background:      -o-linear-gradient(top, #70ac64 0%, #4e7f44 100%);
+  background:     -ms-linear-gradient(top, #70ac64 0%, #4e7f44 100%);
+  background:         linear-gradient(top, #70ac64 0%, #4e7f44 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#70ac64", endColorstr="#4e7f44", GradientType=0);
+}
+
+.button-positive:hover {
+  background: #6AA15F;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fb575), color-stop(100%, #58904d));
+  background: -webkit-linear-gradient(top, #7fb575 0%, #58904d 100%);
+  background:    -moz-linear-gradient(top, #7fb575 0%, #58904d 100%);
+  background:      -o-linear-gradient(top, #7fb575 0%, #58904d 100%);
+  background:     -ms-linear-gradient(top, #7fb575 0%, #58904d 100%);
+  background:         linear-gradient(top, #7fb575 0%, #58904d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fb575", endColorstr="#58904d", GradientType=0);
+}
+
+/* Delete */
+
+.button-negative,
+.button-negative:hover {
+  background: #C15646;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d26e60), color-stop(100%, #b34332));
+  background: -webkit-linear-gradient(top, #d26e60 0%, #b34332 100%);
+  background:    -moz-linear-gradient(top, #d26e60 0%, #b34332 100%);
+  background:      -o-linear-gradient(top, #d26e60 0%, #b34332 100%);
+  background:     -ms-linear-gradient(top, #d26e60 0%, #b34332 100%);
+  background:         linear-gradient(top, #d26e60 0%, #b34332 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d26e60", endColorstr="#b34332", GradientType=0);
+}
+
+.button-negative:hover {
+  background: #CF6455;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d88074), color-stop(100%, #c74a38));
+  background: -webkit-linear-gradient(top, #d88074 0%, #c74a38 100%);
+  background:    -moz-linear-gradient(top, #d88074 0%, #c74a38 100%);
+  background:      -o-linear-gradient(top, #d88074 0%, #c74a38 100%);
+  background:     -ms-linear-gradient(top, #d88074 0%, #c74a38 100%);
+  background:         linear-gradient(top, #d88074 0%, #c74a38 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d88074", endColorstr="#c74a38", GradientType=0);
+}
+
+/* Disabled */
+
+.button-disabled,
+.button-disabled:hover {
+  background: #D6D6D6;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dfdfdf), color-stop(100%, #cccccc));
+  background: -webkit-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
+  background:    -moz-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
+  background:      -o-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
+  background:     -ms-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
+  background:         linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dfdfdf", endColorstr="#cccccc", GradientType=0);
+  cursor: default;
+}
+
+/* Main action */
+
+.button-main {
+  font-weight: bold;
+}
+
+/*  Concave buttons
+ *----------------------------------------------------------------------------*/
+
+.concave,
+.concave:hover {
+  text-decoration: none;
+  padding: 0 7px;
+  line-height: 24px;
+  display: block;
+  color: #555;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  font-size: 11px;
+}
+
+.concave:hover {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+  background: #f3f3f3;
+}
+
+.concave small {
+  color: #aaa;
+  padding-left: 2px;
+}
+
+.concave-selected,
+.concave-selected:hover {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+  background: #e8e8e8;
+}
+
+.concave-selected small,
+.concave-selected:hover small {
+  color: #999;
+}
+
+/*  Filters
+ *----------------------------------------------------------------------------*/
+
+.filter {
+  padding: 2px 0;
+}
+
+.filter li {
+  display: block;
+  float: left;
+  margin-left: 3px;
+}
+
+/* HTML <select> dropdown filter */
+
+.filter-form,
+.filter-form:hover {
+  padding: 3px 10px 3px 10px;
+  font-size: 10px;
+  line-height: 22px;
+}
+
+/*  Pagination
+ *----------------------------------------------------------------------------*/
+
+.pagination {
+  margin-top: 30px;
+  color: #777;
+  display: block;
+  font-size: 11px;
+  line-height: 24px;
+}
+
+.pagination ul {
+  float: right;
+}
+
+.pagination li {
+  float: left;
+  margin-left: 3px;
+}
+
+/* Stats */
+
+.pagination p {
+  float: left;
+}
+
+.pagination p em {
+  font-style: normal;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Pagination concave buttons */
+
+.concave-page,
+.concave-page:hover {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+  background: #f3f3f3;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.pagination li a:hover {
+  background: #e8e8e8;
+}
+
+.concave-page-disabled,
+.concave-page-disabled:hover {
+  color: #ccc;
+  background: #f8f8f8;
+}
+
+.concave-page-current,
+.concave-page-current:hover {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
+  background: #70809F;
+  color: #fff;
+}
+
+/*  Headers
+ *----------------------------------------------------------------------------*/
+
+.header {
+  margin: 0 -5px;
+}
+
+.header > * {
+  margin: 0 5px;
+}
+
+/* Section Header */
+
+.header-section {
+  padding-bottom: 10px;
+}
+
+/* Actions */
+
+.header .actions li {
+  display: block;
+  float: left;
+  margin-left: 5px;
+}
+
+/*  Headings
+ *----------------------------------------------------------------------------*/
+
+.heading {
+  font-weight: bold;
+  color: #333;
+}
+
+.heading em {
+  font-style: normal;
+  font-weight: normal;
+  color: #999;
+}
+
+.heading-page {
+  font-size: 20px;
+  float: left;
+  line-height: 28px;
+}
+
+.heading-section {
+  float: left;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+/*  Record meta
+ *----------------------------------------------------------------------------*/
+
+.meta p {
+  display: inline-block;
+  line-height: 20px;
+  font-size: 13px;
+  color: #333;
+}
+
+.meta p small {
+  color: #777;
+  font-size: 11px;
+}
+
+/* Info attributes */
+
+.meta dl {
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 20px;
+  color: #777;
+  font-size: 10px;
+}
+
+.meta dl,
+.meta dd {
+  display: block;
+  float: left;
+  margin-left: 10px;
+}
+
+.meta dt {
+  display: none;
+}
+
+.meta dd[title] {
+  cursor: help;
+}
+
+/*  Record operations
+ *----------------------------------------------------------------------------*/
+
+.operations {
+  float: right;
+}
+
+.operations li {
+  float: left;
+}
+
+.operations a {
+  display: block;
+  margin: -1px 0;
+  padding: 1px 5px;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 20px;
+}
+
+/*  2.5 Footer
+ *============================================================================*/
+
+#footer {
+  padding-bottom: 30px;
+  color: #bbb;
+  font-size: 11px;
+}
+
+/*  3 MODULES
+ ******************************************************************************/
+
+/*  3.1 List
+ *============================================================================*/
+
+.list {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.list .element:nth-child(2n+1) {
+  background: #f8f8f8;
+}
+
+.list .element {
+  padding: 15px 10px;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: -1px;
+  display: block;
+}
+
+.list .element:hover {
+  background: #f3f3f3 !important;
+}
+
+/* List-specific .meta */
+
+.meta-list {
+  float: left;
+  width: 75%;
+  position: relative;
+}
+
+.meta-list p {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/*  Sortable list
+ *----------------------------------------------------------------------------*/
+
+.list .grip {
+  float: left;
+  padding: 10px 5px 10px 10px;
+  margin: -10px 0 -10px -10px;
+  cursor: move;
+  width: 10px;
+  height: 16px;
+  background: url("../images/arrow-move-y.png") no-repeat 7px 13px;
+  opacity: 0.15;
+  filter: alpha(opacity=15);
+}
+
+.list .element:hover .grip {
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+
+.list .element-locked .grip,
+.list .element-locked:hover .grip {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: default;
+}
+
+/* Affected row */
+
+.list .element-affected:nth-child(2n+1),
+.list .element-affected {
+  background-color: #fbfbd3;
+}
+
+/*  3.2 Grid
+ *============================================================================*/
+
+.grid {
+  margin-top: -25px;
+  margin-left: -25px;
+}
+
+.grid .element {
+  float: left;
+  display: block;
+  width: 250px;
+  margin-left: 25px;
+  margin-top: 25px;
+  background: #f8f8f8;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+
+/* Affected row */
+
+.grid .element-affected {
+  background-color: #fbfbd3;
+}
+
+.grid .element-affected img {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+/* Sortable */
+
+.grid .grip {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  cursor: move;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  margin: -5px;
+  background: url("../images/arrow-move.png") no-repeat center center;
+  z-index: 1;
+}
+
+/*  Image
+ *----------------------------------------------------------------------------*/
+
+.grid .image-container {
+  width: 250px;
+  height: 200px;
+  line-height: 198px;
+  text-align: center;
+}
+
+.grid img {
+  max-width: 99%;
+  max-height: 99%;
+  vertical-align: middle;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/*  Info/actions slow fading in/out
+ *----------------------------------------------------------------------------*/
+
+.meta-grid,
+.operations-grid {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity .1s linear;
+     -moz-transition: opacity .1s linear;
+       -o-transition: opacity .1s linear;
+          transition: opacity .1s linear;
+}
+
+.grid .element-selected .meta-grid,
+.grid .element-selected .operations-grid,
+.grid .element:hover .meta-grid,
+.grid .element:hover .operations-grid,
+.grid .element-dragged .meta-grid,
+.grid .element-dragged .operations-grid {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* Sorting grip */
+
+.grid .grip {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity .1s linear;
+     -moz-transition: opacity .1s linear;
+       -o-transition: opacity .1s linear;
+          transition: opacity .1s linear;
+}
+
+.grid .element-selected .grip,
+.grid .element:hover .grip,
+.grid .element-dragged .grip {
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+
+.grid .element-locked .grip,
+.grid .element-locked:hover .grip {
+  display: none;
+  cursor: default;
+}
+
+/*  Grid-specific .meta
+ *----------------------------------------------------------------------------*/
+
+.meta-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 10px 15px;
+  background: #f4f4f4;
+  background: rgba(245, 245, 245, .96);
+}
+
+.meta-grid p {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 18px;
+}
+
+.meta-grid dl {
+  display: block;
+  position: static;
+  line-height: 14px;
+}
+
+.meta-grid dl,
+.meta-grid dd {
+  margin-left: 0;
+}
+
+.meta-grid dt {
+  display: block;
+  float: left;
+}
+
+.meta-grid dd[title],
+.meta-grid dd[title] {
+  cursor: default;
+}
+
+.meta-grid dt {
+  width: 70px;
+}
+
+.meta-grid dd {
+  width: 100px;
+}
+
+.meta-grid dt,
+.meta-grid dd {
+  margin-bottom: 7px;
+}
+
+/*  Grid-specific .operations
+ *----------------------------------------------------------------------------*/
+
+.operations-grid {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/*  3.3 Form
+ *============================================================================*/
+
+/* Images in form */
+
+.form img {
+  padding: 2px;
+  border: 1px solid #d5d5d5;
+  vertical-align: top;
+}
+
+/*  Main form elements
+ *----------------------------------------------------------------------------*/
+
+/* Fields fieldset */
+
+.form .fields {
+  -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, .05);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px rgba(0, 0, 0, .05);
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  margin-top: 20px;
+  background: #f4f4f4;
+  padding: 20px;
+  position: relative;
+}
+
+.form .fields:first-child {
+  margin-top: 0;
+}
+
+/* Legend */
+
+.form legend {
+  margin-left: -20px;
+}
+
+.form legend span {
+  color: #aaa;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  position: absolute;
+  padding: 20px 0 0 20px;
+}
+
+.ie8 .form legend span {
+  padding-top: 0;
+}
+
+/* Buttons fieldset */
+
+.form .buttons {
+  margin-top: 20px;
+}
+
+/*  Fields
+ *----------------------------------------------------------------------------*/
+
+.form .field {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #e2e2e2;
+  position: relative;
+  padding-left: 130px;
+}
+
+.form .field .label {
+  color: #333;
+  position: absolute;
+  width: 120px;
+  font-size: 13px;
+  line-height: 17px;
+  padding-top: 5px;
+  left: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* First */
+
+.form .field:first-child {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: 0;
+}
+
+.ie8 .form .field:first-child {
+  border-top: 0;
+}
+
+.form legend + .field {
+  padding-top: 40px;
+  margin-top: 0;
+  border-top: 0;
+}
+
+.ie8 .form legend + .field {
+  border-top: 0;
+}
+
+/* Required */
+
+.form .field-required .label:after {
+  content: " *";
+  color: #b44235;
+}
+
+/* Invalid */
+
+.form .field-invalid input[type=password],
+.form .field-invalid input[type=text],
+.form .field-invalid input[type=email],
+.form .field-invalid input[type=url],
+.form .field-invalid input[type=number],
+.form .field-invalid textarea {
+  color: #b44235;
+  border-color: #ce8981;
+}
+
+/* Field without main label (and left indentation) */
+
+.form .field-plain {
+  padding-left: 0;
+  min-height: 0;
+}
+
+/*  Field elements
+ *----------------------------------------------------------------------------*/
+
+/* Inputs to edit code */
+
+.form .code {
+  font-family: Monaco, Consolas, "Lucida Console", "Courier New", monospace;
+}
+
+/* Input sizes */
+
+.form .tiny {
+  width: 40px;
+  max-width: 40px;
+}
+
+.form .small {
+  width: 100px;
+  max-width: 100px;
+}
+
+.form .medium {
+  width: 250px;
+  max-width: 250px;
+}
+
+.form .normal {
+  width: 425px;
+  max-width: 425px;
+}
+
+.form .big {
+  width: 618px;
+  max-width: 618px;
+}
+
+/* Block */
+
+.form .block {
+  margin-top: 5px;
+  display: block;
+}
+
+.form .field .block:first-child,
+.form .field label:first-child + .block {
+  margin-top: 0;
+}
+
+/* Label */
+
+.form .field label:first-child ~ label {
+  color: #333;
+}
+
+/* Hint & Error */
+
+.form .hint,
+.form .error {
+  line-height: 1.4em;
+  font-size: 11px;
+}
+
+.form .hint {
+  color: #888;
+}
+
+.form .error {
+  color: #b44235;
+}
+
+/*  Buttons
+ *----------------------------------------------------------------------------*/
+
+.form .buttons {
+  line-height: 28px;
+  color: #777;
+  font-size: 11px;
+}
+
+.form .buttons em {
+  font-style: normal;
+  font-weight: bold;
+  color: #666;
+}
+
+.form .buttons .left {
+  float: left;
+  margin-right: 5px;
+}
+
+.form .buttons .right {
+  float: right;
+  margin-left: 5px;
+}
+
+/*  3.4 Login
+ *============================================================================*/
+
+/* Overwriting default .wrapper width */
+
+.wrapper-login {
+  width: 380px;
+  margin-top: 75px;
+}
+
+/* Smaller label width */
+
+.wrapper-login .form .field {
+  padding-left: 80px;
+}
+
+.wrapper-login .form .field label:first-child {
+  width: 70px;
+}
+
+/*  3.5 Dashboard
+ *============================================================================*/
+
+.dashboard {
+  margin-top: -20px;
+  margin-left: -30px;
+}
+
+/*  Sections
+ *----------------------------------------------------------------------------*/
+
+.dashboard .section {
+  float: left;
+  width: 385px;
+  margin-left: 30px;
+  padding-top: 20px;
+}
+
+/*  Dashboard List
+ *----------------------------------------------------------------------------*/
+
+.list-dashboard .element {
+  padding: 10px 7px;
+  line-height: 20px;
+}
+
+.list-dashboard .additional {
+  float: right;
+  color: #999;
+}
+
+/*  Dashboard Grid
+ *----------------------------------------------------------------------------*/
+
+/* To do */
+
+/*  3.6 Modal
+ *============================================================================*/
+
+.modal {
+  display: none;
+  position: relative;
+  padding: 15px 15px 50px;
+  width: 350px;
+  min-height: 65px;
+  border: 4px solid #555;
+  background: #fff;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+     -moz-box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+          box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+}
+
+.modal .actions {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 10px;
+  background: #eee;
+}
+
+.modal .button {
+  float: right;
+  margin-left: 5px;
+}
+
+/*  3.7 Table
+ *============================================================================*/
+
+.table {
+  border-spacing: 0;
+  width: 100%;
+  line-height: 17px;
+}
+
+.table,
+.table th,
+.table td {
+  vertical-align: center;
+  border: 1px solid #e8e8e8;
+  padding: 7px;
+}
+
+.table th {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+  background: #f3f3f3;
+}
+
+.table td {
+  background: #f8f8f8;
+}
+
+.table tr:nth-child(2n+1) td {
+  background: #fff;
+}
+
+/* Centered */
+
+.table .centered,
+.table-centered td {
+  text-align: center;
+}

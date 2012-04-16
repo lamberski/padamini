@@ -1,25 +1,23 @@
-      <header class="header header-page clearfix">
+      <header class="header header-page cf">
         <h1 class="heading heading-page">Comments</h1>
 
-        <ul class="actions">
+        <ul class="actions right">
           <li><a href="#" class="button">Button #1</a></li>
           <li><a href="#" class="button button-positive">Button #2</a></li>
           <li>
-            <a href="#" class="button button-negative confirmation"
-              data-type="negative"
-              data-accept="Yes, delete"
-              data-decline="No, do not delete"
-              data-question="Do you really want to delete all records?"
+            <a href="#" class="button button-negative"
+              data-behavior="information"
+              data-message="You can't delete records."
             >Delete all</a></li>
         </ul>
 
-        {{ filters }}
+        {{> filter}}
 
       </header>
 
-      <ul class="listing listing-list listing-sortable" data-sort-url="" data-affected-ids="1,4">
-        <li class="element clearfix" data-id="1" data-position="5">
-          <div class="info">
+      <ul class="list" data-sort-url="" data-affected-ids="1,4">
+        <li class="element cf" data-id="1" data-position="5">
+          <div class="meta meta-list">
             <p class="text-overflow">Donec id elit non mi porta gravida</p>
             <dl>
               <dt>Order value</dt>
@@ -30,14 +28,14 @@
               <dd>13.11.2011</dd>
             </dl>
           </div>
-          <ul class="actions">
-            <li><a href="#" rel="external">Preview</a></li>
+          <ul class="operations operations-list">
+            <li><a href="#" data-behavior="new-tab">Preview</a></li>
             <li><a href="#">Edit</a></li>
             <li><a href="#">Delete</a></li>
           </ul>
         </li>
-        <li class="element clearfix" data-id="4" data-position="4">
-          <div class="info">
+        <li class="element element-locked cf" data-id="4" data-position="4">
+          <div class="meta meta-list">
             <p class="text-overflow">Condimentum egestas dapibus <small>(Tortor mollis)</small></p>
             <dl>
               <dt>Status</dt>
@@ -48,13 +46,13 @@
               <dd>13.11.2011</dd>
             </dl>
           </div>
-          <ul class="actions">
+          <ul class="operations operations-list">
             <li><a href="#">Edit</a></li>
             <li><a href="#" class="confirmation">Delete</a></li>
           </ul>
         </li>
-        <li class="element clearfix" data-id="2" data-position="3">
-          <div class="info">
+        <li class="element cf" data-id="2" data-position="3">
+          <div class="meta meta-list">
             <p class="text-overflow">Donec id elit non mi porta gravida</p>
             <dl>
               <dt>Outstanding balance</dt>
@@ -65,12 +63,11 @@
               <dd>13.11.2011</dd>
             </dl>
           </div>
-          <ul class="actions">
-            <li><a href="#" rel="external">Preview</a></li>
+          <ul class="operations operations-list">
+            <li><a href="#" data-behavior="new-tab">Preview</a></li>
             <li><a href="#">Edit</a></li>
-            <li><a href="#" class="information" data-message="You can't delete this product.">Delete</a></li>
           </ul>
         </li>
       </ul>
 
-      {{ pagination }}
+      {{> pagination}}

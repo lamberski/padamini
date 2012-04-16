@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Padamini CMS</title>
+    <link href="styles/padamini.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <script src="scripts/modal/jquery.modal.min.js"></script>
+    <script src="scripts/padamini.js"></script>
+    <script src="scripts/main.js"></script>
+  </head>
+  <body>
+    <nav class="hidden">
+      <ol>
+        <li><a href="#navigation">Skip to navigation</a></li>
+        <li><a href="#content">Skip to content</a></li>
+      </ol>
+    </nav>
+
+    <hr>
+
+    <header id="header" role="banner">
+      <div class="wrapper cf">
+        <h1>
+          <a href="#" class="logo" rel="index" title="Return to the homepage"><em>Padamini</em> CMS</a>
+        </h1>
+
+        <a href="#" class="action" data-behavior="new-tab">Visit site</a>
+
+        <div class="user-panel">
+          <p>Logged in as <em>User</em></p>
+          <a href="#" class="action">Logout</a>
+        </div>
+      </div>
+    </header>
+
+    <hr>
+
+    <nav id="navigation" role="navigation">
+      <h4 class="hidden">Main navigation</h4>
+
+      <ul class="wrapper cf">
+        <li class="tab">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="tab selected">
+          <a href="#">Comments <em class="arrow">&darr;</em></a>
+          <ul class="dropdown">
+            <li><a href="#">Manage</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Flagged</a></li>
+            <li><a href="#">Trash</a></li>
+          </ul>
+        </li>
+        <li class="tab">
+          <a href="#">Products <em class="arrow">&darr;</em></a>
+          <ul class="dropdown">
+            <li><a href="#">Add New</a></li>
+            <li><a href="#">Management</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Stats</a></li>
+            <li><a href="#">Payments</a></li>
+          </ul>
+        </li>
+        <li class="tab">
+          <a href="#">Reviews <em class="badge">37</em></a>
+        </li>
+        <li class="tab">
+          <a href="#">Users</a>
+        </li>
+        <li class="tab">
+          <a href="#">Pages</a>
+        </li>
+        <li class="tab">
+          <a href="#">Orders <span class="badge">5</span></a>
+        </li>
+        <li class="tab">
+          <a href="#">Settings</a>
+        </li>
+        <li class="tab">
+          <a href="#">Backups</a>
+        </li>
+      </ul>
+
+      <div class="subnavigation">
+        <ul class="wrapper cf">
+          <li><a href="#">Manage</a></li>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Flagged</a></li>
+          <li><a href="#">Trash</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <hr>
+
+    <div id="content" role="main" class="wrapper">
+      <noscript>
+        <div class="message message-warning message-centered">
+          <p>Javascript is turned off. Panel can not work correctly.</p>
+        </div>
+      </noscript>
