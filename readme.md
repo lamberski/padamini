@@ -16,7 +16,7 @@ so basically everything that is needed to create a complete CMS dashboard for sm
 
 Markup is written in HTML5 with attention to semantics. CSS styles are constructed on the basis of [OOCSS](http://oocss.org/) to allow each component to be reused and extended.
 
-### Browsers support
+### Browser support
 
 Pages was tested on latest versions of Firefox, Opera, Safari, Chrome, and Internet Explorer 8+.
 
