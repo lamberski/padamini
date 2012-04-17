@@ -25,8 +25,10 @@ var Padamini = {
   addSubmitStateToButtons: function() {
 
     // Appending hidden loader to show on submit
-    $("form .buttons, .modal .buttons").each(function() {
-      $(this).append($("<div>").addClass("loader loader-buttons").hide());
+    $("form .buttons .button, .modal .button").live("click", function() {
+      var buttons = $(this).closest(".buttons");
+      buttons.find(".loader").remove();
+      buttons.append($("<div>").addClass("loader loader-buttons").hide());
     });
 
     // Define function to toggle action loader
@@ -40,11 +42,36 @@ var Padamini = {
     }
 
     // Bind animation to events
-    $(".modal .button-main").click(function() {
-      submitAnimation($(this).parent().find(".button"));
+    $(".modal .button-main").live("click", function() {
+      var buttons = $(this).closest(".buttons");
+
+      buttons.append(
+        $("<div>").css({
+          "position" : "absolute",
+          "top"      : "0",
+          "right"    : "0",
+          "bottom"   : "0",
+          "left"     : "0"
+        })
+      );
+alert("show");
+      submitAnimation(buttons.find(".button"));
     });
     $("form").submit(function() {
-      submitAnimation($(this).find(".buttons .button"));
+      var buttons = $(this).find(".buttons");
+
+      buttons.append(
+        $("<div>").css({
+          "position" : "absolute",
+          "top"      : "0",
+          "right"    : "0",
+          "bottom"   : "0",
+          "left"     : "0"
+        })
+      );
+
+      submitAnimation(buttons.find(".button"));
+
       return false;
     });
   },
@@ -291,12 +318,12 @@ var Padamini = {
         var text    = $("<p>").text(link.data("message"))
 
         if (link.data("behavior") == "confirmation") {
-          var actions = $("<div>")
-            .addClass("actions")
+          var buttons = $("<div>")
+            .addClass("buttons")
             .append(
               $("<a>")
                 .text(link.data("accept"))
-                .addClass("button button-" + link.data("type"))
+                .addClass("button button-main button-" + link.data("type"))
                 .click(function() {
                   window.location.href = link.attr("href");
                 })
@@ -310,19 +337,19 @@ var Padamini = {
         }
 
         if (link.data("behavior") == "information") {
-          var actions = $("<div>")
-            .addClass("actions")
+          var buttons = $("<div>")
+            .addClass("buttons")
             .append(
               $("<a>")
                 .text("OK")
-                .addClass("button")
+                .addClass("button button-main")
                 .attr("rel", "modal:close")
             );
         }
 
         modal
           .append(text)
-          .append(actions)
+          .append(buttons)
           .appendTo("body")
           .modal({
             "showClose"   : false,
