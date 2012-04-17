@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *  Padamini (January 2012) - Main JS
+ *  Padamini (January 2012)
  *  Crafted with passion by Maciek Lamberski (http://lamberski.com).
  *
  ******************************************************************************/

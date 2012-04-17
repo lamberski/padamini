@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *  Padamini (January 2012)
+ *  Padamini (April 2012)
  *  Crafted with passion by Maciek Lamberski (http://lamberski.com).
  *
  ******************************************************************************/
@@ -19,6 +19,34 @@ var Padamini = {
     Padamini.enableDraggingOnList();
     Padamini.enableFormFilter();
     Padamini.initModals();
+    Padamini.addSubmitStateToButtons();
+  },
+
+  addSubmitStateToButtons: function() {
+
+    // Appending hidden loader to show on submit
+    $("form .buttons, .modal .buttons").each(function() {
+      $(this).append($("<div>").addClass("loader loader-buttons").hide());
+    });
+
+    // Define function to toggle action loader
+    var submitAnimation = function(button) {
+      button
+        .attr("disabled", true)
+        .addClass("button-submitting");
+
+      button.closest(".buttons").find(".loader")
+        .fadeIn(250);
+    }
+
+    // Bind animation to events
+    $(".modal .button-main").click(function() {
+      submitAnimation($(this).parent().find(".button"));
+    });
+    $("form").submit(function() {
+      submitAnimation($(this).find(".buttons .button"));
+      return false;
+    });
   },
 
   /**
