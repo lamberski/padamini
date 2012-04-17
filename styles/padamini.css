@@ -1347,6 +1347,7 @@ textarea[disabled] {
 /* Buttons fieldset */
 
 .form .buttons {
+  position: relative;
   margin-top: 20px;
 }
 
