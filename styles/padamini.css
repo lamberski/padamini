@@ -2,7 +2,7 @@
 
 /*******************************************************************************
  *
- *  Padamini (January 2012)
+ *  Padamini (April 2012)
  *  Crafted with passion by Maciek Lamberski (http://lamberski.com).
  *
  *******************************************************************************
@@ -504,10 +504,15 @@ textarea[disabled] {
   background: url("../images/ajax-loader.gif") no-repeat center;
 }
 
-.loader-header {
+.loader-header,
+.loader-buttons {
   margin-left: 10px;
   float: left;
   height: 28px;
+}
+
+.loader-buttons {
+  margin-left: 5px;
 }
 
 /*  Text overflow (https://developer.mozilla.org/En/CSS/text-overflow)
@@ -656,7 +661,9 @@ textarea[disabled] {
  *----------------------------------------------------------------------------*/
 
 .button,
-.button:hover {
+.button:focus,
+.button:hover,
+.button:active {
   line-height: 28px;
   height: 28px;
   font-size: 11px;
@@ -684,7 +691,9 @@ textarea[disabled] {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#999999", endColorstr="#666666", GradientType=0);
 }
 
-.button:hover {
+.button:focus,
+.button:hover,
+.button:active {
   text-decoration: none;
   background: #8E8E8E;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #aaaaaa), color-stop(100%, #777777));
@@ -699,7 +708,9 @@ textarea[disabled] {
 /* Create */
 
 .button-positive,
-.button-positive:hover {
+.button-positive:focus,
+.button-positive:hover,
+.button-positive:active {
   background: #5E9553;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #70ac64), color-stop(100%, #4e7f44));
   background: -webkit-linear-gradient(top, #70ac64 0%, #4e7f44 100%);
@@ -710,7 +721,9 @@ textarea[disabled] {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#70ac64", endColorstr="#4e7f44", GradientType=0);
 }
 
-.button-positive:hover {
+.button-positive:focus,
+.button-positive:hover,
+.button-positive:active {
   background: #6AA15F;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fb575), color-stop(100%, #58904d));
   background: -webkit-linear-gradient(top, #7fb575 0%, #58904d 100%);
@@ -724,7 +737,9 @@ textarea[disabled] {
 /* Delete */
 
 .button-negative,
-.button-negative:hover {
+.button-negative:focus,
+.button-negative:hover,
+.button-negative:active {
   background: #C15646;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d26e60), color-stop(100%, #b34332));
   background: -webkit-linear-gradient(top, #d26e60 0%, #b34332 100%);
@@ -735,7 +750,9 @@ textarea[disabled] {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d26e60", endColorstr="#b34332", GradientType=0);
 }
 
-.button-negative:hover {
+.button-negative:focus,
+.button-negative:hover,
+.button-negative:active {
   background: #CF6455;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d88074), color-stop(100%, #c74a38));
   background: -webkit-linear-gradient(top, #d88074 0%, #c74a38 100%);
@@ -749,7 +766,9 @@ textarea[disabled] {
 /* Disabled */
 
 .button-disabled,
-.button-disabled:hover {
+.button-disabled:focus,
+.button-disabled:hover,
+.button-disabled:active {
   background: #D6D6D6;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dfdfdf), color-stop(100%, #cccccc));
   background: -webkit-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
@@ -758,6 +777,17 @@ textarea[disabled] {
   background:     -ms-linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
   background:         linear-gradient(top, #dfdfdf 0%, #cccccc 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dfdfdf", endColorstr="#cccccc", GradientType=0);
+  cursor: default;
+}
+
+/* Submitting */
+
+.button-submitting,
+.button-submitting:focus,
+.button-submitting:hover,
+.button-submitting:active {
+  opacity: .3;
+  filter: alpha(opacity=30);
   cursor: default;
 }
 
