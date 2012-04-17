@@ -54,7 +54,7 @@ var Padamini = {
           "left"     : "0"
         })
       );
-alert("show");
+
       submitAnimation(buttons.find(".button"));
     });
     $("form").submit(function() {
@@ -353,7 +353,7 @@ alert("show");
           .appendTo("body")
           .modal({
             "showClose"   : false,
-            "escapeClose" : true,
+            "escapeClose" : false,
             "clickClose"  : false,
             "overlay"     : "#eee",
             "opacity"     : .8
