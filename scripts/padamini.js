@@ -333,6 +333,9 @@ var Padamini = {
                 .text(link.data("decline"))
                 .addClass("button")
                 .attr("rel", "modal:close")
+                .click(function() {
+                  $(this).closest(".modal").remove();
+                })
             );
         }
 
@@ -344,6 +347,9 @@ var Padamini = {
                 .text("OK")
                 .addClass("button button-main")
                 .attr("rel", "modal:close")
+                .click(function() {
+                  $(this).closest(".modal").remove();
+                })
             );
         }
 
