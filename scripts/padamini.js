@@ -71,8 +71,6 @@ var Padamini = {
       );
 
       submitAnimation(buttons.find(".button"));
-
-      return false;
     });
   },
 
