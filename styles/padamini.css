@@ -438,7 +438,6 @@ textarea[disabled] {
   background: #eee;
   margin-bottom: -2px;
   border-top: 2px solid #eee;
-  height: 30px;
 }
 
 #navigation li .subnavigation {
@@ -458,6 +457,7 @@ textarea[disabled] {
   display: block;
   padding: 0 10px;
   line-height: 30px;
+  height: 30px;
   color: #333;
 }
 
