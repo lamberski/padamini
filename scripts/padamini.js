@@ -360,7 +360,8 @@ var Padamini = {
             "escapeClose" : false,
             "clickClose"  : false,
             "overlay"     : "#eee",
-            "opacity"     : .8
+            "opacity"     : .8,
+            "zIndex"      : 1000
           });
 
         return false;
