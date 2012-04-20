@@ -1345,15 +1345,22 @@ textarea[disabled] {
 }
 
 .form .field .label {
-  color: #333;
+  color: #444;
   position: absolute;
   width: 120px;
   font-size: 13px;
+  font-weight: bold;
   line-height: 17px;
   padding-top: 5px;
   left: 0;
   text-overflow: ellipsis;
   overflow: hidden;
+  top: 20px;
+  bottom: 0;
+}
+
+.form legend + .field .label {
+  top: 40px;
 }
 
 /* First */
