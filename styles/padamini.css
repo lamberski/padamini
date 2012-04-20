@@ -241,6 +241,11 @@ textarea[disabled] {
 /*  2.2 Header
  *============================================================================*/
 
+#header {
+  position: relative;
+  z-index: 1;
+}
+
 #header,
 #header .wrapper {
   background: #333;
@@ -323,6 +328,9 @@ textarea[disabled] {
   background:         linear-gradient(top, #70809F 0%, #586787 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#70809F", endColorstr="#586787", GradientType=0);
   border-bottom: 4px solid #eee;
+  -webkit-box-shadow: 0 1px 3px #ccc;
+     -moz-box-shadow: 0 1px 3px #ccc;
+          box-shadow: 0 1px 3px #ccc;
 }
 
 #navigation li {
