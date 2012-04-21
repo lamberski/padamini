@@ -25,8 +25,8 @@ var Padamini = {
   addSubmitStateToButtons: function() {
 
     // Appending hidden loader to show on submit
-    $("form .buttons .button, .modal .button").live("click", function() {
-      var buttons = $(this).closest(".buttons");
+    $("form .buttons").each(function() {
+      var buttons = $(this);
       buttons.find(".loader").remove();
       buttons.append($("<div>").addClass("loader loader-buttons").hide());
     });
@@ -334,7 +334,12 @@ var Padamini = {
                 .click(function() {
                   $(this).closest(".modal").remove();
                 })
+            ).append(
+              $("<div>")
+                .addClass("loader loader-buttons")
+                .hide()
             );
+    });
         }
 
         if (link.data("behavior") == "information") {
