@@ -339,7 +339,6 @@ var Padamini = {
                 .addClass("loader loader-buttons")
                 .hide()
             );
-    });
         }
 
         if (link.data("behavior") == "information") {
