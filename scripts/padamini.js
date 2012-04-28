@@ -11,6 +11,7 @@ var Padamini = {
    * Executes all other methods.
    */
   init: function() {
+    Padamini.addSubmitStateToButtons();
     Padamini.autofocusFirstField();
     Padamini.performListingInfo();
     Padamini.enableNewTabBehavior();
@@ -19,7 +20,7 @@ var Padamini = {
     Padamini.enableDraggingOnList();
     Padamini.enableFormFilter();
     Padamini.initModals();
-    Padamini.addSubmitStateToButtons();
+    Padamini.enablePreviewModal();
   },
 
   addSubmitStateToButtons: function() {
@@ -41,7 +42,7 @@ var Padamini = {
         .fadeIn(250);
     }
 
-    // Bind animation to events
+    // Bind animation to modal window
     $(".modal .button-main").live("click", function() {
       var buttons = $(this).closest(".buttons");
 
@@ -57,20 +58,28 @@ var Padamini = {
 
       submitAnimation(buttons.find(".button"));
     });
-    $("form").submit(function() {
+
+    // Bind animation to regular form
+    $("form").submit(function(e) {
+      var clicked = $(this).find("[clicked=true]");
       var buttons = $(this).find(".buttons");
 
-      buttons.append(
-        $("<div>").css({
-          "position" : "absolute",
-          "top"      : "0",
-          "right"    : "0",
-          "bottom"   : "0",
-          "left"     : "0"
-        })
-      );
-
-      submitAnimation(buttons.find(".button"));
+      if (!clicked.data("behavior")) {
+        buttons.append(
+          $("<div>").css({
+            "position" : "absolute",
+            "top"      : "0",
+            "right"    : "0",
+            "bottom"   : "0",
+            "left"     : "0"
+          })
+        );
+        submitAnimation(buttons.find(".button:not([data-behavior])"));
+      }
+    });
+    $("form button, form input[type=submit]").click(function() {
+      $(this).closest("form").find("form button, form input[type=submit]").attr("clicked", "false");
+      $(this).attr("clicked", "true");
     });
   },
 
@@ -135,7 +144,7 @@ var Padamini = {
 
     $("a[data-behavior=new-tab]").attr("target", "_new");
 
-    $(".form .button[data-behavior=new-tab]").bind("click", function() {
+    $(".form .button[data-behavior=new-tab]").bind("click", function(e) {
 
       // Submiting form into the new tab/window
       $(this).closest(".form")
@@ -148,7 +157,7 @@ var Padamini = {
         .attr("action", "")
         .attr("target", "_self");
 
-      return false;
+      e.preventDefault();
     });
   },
 
@@ -158,7 +167,7 @@ var Padamini = {
   enableCloseMessageButtons: function() {
     if (!$(".message").length) return false;
 
-    $(".message .close").bind("click", function() {
+    $(".message .close").bind("click", function(e) {
       $(this)
         .closest(".message")
         .animate({"opacity": 0}, 200)
@@ -166,7 +175,7 @@ var Padamini = {
           $(this).animate({"margin-bottom": 0}, 200);
         });
 
-      return false;
+      e.preventDefault();
     });
   },
 
@@ -311,7 +320,7 @@ var Padamini = {
       link.text(link.text() + $('<div>').html("&hellip;").text());
 
       // Bind action to open modal window
-      link.click(function() {
+      link.click(function(e) {
         var modal   = $("<div>").addClass("modal");
         var text    = $("<p>").text(link.data("message"))
 
@@ -331,9 +340,6 @@ var Padamini = {
                 .text(link.data("decline"))
                 .addClass("button")
                 .attr("rel", "modal:close")
-                .click(function() {
-                  $(this).closest(".modal").remove();
-                })
             ).append(
               $("<div>")
                 .addClass("loader loader-buttons")
@@ -349,9 +355,6 @@ var Padamini = {
                 .text("OK")
                 .addClass("button button-main")
                 .attr("rel", "modal:close")
-                .click(function() {
-                  $(this).closest(".modal").remove();
-                })
             );
         }
 
@@ -368,8 +371,62 @@ var Padamini = {
             "zIndex"      : 1000
           });
 
-        return false;
+        e.preventDefault();
       });
+    });
+  },
+
+  /**
+   * Opens modal window with preview of data entered to form
+   */
+  enablePreviewModal: function() {
+    $("[data-behavior=preview]").click(function(e) {
+      var link    = $(this);
+      var modal   = $("<div>").addClass("modal");
+      var iframe  = $("<iframe>").css("height", ($(window).height() * 70) / 100);
+
+      // Disable scrolling of page while modal is open
+      modal
+        .on("modal:open", function() {
+          var top = $(window).scrollTop();
+          var left = $(window).scrollLeft()
+          $("body, html").css("overflow", "hidden");
+          $(window).scroll(function() {
+            $(this).scrollTop(top).scrollLeft(left);
+          });
+        })
+        .on("modal:before-close", function() {
+          $("body, html").css("overflow", "auto");
+          $(window).unbind("scroll");
+        });
+
+      $.post(link.data("url"), link.closest("form").serialize(), function(data) {
+        iframe.contents().find("html").html(data);
+      });
+
+      var buttons = $("<div>")
+        .addClass("buttons")
+        .append(
+          $("<a>")
+            .text(link.data("close"))
+            .addClass("button button-main")
+            .attr("rel", "modal:close")
+        );
+
+      modal
+        .append(iframe)
+        .append(buttons)
+        .appendTo("body")
+        .modal({
+          "showClose"   : false,
+          "escapeClose" : true,
+          "clickClose"  : true,
+          "overlay"     : "#eee",
+          "opacity"     : .8,
+          "zIndex"      : 1000
+        });
+
+      e.preventDefault();
     });
   }
 
