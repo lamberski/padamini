@@ -309,11 +309,7 @@ var Padamini = {
    * Redirects to the new url specified in filter's data-url attribute.
    */
   initModals: function() {
-    var links = $("[data-behavior=confirmation], [data-behavior=information]");
-
-    if (!links.length) return false;
-
-    links.each(function() {
+    $("[data-behavior=confirmation], [data-behavior=information]").each(function() {
       var link = $(this);
 
       // Add link action type indicator
@@ -380,53 +376,59 @@ var Padamini = {
    * Opens modal window with preview of data entered to form
    */
   enablePreviewModal: function() {
-    $("[data-behavior=preview]").click(function(e) {
-      var link    = $(this);
-      var modal   = $("<div>").addClass("modal");
-      var iframe  = $("<iframe>").css("height", ($(window).height() * 70) / 100);
+    $("[data-behavior=preview]").each(function() {
+      var link = $(this);
 
-      // Disable scrolling of page while modal is open
-      modal
-        .on("modal:open", function() {
-          var top = $(window).scrollTop();
-          var left = $(window).scrollLeft()
-          $("body, html").css("overflow", "hidden");
-          $(window).scroll(function() {
-            $(this).scrollTop(top).scrollLeft(left);
+      link.text(link.text() + $('<div>').html("&hellip;").text());
+
+      link.click(function(e) {
+        var link    = $(this);
+        var modal   = $("<div>").addClass("modal");
+        var iframe  = $("<iframe>").css("height", ($(window).height() * 70) / 100);
+
+        // Disable scrolling of page while modal is open
+        modal
+          .on("modal:open", function() {
+            var top = $(window).scrollTop();
+            var left = $(window).scrollLeft()
+            $("body, html").css("overflow", "hidden");
+            $(window).scroll(function() {
+              $(this).scrollTop(top).scrollLeft(left);
+            });
+          })
+          .on("modal:before-close", function() {
+            $("body, html").css("overflow", "auto");
+            $(window).unbind("scroll");
           });
-        })
-        .on("modal:before-close", function() {
-          $("body, html").css("overflow", "auto");
-          $(window).unbind("scroll");
+
+        $.post(link.data("url"), link.closest("form").serialize(), function(data) {
+          iframe.contents().find("html").html(data);
         });
 
-      $.post(link.data("url"), link.closest("form").serialize(), function(data) {
-        iframe.contents().find("html").html(data);
+        var buttons = $("<div>")
+          .addClass("buttons")
+          .append(
+            $("<a>")
+              .text(link.data("close"))
+              .addClass("button button-main")
+              .attr("rel", "modal:close")
+          );
+
+        modal
+          .append(iframe)
+          .append(buttons)
+          .appendTo("body")
+          .modal({
+            "showClose"   : false,
+            "escapeClose" : true,
+            "clickClose"  : true,
+            "overlay"     : "#eee",
+            "opacity"     : .8,
+            "zIndex"      : 1000
+          });
+
+        e.preventDefault();
       });
-
-      var buttons = $("<div>")
-        .addClass("buttons")
-        .append(
-          $("<a>")
-            .text(link.data("close"))
-            .addClass("button button-main")
-            .attr("rel", "modal:close")
-        );
-
-      modal
-        .append(iframe)
-        .append(buttons)
-        .appendTo("body")
-        .modal({
-          "showClose"   : false,
-          "escapeClose" : true,
-          "clickClose"  : true,
-          "overlay"     : "#eee",
-          "opacity"     : .8,
-          "zIndex"      : 1000
-        });
-
-      e.preventDefault();
     });
   }
 
