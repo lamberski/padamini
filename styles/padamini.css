@@ -1442,7 +1442,7 @@ textarea[disabled] {
 
 /* Inputs to edit code */
 
-.form .code {
+.form code {
   font-family: Monaco, Consolas, "Lucida Console", "Courier New", monospace;
 }
 
