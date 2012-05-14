@@ -442,15 +442,16 @@ var Padamini = {
     $(".cleditor").each(function() {
       var area = $(this);
 
+      if (area.attr("value") == "") {
+        area.attr("value", "<p>&nbsp;</p>");
+      }
+
       area
         .addClass("code")
         .cleditor({
           "width"    : area.outerWidth(),
           "height"   : area.outerHeight(),
-          "controls" : "bold italic underline strikethrough subscript superscript | font size " +
-                       "style | color highlight removeformat | bullets numbering | " +
-                       "image link unlink | " +
-                       "alignleft center alignright justify | source"
+          "controls" : "bold italic underline strikethrough subscript superscript | font size style | color highlight removeformat | bullets numbering | image link unlink | alignleft center alignright justify | source"
         });
     });
 
