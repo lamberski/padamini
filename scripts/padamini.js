@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *  Padamini (April 2012)
+ *  Padamini (May 2012)
  *  Crafted with passion by Maciek Lamberski (http://lamberski.com).
  *
  ******************************************************************************/
@@ -8,7 +8,7 @@
 var Padamini = {
 
   /**
-   * Executes all other methods.
+   * Execute all other methods.
    */
   init: function() {
     Padamini.addSubmitStateToButtons();
@@ -21,11 +21,12 @@ var Padamini = {
     Padamini.enableFormFilter();
     Padamini.initModals();
     Padamini.enablePreviewModal();
+    Padamini.enableCLEdit();
   },
 
   addSubmitStateToButtons: function() {
 
-    // Appending hidden loader to show on submit
+    // Append hidden loader to show on submit
     $("form .buttons").each(function() {
       var buttons = $(this);
       buttons.find(".loader").remove();
@@ -84,11 +85,11 @@ var Padamini = {
   },
 
   /**
-   * Shows/hides AJAX loader next to main heading.
+   * Show/hide AJAX loader next to main heading
    */
   toggleAJAXLoader: function() {
 
-    // Showing loader.
+    // Show loader
     if (!$(".loader-header").length) {
       $("<div>")
         .addClass("loader loader-header")
@@ -96,7 +97,7 @@ var Padamini = {
         .fadeIn(250)
         .insertAfter(".heading-page");
 
-    // Hiding loader.
+    // Hiding loader
     } else {
       $(".loader-header").fadeOut(250, function() {
         $(this).remove();
@@ -105,7 +106,7 @@ var Padamini = {
   },
 
   /**
-   * Focuses first input/textarea/select in the form.
+   * Focus first input/textarea/select in the form
    */
   autofocusFirstField: function(element) {
     if ($("[autofocus]").length) return false;
@@ -117,7 +118,7 @@ var Padamini = {
   },
 
   /**
-   * Sets title attribute for each <dd> in listing item' information.
+   * Set title attribute for each <dd> in listing item' information
    */
   performListingInfo: function() {
     if (!$(".list").length) return false;
@@ -132,8 +133,8 @@ var Padamini = {
   },
 
   /**
-   * Configes elements with data-behavior="new-tab" to open in new browser
-   * tab/window and forms to submit into new tab/window.
+   * Confige elements with data-behavior="new-tab" to open in new browser
+   * tab/window and forms to submit into new tab/window
    */
   enableNewTabBehavior: function() {
 
@@ -146,13 +147,13 @@ var Padamini = {
 
     $(".form .button[data-behavior=new-tab]").bind("click", function(e) {
 
-      // Submiting form into the new tab/window
+      // Submit form into the new tab/window
       $(this).closest(".form")
         .attr("action", $(this).data("url"))
         .attr("target", "_new")
         .submit();
 
-      // Restoring old values to attributes
+      // Restore old values to attributes
       $(this).closest(".form")
         .attr("action", "")
         .attr("target", "_self");
@@ -162,7 +163,7 @@ var Padamini = {
   },
 
   /**
-   * Adds closing/hiding flash message boxes by clicking in close link.
+   * Add closing/hiding flash message boxes by clicking in close link
    */
   enableCloseMessageButtons: function() {
     if (!$(".message").length) return false;
@@ -180,7 +181,7 @@ var Padamini = {
   },
 
   /**
-   * Glows listing elements that changed in previous action.
+   * Glow listing elements that changed in previous action
    */
   glowAffectedRows: function() {
 
@@ -196,7 +197,7 @@ var Padamini = {
 
         if (element.length) {
 
-          // Highlighting affected elements on list.
+          // Highlight affected elements on list
           if (listing.hasClass("list")) {
             element
               .data("previous-background-color", element.css("background-color"))
@@ -207,7 +208,7 @@ var Padamini = {
                 element.removeClass("element-affected");
               });
 
-          // Highlighting affected elements on grid.
+          // Highlight affected elements on grid
           } else if (listing.hasClass("grid")) {
             element
               .data("previous-background-color", element.css("background-color"))
@@ -230,11 +231,11 @@ var Padamini = {
   },
 
   /**
-   * Allows dragging list elements and submits new order to given URL.
+   * Allow dragging list elements and submits new order to given URL
    */
   enableDraggingOnList: function() {
 
-    // Adding drag handle.
+    // Add drag handle
     $("[data-sort-url] .element").each(function() {
       $("<div>")
         .prependTo($(this))
@@ -292,7 +293,7 @@ var Padamini = {
   },
 
   /**
-   * Redirects to the new url specified in filter's data-url attribute.
+   * Redirect to the new url specified in filter's data-url attribute
    */
   enableFormFilter: function() {
 
@@ -306,7 +307,7 @@ var Padamini = {
   },
 
   /**
-   * Redirects to the new url specified in filter's data-url attribute.
+   * Redirect to the new url specified in filter's data-url attribute
    */
   initModals: function() {
     $("[data-behavior=confirmation], [data-behavior=information]").each(function() {
@@ -373,7 +374,7 @@ var Padamini = {
   },
 
   /**
-   * Opens modal window with preview of data entered to form
+   * Open modal window with preview of data entered to form
    */
   enablePreviewModal: function() {
     $("[data-behavior=preview]").each(function() {
@@ -430,6 +431,16 @@ var Padamini = {
         e.preventDefault();
       });
     });
+  },
+
+  /**
+   * Install CLEdit WYSIWYG plugin on textareas
+   */
+  enableCLEdit: function() {
+    if ($("textarea.cledit") == 0) return false;
+
+    
+
   }
 
 };

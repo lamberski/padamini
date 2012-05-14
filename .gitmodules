@@ -1,3 +1,6 @@
 [submodule "scripts/modal"]
 	path = scripts/modal
 	url = https://github.com/kylefox/jquery-modal.git
+[submodule "scripts/cleditor"]
+	path = scripts/cleditor
+	url = https://github.com/cleditor/cleditor.git
