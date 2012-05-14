@@ -439,8 +439,31 @@ var Padamini = {
   enableCLEdit: function() {
     if ($("textarea.cledit") == 0) return false;
 
-    
+    $(".cleditor").each(function() {
+      var area = $(this);
 
+      area
+        .addClass("code")
+        .cleditor({
+          "width"    : area.outerWidth(),
+          "height"   : area.outerHeight(),
+          "controls" : "bold italic underline strikethrough subscript superscript | font size " +
+                       "style | color highlight removeformat | bullets numbering | " +
+                       "image link unlink | " +
+                       "alignleft center alignright justify | source"
+        });
+    });
+
+    // Resize textarea to prevent from bottom overflow
+    $(".cleditorButton").live("click", function() {
+      var area = $(this).closest(".cleditorMain").find("textarea");
+
+      if (area.data("changed") != true) {
+        area
+          .css("height", area.outerHeight() - 8)
+          .data("changed", true);
+      }
+    });
   }
 
 };
