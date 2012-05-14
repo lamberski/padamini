@@ -584,7 +584,7 @@ textarea[disabled] {
   margin: 0;
   font-size: 11px;
   text-decoration: underline;
-  line-height: 1em;
+  line-height: 18px;
 }
 
 /* Centered */
@@ -944,6 +944,14 @@ textarea[disabled] {
   padding-bottom: 10px;
 }
 
+/* Page Header */
+
+.header-page {
+  line-height: 28px;
+  color: #777;
+  font-size: 11px;
+}
+
 /* Actions */
 
 .header .actions li {
@@ -1044,8 +1052,17 @@ textarea[disabled] {
 
 #footer {
   padding-bottom: 30px;
-  color: #bbb;
+  color: #ccc;
   font-size: 11px;
+  text-align: center;
+}
+
+#footer a {
+  color: #ccc;
+}
+
+#footer a:hover {
+  color: #999;
 }
 
 /*  3 MODULES
@@ -1442,7 +1459,7 @@ textarea[disabled] {
 
 /* Inputs to edit code */
 
-.form .code {
+.form code {
   font-family: Monaco, Consolas, "Lucida Console", "Courier New", monospace;
 }
 
