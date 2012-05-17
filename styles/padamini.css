@@ -1584,6 +1584,23 @@ textarea[disabled] {
   margin: 3px 0;
 }
 
+/* TinyMCE */
+
+.clearlooks2_modalBlocker {
+  background: #eee;
+  opacity: .8;
+}
+
+.clearlooks2 {
+  -webkit-border-radius: 11px 11px 0 0;
+     -moz-border-radius: 11px 11px 0 0;
+          border-radius: 11px 11px 0 0;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+     -moz-box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+          box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+}
+
+
 /*  3.4 Login
  *============================================================================*/
 
