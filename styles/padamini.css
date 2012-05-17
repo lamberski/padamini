@@ -170,6 +170,10 @@ em {
   font-style: italic;
 }
 
+code {
+  font-family: Monaco, Consolas, "Lucida Console", "Courier New", monospace;
+}
+
 del {
   text-decoration: line-through;
 }
@@ -478,9 +482,15 @@ textarea[disabled] {
   text-transform: none;
   display: block;
   padding: 0 10px;
-  line-height: 30px;
-  height: 30px;
-  color: #333;
+  line-height: 33px;
+  height: 31px;
+  color: #444;
+}
+
+.ie8 #subnavigation a {
+  line-height: 33px;
+  height: 33px;
+  color: #444;
 }
 
 #subnavigation a:hover {
@@ -1459,7 +1469,7 @@ textarea[disabled] {
 
 /* Inputs to edit code */
 
-.form code {
+.form .code {
   font-family: Monaco, Consolas, "Lucida Console", "Courier New", monospace;
 }
 
