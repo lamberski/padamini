@@ -11,21 +11,22 @@ var Padamini = {
    * Execute all other methods.
    */
   init: function() {
-    Padamini.addSubmitStateToButtons();
+    Padamini.submitStateToButtons();
     Padamini.autofocusFirstField();
-    Padamini.performListingInfo();
-    Padamini.enableNewTabBehavior();
-    Padamini.enableCloseMessageButtons();
+    Padamini.listingInfo();
+    Padamini.newTabBehavior();
+    Padamini.closingMessageButtons();
     Padamini.glowAffectedRows();
-    Padamini.enableDraggingOnList();
-    Padamini.enableFormFilter();
-    Padamini.initModals();
-    Padamini.enablePreviewModal();
-    Padamini.enableCLEdit();
-    Padamini.enableTinyMCE();
+    Padamini.draggingOnList();
+    Padamini.formFilter();
+    Padamini.modals();
+    Padamini.previewModal();
+    Padamini.CLEdit();
+    Padamini.tinyMCE();
+    Padamini.formI18nSwitcher();
   },
 
-  addSubmitStateToButtons: function() {
+  submitStateToButtons: function() {
 
     // Append hidden loader to show on submit
     $("form .buttons").each(function() {
@@ -121,7 +122,7 @@ var Padamini = {
   /**
    * Set title attribute for each <dd> in listing item' information
    */
-  performListingInfo: function() {
+  listingInfo: function() {
     if (!$(".list").length) return false;
 
     $(".list .meta dt").each(function() {
@@ -137,7 +138,7 @@ var Padamini = {
    * Confige elements with data-behavior="new-tab" to open in new browser
    * tab/window and forms to submit into new tab/window
    */
-  enableNewTabBehavior: function() {
+  newTabBehavior: function() {
 
     // Add link action type indicator
     $("[data-behavior=new-tab]").each(function() {
@@ -166,7 +167,7 @@ var Padamini = {
   /**
    * Add closing/hiding flash message boxes by clicking in close link
    */
-  enableCloseMessageButtons: function() {
+  closingMessageButtons: function() {
     if (!$(".message").length) return false;
 
     $(".message .close").bind("click", function(e) {
@@ -234,7 +235,7 @@ var Padamini = {
   /**
    * Allow dragging list elements and submits new order to given URL
    */
-  enableDraggingOnList: function() {
+  draggingOnList: function() {
 
     // Add drag handle
     $("[data-sort-url] .element").each(function() {
@@ -296,7 +297,7 @@ var Padamini = {
   /**
    * Redirect to the new url specified in filter's data-url attribute
    */
-  enableFormFilter: function() {
+  formFilter: function() {
 
     $(".filter-form *").bind("change", function() {
       if ($(this).is("select")) {
@@ -310,7 +311,7 @@ var Padamini = {
   /**
    * Redirect to the new url specified in filter's data-url attribute
    */
-  initModals: function() {
+  modals: function() {
     $("[data-behavior=confirmation], [data-behavior=information]").each(function() {
       var link = $(this);
 
@@ -377,7 +378,7 @@ var Padamini = {
   /**
    * Open modal window with preview of data entered to form
    */
-  enablePreviewModal: function() {
+  previewModal: function() {
     $("[data-behavior=preview]").each(function() {
       var link = $(this);
 
@@ -437,7 +438,7 @@ var Padamini = {
   /**
    * Install CLEdit WYSIWYG plugin on textareas
    */
-  enableCLEdit: function() {
+  CLEdit: function() {
     if ($("textarea.cleditor").length == 0) return false;
 
     $(".cleditor").each(function() {
@@ -471,32 +472,57 @@ var Padamini = {
   /**
    * Install TinyMCE WYSIWYG plugin on textareas
    */
-  enableTinyMCE: function() {
+  tinyMCE: function() {
     if ($("textarea.tinymce").length == 0) return false;
 
-    $("textarea.tinymce").tinymce({
-      // General options
-      theme : "advanced",
-      plugins : "autoresize,autolink,lists,advimage,inlinepopups,contextmenu,paste,visualchars,template,advlist",
-
-      // Theme options
-      theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,sub,sup,|,justifyleft,justifycenter,justifyright,justifyfull,|,formatselect,fontselect,fontsizeselect",
-      theme_advanced_buttons2 : "link,unlink,image,|,forecolor,backcolor,|,bullist,numlist,|,outdent,indent,blockquote,|,removeformat,cleanup,code",
-      theme_advanced_buttons3 : "",
-      theme_advanced_buttons4 : "",
-      theme_advanced_toolbar_location : "top",
-      theme_advanced_toolbar_align : "left",
-      theme_advanced_resizing : true,
-      theme_advanced_resize_horizontal : false,
-
-      // Custom CSS
-      content_css : "",
-
-      // Drop lists for link/image/media/template dialogs
-      template_external_list_url : "lists/template_list.js",
-      external_link_list_url : "lists/link_list.js",
-      external_image_list_url : "lists/image_list.js",
-      media_external_list_url : "lists/media_list.js"
+    $("textarea.tinymce").each(function() {
+      $(this).tinymce({
+        // General options
+        theme : "advanced",
+        plugins : "autoresize,autolink,lists,advimage,inlinepopups,contextmenu,paste,visualchars,template,advlist",
+        height : $(this).outerHeight(),
+        width : $(this).outerWidth(),
+  
+        // Theme options
+        theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,sub,sup,|,justifyleft,justifycenter,justifyright,justifyfull,|,formatselect,fontselect,fontsizeselect",
+        theme_advanced_buttons2 : "link,unlink,image,|,forecolor,backcolor,|,bullist,numlist,|,outdent,indent,blockquote,|,removeformat,cleanup,code",
+        theme_advanced_buttons3 : "",
+        theme_advanced_buttons4 : "",
+        theme_advanced_toolbar_location : "top",
+        theme_advanced_toolbar_align : "left",
+        theme_advanced_resizing : true,
+        theme_advanced_resize_horizontal : false,
+  
+        // Custom CSS
+        content_css : "",
+  
+        // Drop lists for link/image/media/template dialogs
+        template_external_list_url : "lists/template_list.js",
+        external_link_list_url : "lists/link_list.js",
+        external_image_list_url : "lists/image_list.js",
+        media_external_list_url : "lists/media_list.js"
+      });
     });
+  },
+
+  /**
+   * Create i18n tabs switcher for fields
+   */
+  formI18nSwitcher: function() {
+    $(".i18n-tabs input").bind("change", function() {
+      if ($(this).attr("checked")) {
+
+        var lang = $(this).attr("value");
+        var fieldset = $(this).closest("fieldset");
+
+        fieldset.find(".field [data-lang]").css({"opacity" : 0, "position" : "absolute", "z-index" : -1});
+        fieldset.find(".field [data-lang=" + lang + "]").css({"opacity" : 1, "position" : "static"});
+      }
+  
+      return false;
+    });
+
+    // Checking first language
+    $(".i18n-tabs input").first().attr("checked", "checked").change();
   }
 };

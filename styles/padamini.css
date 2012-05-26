@@ -1382,6 +1382,24 @@ textarea[disabled] {
   margin-top: 20px;
 }
 
+/* I18n language tabs */
+
+.form .i18n-tabs {
+  position: absolute;
+  right: 20px;
+  z-index: 1;
+}
+
+.form .i18n-tabs label {
+  margin: -5px 1px;
+  padding: 5px 0;
+}
+
+.form .i18n-tabs label *,
+.form .i18n-tabs label {
+  cursor: pointer;
+}
+
 /*  Fields
  *----------------------------------------------------------------------------*/
 

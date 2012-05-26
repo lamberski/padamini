@@ -4,6 +4,66 @@
 
       <form class="form" method="post" action="/">
         <fieldset class="fields">
+          
+          <div class="i18n-tabs">
+            <label for="tab-lang-pl">
+              <input type="radio" id="tab-lang-pl" name="lang" value="pl" /> Polski
+            </label>
+            <label for="tab-lang-en">
+              <input type="radio" id="tab-lang-en" name="lang" value="en" /> English
+            </label>
+            <label for="tab-lang-de">
+              <input type="radio" id="tab-lang-de" name="lang" value="de" /> Deutsch
+            </label>
+            <label for="tab-lang-fr">
+              <input type="radio" id="tab-lang-fr" name="lang" value="fr" /> Français
+            </label>
+          </div>
+
+          <legend><span>Multilanguage</span></legend>
+          
+          <div class="field">
+            <div data-lang="pl">
+              <label class="label" for="content-pl">TinyMCE</label>
+              <textarea rows="15" cols="50" class="big tinymce" name="content" id="content-pl"></textarea>
+            </div>
+            <div data-lang="en">
+              <label class="label" for="content-en">TinyMCE</label>
+              <textarea rows="15" cols="50" class="big tinymce" name="content" id="content-en"></textarea>
+            </div>
+            <div data-lang="de">
+              <label class="label" for="content-de">TinyMCE</label>
+              <textarea rows="15" cols="50" class="big tinymce" name="content" id="content-de"></textarea>
+            </div>
+            <div data-lang="fr">
+              <label class="label" for="content-fr">TinyMCE</label>
+              <textarea rows="15" cols="50" class="big tinymce" name="content" id="content-fr"></textarea>
+            </div>
+            <p class="hint block">Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          </div>
+          
+          <div class="field">
+            <div data-lang="pl">
+              <label class="label" for="form-photo">Current</label>
+              <input type="file" id="form-photo" name="photo">
+            </div>
+            <div data-lang="en">
+              <label class="label" for="form-photo">Current</label>
+              <input type="file" id="form-photo" name="photo">
+            </div>
+            <div data-lang="de">
+              <label class="label" for="form-photo">Current</label>
+              <input type="file" id="form-photo" name="photo">
+            </div>
+            <div data-lang="fr">
+              <label class="label" for="form-photo">Current</label>
+              <input type="file" id="form-photo" name="photo">
+            </div>
+            <p class="hint block">Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="fields">
           <legend><span>Basic</span></legend>
           <div class="field field-required field-invalid">
             <label class="label">Title</label>
