@@ -482,7 +482,7 @@ var Padamini = {
         plugins : "autoresize,autolink,lists,advimage,inlinepopups,contextmenu,paste,visualchars,template,advlist",
         height : $(this).outerHeight(),
         width : $(this).outerWidth(),
-  
+
         // Theme options
         theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,sub,sup,|,justifyleft,justifycenter,justifyright,justifyfull,|,formatselect,fontselect,fontsizeselect",
         theme_advanced_buttons2 : "link,unlink,image,|,forecolor,backcolor,|,bullist,numlist,|,outdent,indent,blockquote,|,removeformat,cleanup,code",
@@ -492,10 +492,10 @@ var Padamini = {
         theme_advanced_toolbar_align : "left",
         theme_advanced_resizing : true,
         theme_advanced_resize_horizontal : false,
-  
+
         // Custom CSS
         content_css : "",
-  
+
         // Drop lists for link/image/media/template dialogs
         template_external_list_url : "lists/template_list.js",
         external_link_list_url : "lists/link_list.js",
@@ -515,14 +515,16 @@ var Padamini = {
         var lang = $(this).attr("value");
         var fieldset = $(this).closest("fieldset");
 
-        fieldset.find(".field [data-lang]").css({"opacity" : 0, "position" : "absolute", "z-index" : -1});
+        fieldset.find(".field [data-lang]").css({"opacity" : 0, "position" : "absolute", "z-index" : -1, "top" : 0});
         fieldset.find(".field [data-lang=" + lang + "]").css({"opacity" : 1, "position" : "static"});
       }
-  
+
       return false;
     });
 
-    // Checking first language
-    $(".i18n-tabs input").first().attr("checked", "checked").change();
+    $(".i18n-tabs").each(function() {
+      // Checking first language
+      $(this).find("input").first().attr("checked", "checked").change();
+    });
   }
 };

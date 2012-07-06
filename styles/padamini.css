@@ -1421,11 +1421,12 @@ textarea[disabled] {
   padding-top: 5px;
   left: 0;
   text-overflow: ellipsis;
-  overflow: hidden;
+  overflow-x: hidden;
   top: 20px;
   bottom: 0;
 }
 
+.form .i18n-tabs + .field .label,
 .form legend + .field .label {
   top: 40px;
 }
@@ -1446,7 +1447,8 @@ textarea[disabled] {
   border-top: 0;
 }
 
-.form legend + .field {
+.form legend + .field,
+.form .i18n-tabs + .field {
   padding-top: 40px;
   margin-top: 0;
   border-top: 0;
